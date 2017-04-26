@@ -1,0 +1,1671 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%              학술원 총서 평설 논문
+%
+%                토에플리츠 작용소에 대한 브리지 이론
+%                        이 우 영
+%                  서울대학교 수리과학부
+%
+%                     2013년 9월 21일
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,a4paper,2sided]{article}
+\usepackage{hangul}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amscd}
+\usepackage{amsfonts}
+%\usepackage{fancyhdr}
+
+\topmargin 2mm \textwidth 140mm \textheight 230mm
+
+\pagestyle{empty}
+
+\newcommand{\mm}{\multimap}
+\newcommand{\sub}{\subset}
+\newcommand{\g}{\gamma}
+\newcommand{\G}{\Gamma}
+\newcommand{\ol}{\overline}
+\newcommand{\ul}{\underline}
+\newcommand{\ti}{\times}
+\newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda}
+\newcommand{\bcup}{\bigcup}
+\newcommand{\bcap}{\bigcap}
+\newcommand{\De}{\Delta}
+\newcommand{\de}{\delta}
+\newcommand{\back}{\backslash}
+\newcommand{\f}{\frak}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+\newcommand{\wh}{\widehat}
+\newcommand{\emp}{\emptyset}
+\newcommand{\vs}{\vspace}
+\newcommand{\hs}{\hspace}
+
+
+\newtheorem{thm}{Theorem}[subsection]
+\newtheorem{df}[thm]{Definition}
+\newtheorem{pro}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{ex}[thm] {Example}
+\newtheorem{rema}[thm] {Remark}
+\newtheorem{lem}[thm] {Lemma}
+\newtheorem{prob}[thm]{Problem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\rightline{\large\it 173} \vspace{1.5cm}
+
+\centerline{\Large{\bf 토에플리츠 작용소에 대한 브리지 이론}}
+\vspace{1.5 cm} \rightline{\large{\bf 이  우  영}\
+{\small(서울대학교 교수)}}
+
+\vspace{.5 cm}
+\begin{abstract}
+Toeplitz 작용소는 수학과 물리학의 다양한 문제에서 자연스럽게
+발생한다. 또한 아정규와 부분정규 작용소 이론은 오늘날 광범위하게 잘
+발달된 분야로 성장하였으며 함수해석학, 작용소 이론, 수리물리학 등의
+많은 문제를 푸는 데 지대한 기여를 해왔다. 따라서, Toeplitz 작용소에
+대한 아정규성과 부분정규성을 상세하게 묘사하는 것은 매우 중요한
+문제로 떠올랐다. 그런 의미에서 다음 질문은 흥미롭고 매력적이다: {\it
+어떤 Toeplitz 작용소가 아정규이거나 부분정규인가?} 정규성과
+부분정규성에 대한 정확한 관계가 광범위하게 연구되어 온 반면에,
+아정규성 안에서의 부분정규성의 위치에 관한 연구는 여전히 이해가
+부족한 편이다. 무한차원 복소 Hilbert (혹은 Banach) 공간 상의
+유계작용소에 관한 아정규성과 부분정규성 사이의 틈을 연구하는 분야를
+`브리지 이론'이라 부르는데, 이 글에서는 Toeplitz 작용소에 대한
+브리지 이론의 발전을 설명한다. 이는 1970년에 P.\,R.\ Halmos가 제시한
+열 개의 문제 중 다음과 같은 다섯번째 문제로부터 야기된다: {\it 모든
+부분정규 Toeplitz 작용소는 정규이거나 해석적인가?}
+\end{abstract}
+
+\vspace{.5 cm} {\large\bf 1. 서론}
+
+\vspace{.5 cm}
+
+작용소 이론(Operator Theory)은 함수 공간과 그 공간 상에서 작용하는
+함수를 다루는 학문이다. 작용소 이론의 연구는 1713년에 B.\ Taylor가
+진동하는\linebreak
+
+\vspace{.5 cm} \footnoterule
+
+\vspace{.2 cm} {\footnotesize 2010 Mathematics Subject
+Classification: 47B20, 47B35, 46J15, 15A83, 30H10, 47A20.
+
+Key words and phrases: Hardy 공간, Toeplitz 작용소, Hankel 작용소,
+정규성, 부분정규성, 아정규성, $k$-아정규성.}
+
+\newpage
+
+\leftline{\large{\it 174}\ \ \ \small 학문 연구의 동향과 쟁점 --
+수학}  \vspace{0.8cm}
+
+\noindent 끈을 논의하면서 그 씨앗이 뿌려졌는데 이 때가 Newton의
+`프린키피아'가 출간된지 25년쯤 지난 후이다. 현대수학의 역사 치고 꽤
+유서가 깊은 학문이라 하겠다.
+
+  그 후 수학이 급격히 발전하게 되고 19세기 초의
+Sturm과 Liouville에 의해서 매우 강력한 이론이 만들어졌으며 1910년에
+H.\ Weyl의 자기수반 작용소에 관한 중요한 발견들과 20세기 초의 F.\
+Volterra, M.\ Riesz, D.\ Hilbert, 괴팅겐학파, Banach, Mazur,
+Schauder, 그리고 폴란드의 많은 수학자들에 의하여 풍성한 열매가
+열렸다. 또 1930년과 1970년대 사이에 Gelfand, Krein, Naimark,
+Kakutani, Kato, 프랑스의 Bourbaki 그룹, 루마니아의 Colojoara, Foias,
+미국의 Hille, Phillips, Friedrichs, von Neumann, Paley, Wiener 등이
+이 분야의 연구를 더욱 풍성하게 하였다. 오늘날, 작용소 이론이
+현대수학에서 차지하는 비중은 실로 대단하다. 우선 수학 분야에서만
+보더라도 편미분방정식론, 근사이론, 적분방정식론, 확률론 등에 깊은
+영향을 주고 있으며, 응용분야에서는 양자역학, 유체역학, 전자기학,
+생명공학 등 다양한 분야로 응용되고 있다.
+
+Toeplitz 작용소에 대하여 끊임없이 관심이 증대되는 이유는 적어도 두
+가지가 있다. 첫째는 Toeplitz 작용소가 물리학, 확률론, 정보 및
+제어이론, 그 밖의 여러 분야의 다양한 문제들과 밀접한 관련이 있기
+때문이며, 둘째는 Toeplitz 작용소가 유계 작용소의 집합 중 가장 큰
+집합으로서 작용소 이론, 함수론, Banach 대수 이론 등의 주제들 사이의
+매력적인 상호 연관성을 보여주고 풍부한 예들을 제공하기 때문이다.
+
+한편, 1950년에는 Paul Halmos가 아정규성(hyponormality)과
+부분정규성\newline\noindent(subnormality)을 도입하였는데, 그 이후로
+아정규성과 부분정규성 이론은 작용소론에서 광범위하게 연구되어 매우
+훌륭한 이론으로 자리를 잡았다. 그런 의미에서, 다음 문제는 흥미롭고
+매력적이다:
+
+\vspace{.2 cm}\centerline {\it 어떤 Toeplitz 작용소가 아정규인가? 또
+부분정규인가?}\vspace{.2 cm}
+
+이 글에서는 이 문제에 대한 역사와 발전, 관련된 미해결 문제들을
+제시하고자 한다.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{.8 cm} {\large\bf 2. 예비 이론}
+
+\vspace{.5 cm}
+
+이  글에서는 모든 Hilbert 공간은 복소 Hilbert 공간으로 이해하며
+$\mathcal{H}$를\linebreak
+
+\rightline{\small 이우영: 토에플리츠 작용소에 대한 브리지 이론\ \ \
+\large\it 175}
+
+\vspace{.8 cm}
+
+\noindent  가산 Hilbert 공간으로 약속한다. 또한, $\mathcal{B(H)}$는
+$\mathcal{H}$ 상의 모든 유계 선형작용소의 집합이라 하고
+$\mathcal{K(H)}$는 컴팩트 작용소들의 집합이라 하자. 만일
+$T\in\mathcal{B(H)}$이면 $T$의 스펙트럼(spectrum) $\sigma(T)$과 점
+스펙트럼(point spectrum) $\sigma_p(T)$은 다음과 같이 정의된다.
+\begin{align*}
+\sigma(T)&:=\{\lambda\in\mathbb{C}: T-\lambda\ \text{가 가역이 아니다}\};\\
+\sigma_p(T)&:=\{\lambda\in\mathbb{C}: T-\lambda\ \text{가 일대일이 아니다}\}.
+\end{align*}
+
+
+
+만일 $U$가 $\ell^2$ 상의 이동 작용소(the unilateral shift)
+$$
+U:=
+\begin{pmatrix}
+0\\
+1&0\\
+&1&0\\&&1&0\\&&&\ddots&\ddots
+\end{pmatrix}
+$$
+이면 $\sigma_p(T)=\emptyset$이다. \ 양의 유계수열
+$\alpha:\alpha_0,\alpha_1,\cdots$이 주어질 때,
+$\ell^2(\mathbb{Z}_+)$ 상의 $\alpha$에 대한 가중이동 작용소 (the
+unilateral weighted shift) $W_\alpha$는 다음과 같이 정의된다.
+$$
+W_\alpha e_n:=\alpha_n e_{n+1}\quad \hbox{(모든 $n\ge 0$)},
+$$
+여기에서 $\{e_n\}_{n=0}^\infty$은 $\ell^2$에 대한
+단위직교기저이다. 작용소 $T\in\mathcal{B(H)}$의
+수반작용소(adjoint)를 $T^*$로 나타낸다. $T$가 정규(normal)라 함은
+$T^*T=TT^*$이고, 아정규(hyponormal)라 함은
+자기가환자(self-commutator) $[T^*,T]\equiv T^*T-TT^*\ge 0$이고,
+부분정규(subnormal)라 함은 $T=N\vert_{\mathcal{H}}$ (여기에서,
+$N$은 어떤 Hilbert 공간 $\mathcal{K}\supseteq \mathcal{H}$ 상에서
+정규이다). 명백히, $T$가 부분정규이면 $T$는 아정규이다.
+
+다음은 문헌에서 잘 알려진 아정규 작용소의 기본 성질이다.
+
+\vs{0.3cm}{\bf Proposition 2.0.1.} {\rm (Basic Properties of
+Hyponormal Operators)\cite{Con2}}\label{pro3.4} {\sl Let
+$T\in\mathcal{L(H)}$ be a hyponormal operator. Then we have:
+\begin{itemize}
+\item[\rm(a)] If $T\cong S$ then $S$ is also hyponormal;
+
+\item[\rm(b)] $T-\lambda$ is hyponormal for every
+$\lambda\in\mathbb{C}$;
+
+\item[\rm(c)] If $T\mathcal{M}\subset\mathcal{M}$ then
+$T\vert_\mathcal{M}$ is hyponormal; \end{itemize}}
+
+\newpage
+\leftline{\large{\it 176}\ \ \ \small 학문 연구의 동향과 쟁점 --
+수학}
+
+ \vspace{0.4cm}
+
+{\sl \begin{itemize} \item[\rm(d)] $||T^*h||\le ||Th||$ for all $h$,
+so that $\text{\rm ker}(T-\lambda)\subset \text{\rm
+ker}(T-\lambda)^*$;
+\item[\rm(e)] If $f$ and $g$ are eigenvectors corresponding to
+distinct eigenvalues of $T$ then $f\perp g$; \item[\rm(f)] If
+$\lambda\in\sigma_p(T)$ then $\text{\rm ker}\,(T-\lambda)$ reduces
+$T$; \item[\rm(g)] If $T$ is invertible then $T^{-1}$ is hyponormal;
+\item[\rm(h)] \text{\rm(Stampfli, 1962)} $||T^n||=||T||^n$, so that
+$||T||=r(T)$ {\rm (}$r(\cdot)$ denotes spectral radius{\rm )};
+\item[\rm(i)] $T$ is isoloid, i.e., $\text{\rm
+iso}\,\sigma(T)\subset \sigma_p(T)$; \item[\rm(j)] If $\lambda\notin
+\sigma(T)$ then $\text{\rm dist}(\lambda,\,
+\sigma(T))=||(T-\lambda)^{-1}||^{-1}$. \item[\rm(k)] \text{\rm
+(Berger-Shaw theorem)} If $T$ is cyclic then $\text{\rm
+tr}\,[T^*,T]\le\frac{1}{\pi}\mu(\sigma(T))$; \item[\rm(l)] \text{\rm
+(Putnam's Inequality)} $||\,[T^*,T]\,||\le\frac{1}{\pi}
+\mu(\sigma(T))$.
+\end{itemize} }
+%\end{pro}
+
+
+
+다음도 문헌에서 잘 알려진 부분정규의 특성화이다.
+
+\vs{0.3cm}{\bf Proposition 2.0.2.} {\rm (A Characterization of
+Subnormality) \cite{Con2}}\label{thm3.5} {\sl If
+$T\in\mathcal{L(H)}$ then the following are equivalent:
+\begin{itemize}
+\item[\rm(a)] $T$ is subnormal;
+\item[\rm(b)] {\rm (Bram-Halmos, 1955)}
+$$
+\begin{pmatrix}
+I&T^*&\hdots& T^{*k}\\
+T& T^*T& \hdots& T^{*k}T\\
+\vdots&\vdots& \ddots& \vdots\\
+T^k& T^*T^k& \hdots& T ^{*k}T^k
+\end{pmatrix}
+\ge 0\qquad\text{(all $k\ge 1$)}.
+$$
+\item[\rm(c)]
+$$
+\begin{pmatrix}
+[T^*,T]&[T^{*2},T]&\hdots&[T^{*k},T]\\
+[T^*,T^2]&[T^{*2},T^2]&\hdots&[T^{*k},T^2]\\
+\vdots&\vdots&\hdots&\vdots\\
+[T^*,T^k]&[T^{*2},T^k]&\hdots&[T^{*k},T^k]
+\end{pmatrix}
+\ge 0\qquad\text{(all $k\ge 1$)}.
+$$  \end{itemize}}
+
+\newpage
+
+\rightline{\small 이우영: 토에플리츠 작용소에 대한 브리지 이론\ \ \
+\large\it 177} \vspace{.4 cm}
+
+{\sl \begin{itemize}
+\item[\rm(d)] {\rm (Embry, 1973)}  There is a positive
+operator-valued measure $Q$ on some interval $[0,a]\subset
+\mathbb{R}$ such that
+$$
+T^{*n}T^n=\int t^{2n} dQ(t)\quad\text{for all}\ n\ge 0.
+$$
+\end{itemize}}
+%\end{pro}
+
+위의 조건 (b) (혹은 동치로서 조건 (c))는 아정규와 부분정규 사이의
+틈에 대한 측도를 제공한다. 사실, $k=1$에 대한 양의 조건 (b)가 $T$의
+아정규성이고, 부분정규는 모든 $k$에 대한 조건 (b)이다. 따라서, (b)에
+있는 $(k+1)\times (k+1)$ 작용소 행렬이 양의 행렬일 때, $T$를
+$k$-아정규라고 정의할 수 있다. 그러면, Bram-Halmos 특성화는 $T$가
+부분정규이기 위한 필요충분조건은 모든 $k$에 대하여 $T$가
+$k$-아정규임을 말해준다.
+
+가중이동 작용소의 부분정규성은 측도와 관련된 모멘트 문제로 판정될 수 있다.
+
+\vs{0.2cm}{\bf Proposition 2.0.2.} {\rm (Berger's
+Theorem)}\label{thm3.6} {\sl Let $T\equiv W_\alpha$ be a weighted
+shift with weight sequence $\alpha\equiv\{\alpha_n\}$ and define the
+moment of $T$ by
+$$
+\gamma_0:=1\quad\text{and}\quad \gamma_n:=\alpha_0^2\alpha_1^2\cdots \alpha_{n-1}^2\ (n\ge 1).
+$$
+Then $T$ is subnormal if and only if there exists a probability
+measure $\nu$ on $[0,||T||^2]$ such that}
+\begin{equation}\label{2.0.1}
+\gamma_n=\int_{[0,||T||^2]} t^{n} d\nu(t)\quad (n\ge 1).
+\end{equation}
+%\end{pro}
+
+\vs{0.2cm} 한편,  $T\in\mathcal{B(H)}$가 {약 $k$-아정규}(weakly
+$k$-hyponormal)라 함은 다음의 집합
+$$
+LS((T,T^2,\cdots,T^k)):=\left\{\sum_{j=1}^k \alpha_jT^j: \alpha=
+(\alpha_1,\cdots,\alpha_k)\in {\mathbb C}^k\right\}
+$$
+가 아정규 작용소로 이루어지는 것이다. 만일 $k=2$이면, $T$를
+2차-아정규 (quadratically hyponormal)라 하고, $p(T)$가 모든 다항식
+$p\in{\mathbb C}[z]$에 대하여 아정규이면 $T$를 다항정규(polynomially
+hyponormal)라 한다. 일반적으로, $k$-아정규 $\Rightarrow$ 약
+$k$-아정규이고, 그 역은 성립하지 않는다. 약-아정규 작용소는 아정규와
+부분정규 사이의 틈을 연결하는 시도에서 많은 연구가 이루어졌다.
+
+\newpage\leftline{\large{\it 178}\ \ \ \small 학문 연구의
+동향과 쟁점 -- 수학}
+
+ \vspace{0.8cm}
+
+이제, $P$를 ${\bold L}^2(\mathbb T)\equiv{\bold L}^2$에서 ${\bold
+H}^2(\mathbb T)\equiv {\bold H}^2$ 위로의 직교사영이라고 하자.
+그러면 함수 $\varphi\in{\bold L}^{\infty}(\mathbb T)\equiv {\bold
+L}^{\infty}$에 대하여, 심벌 $\varphi$를 가지는 Toeplitz 작용소
+$T_\varphi$는 다음과 같이 정의된다:
+$$
+T_\varphi f=P(\varphi f)\quad\text{($f\in {\bold H}^2$)}.
+$$
+한편, $\{z^n : n=0,1,2,\cdots \}$이 ${\bold H}^{2}$의 정규직교기저라
+하고 $\varphi\in{\bold L}^{\infty}$가 다음과 같은 Fourier 계수를
+가진다고 하자:
+$$
+\widehat\varphi(n)=\frac{1}{2\pi}\int_{0}^{2\pi} \varphi{\overline z}^n dt
+$$
+그러면 기저 $\{z^n : n=0,1,2,\cdots\}$에 관한 $T_\varphi$의 행렬 $(a_{ij})$는 다음과 같다:
+$$
+a_{ij}=(T_{\varphi}z^j,z^i)=\frac{1}{2\pi}\int_{0}^{2\pi} \varphi \overline{z}^{i-j} dt=\widehat\varphi(i-j).
+$$
+즉, $T_\varphi$에 대한 행렬은 대각선이 모두 일정한 행렬이다:
+$$
+(a_{ij})=\begin{pmatrix}
+c_0 & c_{-1}& c_{-2}& c_{-3}& \cdots \\
+c_1 & c_{0}& c_{-1}& c_{-2}& \cdots \\
+c_2 & c_{1}& c_{0}& c_{-1}& \cdots \\
+c_3 & c_{2}& c_{1}& c_{0}& \cdots \\
+\vdots& \ddots& \ddots& \ddots& \ddots
+\end{pmatrix}, \quad \hbox{(여기서, $c_{j}=\widehat\varphi(j)$)}:
+$$
+이러한 행렬을 Toeplitz 행렬이라고 한다.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\vspace{.8 cm} {\large\bf 3. Toeplitz 작용소의 아정규성}
+
+\vspace{.5 cm}
+
+
+1988년에, C. Cowen \cite{Cow3}의 우아하고 유용한 정리가 단위원
+${\mathbb T}\subset{\mathbb C}$의 Hardy 공간 $\bold H^2$ 상의
+Toeplitz 작용소의 아정규성을 그의 심벌 $\varphi\in \bold
+L^{\infty}$을 써서 특성화하였다. 이 결과는 작용소 이론으로부터
+떠오른 대수적 문제 -- 즉, $T_{\varphi}$가 아정규인가? -- 의 해답이
+함수 $\varphi$를 연구함으로써 가능하게 되었다. 정규 Toeplitz
+작용소는 1960년대에 A.\ Brown과 P.\,R.\ Halmos \cite{BH}가 그 심벌을
+써서 특성화하였다. 그런데 다소 놀랍게도 아정규 Toeplitz 작용소의
+심벌에 의한 특성화(Cowen의 정리)가 발견되기까지 무려 25년이
+흘러갔다. 이는 Cowen이 그의 해설논문 \cite{Cow2}에서 지적하였듯이
+아마도 1970년대와 1980년대에 부분정규\linebreak
+
+\newpage
+\rightline{\small 이우영: 토에플리츠 작용소에 대한 브리지 이론\ \ \
+\large\it 179}
+\vspace{.8 cm}
+
+
+\noindent  Toeplitz 작용소에 대한 뜨거운 연구 분위기가 아정규의
+연구를 뒤늦게 했을 것이라는 추측이 가능하다. Cowen의 정리에 의한
+아정규성의 특성화는 $\bold H^{\infty}$의 단위구에서의 어떤
+함수방정식을 푸는 것이다. 그러나 이는 이론적으로 가능하다는 것이지
+실제로 이 함수방정식을 푸는 문제는 무척 어렵다. 참으로, 심벌
+$\varphi$에 관한 어떤 제한이 없다면 $T_{\varphi}$의 아정규성을
+$\varphi$의 Fourier 계수로 나타낸다는 것은 어쩌면 불가능할 수도
+있다. 이 절에서는 이 연구의 최근의 발전 상황을 살펴본다.
+
+\vspace{.3 cm} {\bf 3.1. Cowen의 정리} \vspace{.3 cm}
+
+이 절에서는 Cowen 정리를 제시한다. Cowen의 정리는 Toeplitz 작용소의
+아정규성에 대한 작용소론의 문제를 그 심벌과 관련된 함수방정식의 해를
+발견하는 문제로 바꾸어 준다. 이와 같은 접근법은 Toeplitz 작용소
+연구의 많은 논문에 등장하였다.
+
+\vs{0.3cm} 다음의 두 결과는 \cite{BH}에서 알려진 사실이다.
+
+\vs{0.3cm}{\bf Lemma 3.1.1.} {\sl A necessary and sufficient
+condition that two Toeplitz operators commute is that either both be
+analytic or both be co-analytic or one be a linear function of the
+other.}
+
+\vs{0.3cm}{\bf Theorem 3.1.2.} {\rm(Brown-Halmos) \cite{BH}} {\sl
+Normal Toeplitz operators are translations and rotations of
+hermitian Toeplitz operators, i.e.,
+$$
+T_\varphi\ \mbox{normal}\ \Longleftrightarrow\ \exists\ \alpha,\beta\in\mathbb{C},
+\ \mbox{a real valued}\ \psi\in {\bold L}^{\infty}\ \mbox{s.t.}\
+T_{\varphi}=\alpha T_{\psi} +\beta 1.
+$$}
+
+함수 $\psi\in{\bold L}^{\infty}$에 대하여, ${\bold H}^2$ 상의 Hankel
+작용소 $H_\psi$는 다음과 같이 정의된다:
+$$
+H_{\psi}f=J(I-P)(\psi f)\quad (f\in {\bold H}^{2}),
+$$
+여기에서 $J$\,는 아래와 같이 정의된 $({{\bold H}^2})^{\perp}$\,에서
+${\bold H}^2$ 위로의 유니터리 작용소이다:
+$$
+J(z^{-n})=z^{n-1}\ (n\ge 1).
+$$
+\medskip
+만일 $\psi$가 Fourier 급수 $\psi:=\sum_{n=-\infty}^{\infty}a_n
+z^n$로 표현되면, $H_\psi$의 행렬은 다음과 같이 주어진다:
+
+\bigskip\bigskip
+
+\newpage\leftline{\large{\it 180}\ \ \ \small 학문 연구의
+동향과 쟁점 -- 수학}  \vspace{0.3cm}
+
+$$
+H_\psi \equiv
+\begin{pmatrix}
+a_{-1}&a_{-2}&a_{-3}&\cdots\\
+a_{-2}&a_{-3}& & \\
+a_{-3}& &\ddots&  \\
+\vdots& & &\ddots \\
+\end{pmatrix}.
+$$
+
+다음은 Hankel 작용소의 기본 성질들이다.
+\begin{itemize}
+\item[1.]  $H_{\psi}^*=H_{{\psi}^*}$;
+\item[2.]  $H_{\psi}U=U^*H_{\psi}$ ($U$는 이동작용소);
+\item[3.]  ${\rm Ker}H_{\psi}=\{0\}$ 또는 $\theta{\bold H}^2$ (어떤 내적(inner)함수 $\theta$) (Beurling's theorem에 의해);
+\item[4.]  $T_{\varphi\psi}-T_{\varphi}T_{\psi}=H_{\overline{\varphi}}^*H_{\psi}$;
+\item[5.]  $H_{\varphi}T_{h}=H_{\varphi h}=T_{h^*}^*H_{\varphi}\ (h\in{\bold H}^{\infty})$.
+\end{itemize}
+
+1988년에 Carl Cowen이 Toeplitz 작용소 $T_\varphi$의 아정규성을 심벌
+$\varphi$에 의해 특성화하는 데 성공하였다.
+
+\vs{0.2cm}{\bf Theorem 3.1.3.} (Cowen's Theorem)\ [7]\ {\sl If
+$\varphi\in{\bold L}^{\infty}$ is such that \linebreak
+$\varphi=\overline{g} +f$ {\rm (}$f,g\in {\bold H}^2${\rm )}, then
+$$
+T_\varphi\ \mbox{is hyponormal}\ \Longleftrightarrow\ g=c+T_{\overline{h}}f
+$$
+for some constant $c$ and some $h\in{\bold
+H}^{\infty}(\mathbb{D})$ with $||h||_{\infty}\le 1$.}
+%\end{thm}
+
+
+\vs{0.2cm}{\bf Theorem 3.1.4.} (Nakazi-Takahashi Variation) [23]
+{\sl For $\varphi\in{\bold L}^{\infty}$, put
+$$
+\mathcal{E} (\varphi):=\{k\in{\bold H}^{\infty}:||k||_{\infty}\le 1\
+\mbox{and}\ \varphi-k{\overline{\varphi}}\in{\bold H}^{\infty}\}.
+$$
+Then $T_\varphi$ is hyponormal if and only if} $\mathcal{E}
+(\varphi)\neq\varnothing$.
+%\end{thm}
+
+
+\vspace{.3 cm}
+
+{\bf 3.2. 삼각다항 심벌의 경우} \vspace{.3 cm}
+
+이 분절에서는 삼각다항 심벌을 가진 Toeplitz 작용소의 아정규성을
+살펴본다. 이를 위하여  팽창이론(dilation theory)을 먼저 살펴본다.
+만일 $B=\begin{pmatrix} A&*\\ *&* \end{pmatrix}$이면, $B$를 $A$의
+팽창이라 하고, $A$를 $B$의 축소라고 한다. 모든 수축 \linebreak
+
+\rightline{\small 이우영: 토에플리츠 작용소에 대한 브리지 이론\ \ \
+\large\it 181}
+
+\vspace{.8 cm} \noindent 작용소(contraction)는 유니터리 팽창을
+가진다는 것이 잘 알려져 있다. 실제로, $||A||\le 1$이면,
+$$
+B\equiv
+\begin{pmatrix} A&(I-AA^*)^{\frac{1}{2}}\\(I-A^*A)^{\frac{1}{2}}&-A^*\end{pmatrix}
+$$
+는 유니터리이다. 한편, 모든 자연수 $n$에 대하여 $B^n$이 $A^n$의
+팽창이면, 작용소 $B$를 $A$의 강팽창(strong dilation)이라고 한다.
+따라서 만일 $B$가 $A$의 강팽창이면, $B$는 $B=\begin{pmatrix} A &0\\
+*&*\end{pmatrix}$의 꼴로 나타난다. 종종 $B$를 $A$의
+리프팅(lifting)이라 하고, $A$가 $B$로 승강된다고 말한다. 모든 수축
+작용소가 등장(isometric) 강팽창을 가진다는 것이 알려져 있다. 사실
+수축 작용소 $A$의 최소 등장 강팽창은 다음과 같이 주어진다:
+$$
+B\equiv
+\begin{pmatrix}A&0&0&0&\cdots\\
+(I-A^*A)^{\frac{1}{2}}&0&0&0&\cdots\\
+0&I&0&0&\cdots\\
+0&0&I&0&\cdots\\
+\vdots&\vdots&\vdots&\ddots&
+\end{pmatrix}.
+$$
+
+그러면  다음의 유명한 정리를 얻을 수 있다.
+
+
+\vs{0.2cm}{\bf Theorem 3.2.1.} (Commutant Lifting Theorem) {\rm
+\cite[p.658]{GGK}} {\sl  Let $A$ be a contraction and $T$ be a
+minimal isometric dilation of $A$. If $BA=AB$ then there exists a
+dilation $S$ of $B$ such that}
+$$
+S=\begin{pmatrix} B &0\\ *&*\end{pmatrix},\quad ST=TS,\quad \mbox{and}\quad ||S||=||B||.
+$$
+%\end{thm}
+
+
+이제 다음의 보간문제(interpolation problem) -- 소위 Carath\'
+eodory-Schur 보간문제로 불림 -- (CSIP)를 살펴보자. 복소수 $c_0,
+\cdots, c_{N-1}$이 주어질 때, 다음을 만족하는 $\mathbb{D}$ 상의
+해석함수 $\varphi$를 찾아라:
+\begin{itemize}
+\item[(i)] $\widehat{\varphi}(j)=c_j\ (j=0,\cdots, N-1)$;
+\item[(ii)] $||\varphi||_{\infty}\le 1$.
+\end{itemize}
+
+그러면 CSIP의 해는 다음과 같이 주어진다.
+
+\newpage\leftline{\large{\it 182}\ \ \ \small 학문 연구의
+동향과 쟁점 -- 수학}
+
+\vspace{0.8cm}
+
+
+
+{\bf Theorem 3.2.2.} {\rm \cite{FF}} {\sl
+$$
+\mbox{CSIP is solvable}\ \Longleftrightarrow\ C\equiv
+\begin{pmatrix}
+c_0\\
+c_1&c_0&&\mbox{\rm{\Huge{O}}}\\
+c_2&c_1&c_0\\
+\vdots&\vdots&\ddots&\ddots\\
+c_{N-1}&c_{N-2}&\cdots&c_1&c_0
+\end{pmatrix}\ \mbox{is a contraction.}
+$$
+Moreover, if $\varphi$ is a solution if and only if  $T_\varphi$
+is a contractive lifting of $C$ which commutes with the unilateral
+shift.}
+%\end{thm}
+
+\vs{0.3cm} 이제 $\varphi$가 다음과 같은 삼각다항함수라고 하자:
+$$
+\varphi(z)=\sum_{n=-N}^{N} a_{n}z^n\ (a_{N}\neq 0).
+$$
+함수 $k\in{\bold H}^{\infty}$가 $\varphi -k\overline{\varphi}\in {\bold H}^{\infty}$
+를 만족하면, $k$는 다음을 만족해야 한다.
+\begin{equation}\label{3.2.1}
+k\sum_{n=1}^{N}\overline{a_n} z^{-n} -\sum_{n=1}^{N}a_{-n}z^{-n}\in{\bold H}^{\infty}.
+\end{equation}
+식 (\ref{3.2.1})로부터 우리는 Fourier 계수 $\widehat{k}(0),\cdots
+,\widehat{k}(N-1)$가 $\widehat{k}(n)=c_n\ (n=0,1,\cdots,N-1)$을
+만족하도록 하는 것을 구할 수 있다. 여기에서,
+$c_0,c_1,\cdots,\linebreak c_{N-1}$은 $\varphi$의 계수로부터
+유일하게 다음 관계식을 써서 얻어진다.
+\begin{equation}\label{3.2.2}
+\begin{pmatrix}c_0\\c_1\\ \vdots\\ \vdots\\c_{N-1}\end{pmatrix}=
+\begin{pmatrix}\overline{a_1}&\overline{a_2}&\overline{a_3}&\cdots&\overline{a_N}\\
+\overline{a_2}&\overline{a_3}&\hdots&\cdot\\
+\overline{a_3}&\hdots&\cdots\\
+\vdots&\cdots & &\mbox{{\Huge{O}}}\\
+\overline{a_N}
+\end{pmatrix}^{-1}
+\begin{pmatrix}
+a_{-1}\\ a_{-2}\\ \vdots\\ \vdots\\ a_{-N}
+\end{pmatrix}.
+\end{equation}
+따라서, 만일 $k(z)=\sum_{j=0}^{\infty} c_{j}z^j$가 ${\bold
+H}^{\infty}$에 속하면 다음이 성립한다.
+$$
+\varphi -k\overline{\varphi}\in {\bold H}^{\infty}\ \Longleftrightarrow
+\ c_0,c_1,\cdots ,c_{N-1}\mbox{이 (\ref{3.2.2})에 의해 주어진다}.
+$$
+그러면  Cowen의 정리에 의해, 만일 $ c_0,c_1,\cdots ,c_{N-1}$이
+(\ref{3.2.2})으로 주어지면,\linebreak $T_\varphi$의 아정규성은
+다음을 만족하는 함수 $k\in{\bold H}^{\infty}$의 존재와 동치이다:
+$$
+\begin{cases}\widehat{k}(j)=c_j\ (j=0,\cdots , N-1)\\||k||_{\infty}\le 1
+\end{cases}
+$$
+
+
+\newpage\rightline{\small 이우영: 토에플리츠 작용소에 대한 브리지 이론\ \ \
+\large\it 183} \vspace{.8 cm}
+
+
+이는 정확히 CSIP와 같은 문제이다. 따라서 다음을 즉시 얻는다.
+
+
+\vs{0.2cm}{\bf Theorem 3.2.3.} {\sl If $\varphi(z)=\sum_{n=-N}^{N}
+a_{n}z^n$, where $a_N\neq 0$ and if $c_0,c_1,\cdots,\linebreak
+c_{N-1}$ are given by (\ref{3.2.2}) then
+$$
+T_\varphi\ \mbox{is hyponormal}\ \Longleftrightarrow\ C\equiv
+\begin{pmatrix}
+c_0\\
+c_1&c_0&&\mbox{\rm{\Huge{O}}}\\
+c_2&c_1&c_0\\
+\vdots&\vdots&\ddots&\ddots\\
+c_{N-1}&c_{N-2}&\cdots&c_1&c_0
+\end{pmatrix}\ \mbox{is a contraction.}
+$$}
+%\end{thm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vs{0.3cm} { \bf 3.3 유리함수 심벌의 경우}
+
+\vs{0.3cm} 함수 $\varphi\in \bold L^\infty$가 유계형(bounded
+type)이라 함은 $\bold H^\infty (\mathbb{D})$ 상의 다음을 만족하는
+함수 $\psi_1, \psi_2$가 존재할 때이다:
+$$
+\varphi(z)=\frac{\psi_1(z)}{\psi_2(z)}\quad\hbox{(거의 모든 $z\in\mathbb{T}$에 대하여)}
+$$
+명백히 유리함수는 유계형이다. 이제, $\theta$가 내적함수(inner
+function)라 하자. 만일 $\theta$가 다음의 유한 Blaschke 곱(finite
+Blaschke product)이면,
+$$
+\theta(z)=e^{i\xi}\prod_{j=1}^n
+\frac{z-\beta_j}{1-\overline{\beta_j}z}\quad \hbox{($|\beta_j|<1$,
+$j=1,\cdots,n$)},
+$$
+$\theta$의 차수(degree) $\text{deg}(\theta)$는 개 단위원판 $\mathbb
+D$ 안의 근의 개수로 정의되며, 그렇지 않으면 무한대로 정의한다. 이제,
+내적함수 $\theta$에 대하여 다음과 같이 쓰자:
+$$
+\mathcal H(\theta):=\bold H^2 \ominus \theta \bold H^2.
+$$
+
+그러면, $f\in \bold H^2$에 대하여 다음이 성립한다.
+
+\begin{align*}
+\langle [T_\varphi^*,T_\varphi]f,f\rangle
+=||T_\varphi f||^2-||T_{\overline{\varphi}}f||^2
+&=||\varphi f||^2-||H_\varphi f||^2-(||\overline{\varphi} f||^2-||H_{\overline{\varphi}} f||^2)\\
+&=||H_{\overline\varphi}f||^2-||H_\varphi f||^2.
+\end{align*}
+
+따라서 다음을 얻는다.
+$$
+T_\varphi\ \text{hyponormal}\ \Longleftrightarrow\
+||H_{\overline\varphi} f||\ge ||H_\varphi f||\quad (f\in \bold H^2).
+$$
+\newpage\leftline{\large{\it 184}\ \ \ \small 학문 연구의
+동향과 쟁점 -- 수학}
+
+
+\vspace{0.8cm}
+
+이제 $\varphi = \overline{g}+ f \in \bold L^{\infty}$ ($f,g\in\bold
+H^2$)라 하자. 그러면 $H_\varphi U=U^*H_\varphi$
+($U=$이동작용소)이므로, Beurling 정리로부터 다음을 얻는다.
+$$
+\text{ker}\, H_{\overline f}=\theta_0 \bold H^2\quad\text{and}\quad \text{ker}\,H_{\overline g}
+=\theta_1 \bold H^2\quad\text{(어떤 내적함수 $\theta_0, \theta_1$에 대하여)}.
+$$
+만일 $T_\varphi$가 아정규이면, $||H_{\overline f} h||\ge ||H_{\overline g} h||$
+($h\in \bold H^2$)이므로 다음을 얻는다.
+\begin{equation}\label{3.2.4}
+\theta_0 \bold H^2=\text{ker}\, H_{\overline f}\subset \text{ker}\, H_{\overline g}=\theta_1 \bold H^2.
+\end{equation}
+이는 $\theta_1$가 $\theta_0$을 나눈다는 것을 의미하며, 따라서
+$\theta_0=\theta_1\theta_2$ ($\theta_2$는 내적함수). 한편, 함수
+$f\in \bold H^2$에 대하여 $\overline{f}$가 유계형이면, 즉,
+$\overline{f}=\psi_2/\psi_1$ ($\psi_i\in \bold H^\infty$)이면
+$\psi_1$의 외적 부분(outer part)을  $\psi_2$로 나누어
+$\overline{f}=\psi/\theta$ ($\theta$는 내적함수, $\psi\in \bold
+H^\infty$)이다. 따라서, $f=\theta\overline{\psi}$로 나타난다. 그러나
+$f\in \bold H^2$이므로, $\psi\in\mathcal{H}(\theta)$이다. 따라서
+$f\in \bold H^2$이고 $\overline{f}$이 유계형이면 다음과 같이
+쓰여진다.
+\begin{equation}\label{3.2.5}
+f=\theta\overline{\psi}\quad (\theta\ \text{inner},\ \psi\in \mathcal{H}(\theta)).
+\end{equation}
+그러므로 만일 $\varphi=\overline g+f$이 유계형이고 $T_\varphi$가
+아정규이면, (\ref{3.2.4})와 (\ref{3.2.5})에 의하여 다음과 같이 쓸 수
+있다:
+$$
+f=\theta_1\theta_2\overline{a}\quad\text{and}\quad g=\theta_1\overline b,
+$$
+(여기에서, $a\in \mathcal{H}(\theta_1\theta_2)$,
+$b\in\mathcal{H}(\theta_1)$이다).
+
+
+다음 보조정리는 \cite{CuL1}으로부터 나온다.
+
+\vs{0.2cm}{\bf Lemma 3.3.1.} {\sl Let $\varphi = \overline{g}+ f \in
+\bold L^{\infty}$, where $f$ and $g$ are in $\bold H^2$. Assume that
+\begin{equation}\label{3.2.6}
+f= \theta_1 \theta_2 \overline{a}\quad\text{and}\quad g = \theta_1
+\overline{b}
+\end{equation}
+for $a \in \mathcal H (\theta_1 \theta_2)$ and $b \in \mathcal H
+(\theta_1)$. Let $\psi: = \theta_1 \overline{P_{ \mathcal H
+(\theta_1)}(a)} + \overline{g}$. Then $T_{\varphi}$ is hyponormal
+if and only if $T_{\psi}$ is.}
+%\end{lem}
+
+\vs{0.2cm} Lemma 3.3.1의 관점에서, 유계형 심벌을 가진 Toeplitz
+작용소의 아정규성을 연구할 때, 심벌 $\varphi= \overline{g}+ f \in
+\bold L^{\infty}$는 다음과 같이 쓸 수 있다.
+\begin{equation}\label{3.2.7}
+f=\theta \overline{a},\quad \quad g=\theta \overline{b},
+\end{equation}
+
+\newpage\rightline{\small 이우영: 토에플리츠 작용소에 대한 브리지 이론\ \ \
+\large\it 185}
+
+ \vspace{.8 cm} \noindent (여기에서, $\theta$는
+내적함수이고 $a,b \in \mathcal H (\theta)$와 $\theta$\,는 서로
+소이다). 한편, $f \in \bold H^{\infty}$를 유리함수라고 하자. 그러면
+다음과 같이 쓸 수 있다.
+$$
+f=p_m(z)+\sum_{i=1}^n \sum_{j=0}^{l_i -1}
+\frac{a_{ij}}{(1-\overline{\alpha_i}z)^{l_i -j}} \quad
+(0<|\alpha_i|<1),
+$$
+(여기에서, $p_m(z)$는 차수가 $m$인 다항식이다). 이제 $\theta$가
+다음과 같은 유한 Blaschke 곱이라고 하자:
+$$
+\theta=z^{m} \prod_{i=1}^{n} \left(\frac{z- \alpha_i}{1- \overline{\alpha_i}z}\right)^{l_i}.
+$$
+다음을 관찰하자.
+$$
+\frac{a_{ij}}{1-\overline{\alpha_i}z}=
+\frac{\overline{\alpha_i}a_{ij}}{1 - |\alpha_i|^2}
+\Bigl(\frac{z-\alpha_i}{1- \overline{\alpha_i}z}
++\frac{1}{\overline{\alpha_i}} \Bigr).
+$$
+따라서 $f \in \mathcal H (z\theta)$이다. 이제 $a := \theta
+\overline{f}$라 하면, $a \in \mathcal H (z \theta)$이고  $f= \theta
+\overline{a}$이다. 따라서 만일 $\varphi = \overline{g} + f \in \bold
+L^{\infty}$ ($f,g$는 유리함수)이고 $T_{\varphi}$가 아정규이면 다음과
+같이 쓸 수 있다.
+$$
+f=\theta \overline{a},\quad\quad g=\theta \overline{b}
+$$
+($\theta$\,는 유한 Blaschke 곱이고 $\theta (0)=0$, $a,b \in \mathcal
+H (\theta)$). 이제 $\theta$\,를 차수 $d$\;의 유한 Blaschke 곱이라
+하면 다음과 같이 쓸 수 있다.
+\begin{equation}\label{3.2.8}
+\theta = e^{i \xi} \prod_{i=1}^n B_i ^{n_i},
+\end{equation}
+
+\noindent (여기에서, $B_i(z) := \frac{z- \alpha_i}{1-
+\overline{\alpha_i}z}$, $|\alpha_i| < 1$, $n_i \geq 1$,
+$\sum_{i=1}^n n_i =d$). 그리고 $\theta =e^{i\xi} \prod_{j=1}^d B_j
+$라 하고 $\theta$\,의 각 근이 그의 계수(multiplicity)만큼 반복된다고
+하자. 그러면 이 Blaschke 곱은 정확히 (\ref{3.2.8})에 있는 Blaschke
+곱과 같다. 다음과 같이 두자.
+\begin{equation}\label{3.2.9}
+\phi_j :=\frac{d_j}{1- \overline{\alpha_j}z}\,B_{j-1}B_{j-2} \cdots
+B_1 \quad (1 \leq j \leq d)
+\end{equation}
+
+\noindent (여기에서, $\phi_1 :=d_1(1- \overline{\alpha_1}z)^{-1}$,
+$d_j:=(1-|\alpha_j |^2)^{\frac{1}{2}}$). 그러면 $\{\phi_j \}_1^d$가
+$\mathcal H (\theta)$의 정규직교기저를 이룸이 잘 알려져 있다 (cf.
+\cite[Theorem X.1.5]{FF}). 이제 $\varphi=\overline g+f\in \bold
+L^\infty$ (여기에서, $g=\theta \overline b$, $f=\theta \overline a$,
+$a, b\in \mathcal H (\theta)$)라 하고 다음과 같이 쓰자:
+$$
+\mathcal{C}(\varphi):= \{k \in \bold H^{\infty} : \varphi -k
+\overline{\varphi} \in \bold H^{\infty}\}.
+$$
+\newpage\leftline{\large{\it 186}\ \ \ \small 학문 연구의
+동향과 쟁점 -- 수학}
+
+\vspace{.8 cm} \noindent 그러면, $k$가 $\mathcal{C}(\varphi)$ 안에
+있기 위한 필요충분조건은 $\overline {\theta} b-k \overline{\theta}a
+\in \bold H^2$이다. 즉,
+\begin{equation}\label{3.2.10}
+b-ka \in \theta \bold H^2 .
+\end{equation}
+그러면, $\theta^{(n)} (\alpha_i) =0$ (모든 $0 \leq n  < n_i$).
+따라서 조건 (\ref{3.2.10})은 다음과 동치이다:
+모든 $1 \leq i \leq n,$에 대하여,
+\begin{equation}\label{3.2.11}
+\begin{pmatrix} k_{i,0}\\
+k_{i,1}\\
+k_{i,2}\\
+\vdots\\
+k_{i,n_i -2}\\
+k_{i,n_i -1}
+\end{pmatrix}
+=\begin{pmatrix} a_{i,0}&0&0&0&\cdots&0\\
+a_{i,1}&a_{i,0}&0&0&\cdots&0\\
+a_{i,2}&a_{i,1}&a_{i,0}&0&\cdots&0\\
+\vdots&\ddots&\ddots&\ddots&\ddots&\vdots \\
+a_{i,n_i -2}&a_{i,n_i -3}&\ddots&\ddots&a_{i,0}&0\\
+a_{i,n_i -1}&a_{i,n_i -2}&\hdots&a_{i,2}&a_{i,1}&a_{i,0}
+\end{pmatrix}^{-1}
+\begin{pmatrix} b_{i,0}\\
+b_{i,1}\\
+b_{i,2}\\
+\vdots\\
+b_{i,n_i -2}\\
+b_{i,n_i -1}
+\end{pmatrix},
+\end{equation}
+여기에서,
+$$
+k_{i,j}:= \frac{k^{(j)}(\alpha_i)}{j!},\quad a_{i,j}:=
+\frac{a^{(j)}(\alpha_i)}{j!} \quad\text{and}\quad
+b_{i,j}:=\frac{b^{(j)}(\alpha_i)}{j!}.
+$$
+역으로, $k \in \bold H^{\infty}$가 (\ref{3.2.11})을 만족하면 $k$는
+$\mathcal{C}(\varphi)$에 속한다. 따라서, $k$가
+$\mathcal{C}(\varphi)$에 속하기 위한 필요충분조건은  $k$가 다음을
+만족하는 $\bold H^{\infty}$ 안의 함수이다:
+\begin{equation}\label{3.2.12}
+\frac{k^{(j)}(\alpha_i)}{j!} = k_{i,j} \qquad (1 \leq i \leq n, \
+0 \leq j < n_i),
+\end{equation}
+(여기에서, $k_{i,j}$는 방정식 (\ref{3.2.11})에 의해 주어진다).
+더구나 $||k||_\infty\le 1$\,이라면 이는 정확히  classical
+Hermite-Fej\' er Interpolation Problem (HFIP)이다. 그러므로 다음을
+얻는다.
+
+\medskip{\bf Theorem 3.3.2.}\ {\sl Let $\varphi=\overline{g}+f\in
+\bold L^\infty$, where $f$ and $g$ are rational\linebreak functions.
+Then $T_\varphi$ is hyponormal if and only if the corresponding HFIP
+$(12)$ is solvable.}
+
+
+\vspace{0.2cm} 이제 우리는 Toeplitz 작용소 $T_\varphi$의 아정규성에
+대한 계산가능한 판정법이 심벌 $\varphi$가 삼각다항함수이거나
+유리함수이면 보간문제의 해에 의하여 얻어질 수 있다고 말할 수 있다.
+
+\newpage\rightline{\small 이우영: 토에플리츠 작용소에
+대한 브리지 이론\ \ \ \large\it 187}
+
+\vspace{0.8cm}
+
+{\bf 3.4. 유계형 심벌의 경우}
+
+\vspace{0.3cm}
+
+이 분절은 Toeplitz 작용소의 아정규성에 관하여 저자와 저자의
+공저자들이 얻은 가장 최근의 결과로서, 일반적인 심벌인 유계형 심벌에
+대한 판정법을 제시할 것이다. 이 결과가 Cowen의 정리를 제외하고
+지금까지 얻어진 Toeplitz 작용소의 아정규성에 관한 가장 일반적인
+결과라 할 수 있을 것이다. 우선 이를 알아보기 전에 이동작용소 $U
+\equiv T_z$의 압축(compression)에 대한 삼각행렬 표현을 알아보자.
+내적함수 $\theta$에 대하여, $U_\theta$를 다음과 같이 정의하자.
+\begin{equation}\label{3.1}
+U_\theta= P_{\mathcal H (\theta)} U \vert_{\mathcal H (\theta)}.
+\end{equation}
+이제 세 가지 경우로 나누어 생각한다.
+
+\vspace{0.3cm}
+
+\noindent {\bf 경우 1} : $B$를 Blaschke 곱이라 하고
+$\Lambda:=\{\lambda_n : n \geq 1\}$를 $B$의 근들이라고 하자. 다음과
+같이 쓰자.
+$$
+\beta_1:=1, \quad
+\beta_k:=\prod_{n=1}^{k-1}\frac{\lambda_n-z}{1-\overline{\lambda}_n z}\cdot
+\frac{|\lambda_n|}{\lambda_n}\qquad (k\geq 2);
+$$
+$$
+\delta_j\label{deltaj}:=\frac{d_j}{1-\overline{\lambda}_j z}\beta_j \qquad (j \geq
+1),
+$$
+여기에서, $d_j\label{dj}:=(1-|\lambda_j|^2)^{\frac{1}{2}}$.
+$\mu_B\label{mub}$를 $\mathbb N$ 상의 측도로서
+$\mu_B(\{n\}):=\frac{1}{2}d_n^2, (n \in \mathbb N)$라고 하자. 이제
+함수  $V_B\label{VB}: L^2(\mu_B)\to \mathcal H(B)$ 가 다음과 같이
+정의된다고 하자.
+\begin{equation}\label{3.2}
+V_B(c):=\frac{1}{\sqrt{2}} \sum_{n \geq 1} c(n)d_n \delta_n, \quad c
+\equiv \{c(n)\}_{n \geq 1}.
+\end{equation}
+그러면 $V_B$는 유니터리이고 $U_B$는 다음의 함수로 보내진다.
+\begin{equation}\label{3.3}
+V_B^*U_B V_B=(I-J_B)M_B,
+\end{equation}
+여기에서, $(M_B\label{MB} c)(n):=\lambda_n c(n)$ ($n\in \mathbb
+N$)은 곱 작용소이고
+$$
+(J_B\label{JB} c)(n):=\sum_{k=1}^{n-1}c(k)|\lambda_k|^{-2} \cdot
+\frac{\beta_n(0)}{\beta_k(0)}d_k d_n \ \ \hbox{$(n \in \mathbb N$)}
+$$
+는 하삼각 Hilbert-Schmidt 작용소이다. \
+
+\newpage \leftline{\large{\it 188}\ \ \
+\small 학문 연구의 동향과 쟁점 -- 수학}
+
+\vspace{0.8cm}
+
+\noindent {\bf 경우 2} : $s$를 연속표현측도  $\mu\equiv
+\mu_{s}\label{mus}$를 가진 특이내적함수(singular inner function)라고
+하자. 이제, $\mu_{\lambda}$을 $\mu$에서 호 $\{\zeta: \zeta \in
+\mathbb T, \ 0< \text{arg}\zeta \leq \text{arg}\lambda\}$ 위로의
+사영이라 하고 다음과 같이 두자.
+$$
+s_{\lambda}(\zeta)\label{slambdazeta}:=\text{exp}\Bigl(-\int_{\mathbb
+T}\frac{t+\zeta}{t-\zeta}d\mu_{\lambda}(t) \Bigr) \ \ \hbox{($\zeta
+\in \mathbb D$)}.
+$$
+이제 함수 $V_s\label{Vs}: L^2(\mu)\to \mathcal H (s)$가 다음과 같이 정의된다고 하자.
+\begin{equation}\label{3.4}
+(V_s c)(\zeta)=\sqrt{2}\int_{\mathbb
+T}c(\lambda)s_{\lambda}(\zeta)\frac{\lambda
+d\mu(\lambda)}{\lambda-\zeta}\quad\hbox{($\zeta \in \mathbb D$)}
+\end{equation}
+그러면 $V_s$는 유니터리이고 $U_s$는 다음의 함수로 보내진다.
+\begin{equation}\label{3.5}
+V_s^*U_s V_s=(I-J_s)M_s,
+\end{equation}
+여기에서, $(M_s c)(\lambda):=\lambda c(\lambda)$ ($\lambda\in\mathbb
+T$) 는 곱 작용소이고
+$$
+(J_s\label{Js} c)(\lambda)=2 \int _{\mathbb T} e^{\mu(t)-\mu(\lambda)}
+c(t)d_{\mu_{\lambda}}(t)\ \ \hbox{($\lambda \in \mathbb T$)}
+$$
+는 하삼각 Hilbert-Schmidt 작용소이다. \
+
+\vspace{.3 cm}
+
+\noindent {\bf 경우 3} : $\Delta$를 순수한 점표현측도 $\mu\equiv
+\mu_{\Delta}\label{mudelta}$를 가진 특이내적함수(singular inner
+function)라고 하자. 그리고 집합 $\{t\in \mathbb T: \mu(\{t\})>0
+\}$을 수열 $\{t_k\}_{k \in \mathbb N}$로 배열하고 다음과  같이 쓰자:
+$\mu_k:=\mu(\{t_k\}), \ k \geq 1$. \  더구나, $\mu_{\Delta}$를
+$\mathbb R_{+}=[0, \infty)$ 상의 측도로서
+$d\mu_{\Delta}(\lambda)=\mu_{[\lambda]+1}d \lambda$라고 하자.이제
+단위원판 $\mathbb D$ 위의 함수
+$\Delta_{\lambda}\label{deltalambda}$를 다음과 같이 정의하자.
+$$
+\Delta_{\lambda}(\zeta):=\text{exp}\Biggl\{-\sum_{k=1}^{[\lambda]}\mu_k
+\frac{t_k+\zeta}{t_k-\zeta}-(\lambda-[\lambda])\mu_{[\lambda]+1}
+\frac{t_{[\lambda]+1}+\zeta}{t_{[\lambda]+1}-\zeta}\Biggr \},
+$$
+여기에서, $[\lambda]$는 $\lambda$ ($\lambda \in \mathbb R_{+}$)의
+정수 부분이고 $\Delta_0:=1$로 약속한다. \ 그리고 함수
+$V_{\Delta}\label{Vdelta}: L^2(\mu_{\Delta})\to \mathcal H
+(\Delta)$가 다음과 같이 정의된다고 하자.
+\begin{equation}\label{3.6}
+(V_{\Delta}c)(\zeta):=\sqrt{2} \int_{\mathbb
+R_{+}}c(\lambda)\Delta_{\lambda}(\zeta)(1-\overline{t}_{[\lambda]+1}
+\zeta)^{-1}d\mu_{\Delta}(\lambda) \ \hbox{($\zeta \in \mathbb D$)}
+\end{equation}
+그러면 $V_{\Delta}$는 유니터리이고 $U_\Delta$는 다음의 함수로 보내진다.
+\begin{equation}\label{3.7}
+V_{\Delta}^*U_\Delta V_{\Delta}=(I-J_{\Delta})M_{\Delta},
+\end{equation}
+
+\newpage\rightline{\small 이우영:
+토에플리츠 작용소에 대한 브리지 이론\ \ \ \large\it 189}
+
+\vspace{.8 cm}
+
+\noindent 여기에서, $(M_{\Delta}c)(\lambda):= t_{[\lambda]+1}
+c(\lambda)$, ($\lambda\in \mathbb R_+$)은 곱 작용소이고
+$$
+(J_{\Delta}\label{Jdelta} c)(\lambda) := 2 \int _{0}^{\lambda}c(t)
+\frac{\Delta_{\lambda}(0)}{\Delta_{t}(0)} d\mu_{\Delta}(t) \ \
+\hbox{($\lambda \in \mathbb R_+$)}
+$$
+는 하삼각 Hilbert-Schmidt 작용소이다. \
+
+\medskip
+
+이제 위의 세 경우를 종합하면 다음을 얻는다.
+
+\medskip
+
+{\bf Triangularization theorem.} \cite [p.123] {Ni} {\sl Let
+$\theta$ be an inner function with the canonical factorization
+$\theta=B\cdot s \cdot \Delta$, where $B$ is a Blaschke product,
+and $s$ and $\Delta$ are singular functions with representing
+measures $\mu_{s}$ and $\mu_{\Delta}$ respectively, with $\mu_{s}$
+continuous and $\mu_{\Delta}$ a pure point measure. \  Then the
+map $V:\,L^2(\mu_B)\times L^2(\mu_s) \times L^2(\mu_{\Delta})\to
+\mathcal H(\theta)$ defined by
+\begin{equation}\label{3.8}
+V:=\begin{bmatrix}V_B&0&0\\0&BV_s&0\\0&0&BsV_{\Delta}\end{bmatrix}
+\end{equation}
+is unitary, where $V_B, \mu_B, V_S, \mu_S, V_\Delta, \mu_\Delta$ are
+defined in (\ref{3.2}) - (\ref{3.7}) and $U_\theta$ is mapped onto
+the operator
+$$
+M:= V^*U_\theta V =
+\begin{bmatrix}M_B&0&0\\0&M_{s}&0\\0&0&M_{\Delta}\end{bmatrix}+J,
+$$
+where $M_B, M_S, M_{\Delta}$ are defined in (\ref{3.3}), (\ref{3.5})
+and (\ref{3.7}) and
+$$
+J:=-\begin{bmatrix}J_BM_B&0&0\\0&J_sM_s&0\\0&0&J_{\Delta}M_\Delta\end{bmatrix}+A
+$$
+is a lower-triangular Hilbert-Schmidt operator, with $A^3=0$,
+$\text{rank}\,A\leq 3$.}
+
+\
+
+위의 정리를 이용하면 유계형 심벌을 가진 Toeplitz 작용소의 아정규성을
+판별할 수 있는 판정법을 얻을 수 있다.
+
+\newpage\leftline{\large{\it 190}\ \ \ \small 학문 연구의 동향과 쟁점 --
+수학} \vspace{0.8cm}
+
+{\bf Theorem 3.4.1.} {\rm \cite{CHL1}} {\sl Let $\varphi\equiv
+\varphi_-^*+\varphi_+\in \bold L^\infty$ be such that $\varphi$
+and $\overline\varphi$ are of bounded type of the form
+$$
+\varphi_+=\theta_1\theta_0\overline a\quad\hbox{and}\quad
+\varphi_-=\theta_1\overline b,
+$$
+where $\theta_1$ and $\theta_0$ are inner functions and $a,b\in
+H^2$. \  If $k\in\mathcal{C}(\varphi)$ then
+$$
+T_\varphi\ \hbox{is hyponormal}\ \Longleftrightarrow\ k(M)\ \hbox{is
+contractive},
+$$
+where $M$ is defined as follows:
+\begin{equation}\label{3.10}
+\begin{cases}
+V: L\equiv L^2(\mu_B) \times L^2(\mu_s)
+         \times L^2(\mu_{\Delta})\to \mathcal H(\theta_1 \theta_0)\ \
+            \hbox{\rm is unitary as in (\ref{3.8})};\\
+M:= V^*U_{\theta_1\theta_0}V;\\
+\mathcal L :=L \otimes \mathbb C^n\\
+\mathcal V := V \otimes I_n.
+\end{cases}
+\end{equation}}
+%\end{thm}
+위에서 $k(M)$은 $H^\infty$-함수계산을 따른다.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{.8 cm} {\large\bf 4. Toeplitz 작용소의 부분정규성}
+
+\vspace{.5 cm}
+
+
+이 절은 다음의 문제에 관한 것이다: {\it 어떤 Toeplitz 작용소가
+부분정규인가?} Toeplitz 작용소 $T_\varphi$가 해석적(analytic)이라
+함은 심벌 $\varphi$가 $\bold H^\infty$에 속할 때를 말한다, 즉,
+$\varphi$가 $\mathbb{D}$ 상의 유계 해석함수일 때이다. 이는
+부분정규임을 쉽게 알 수 있다. 실제로,
+$$
+T_\varphi h=P(\varphi h)=\varphi h=M_\varphi h\quad \hbox{($h\in \bold H^2$)},
+$$
+여기에서, $M_\varphi$는   $\bold L^2$ 상에서 $\varphi$를 곱하는 곱
+작용소(multiplication operator)로서 정규작용소이다. 1970년에
+P.\,R.\ Halmos는 {\it Ten Problems in Hilbert Space} (cf.
+\cite{Ha1}, \cite{Ha2})라는 강의록에서 작용소 학계에  Hilbert 공간
+상의 문제 열 개를 제시하였는데, 그 중 다섯번째 문제 (소위 Halmos'
+Problem 5로 불리움)가 Toeplitz 작용소의 부분정규성에 대한
+것이었다:
+
+\vspace{.2 cm}\label{4.1.1}\ \ \ \ \ {\it 모든 부분정규 Toeplitz
+작용소는 정규이거나 해석적일까\,?}
+
+\vspace{.2 cm}  이 문제는 정규 Toeplitz 작용소와 해석적 Toeplitz
+작용소가 잘 이해되고, 또 모두 부분정규이므로 매우 자연스러운 문제라
+하겠다.
+
+\vspace{.2 cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage\rightline{\small 이우영: 토에플리츠 작용소에 대한 브리지 이론\
+\ \ \large\it 191}
+
+
+\vspace{.8 cm}
+
+{\bf 4.1. Halmos' Problem 5}
+
+\vspace{0.3cm} 이제 Halmos' Problem 5와 관련된 연구에 대하여
+살펴본다. 1976년에, M. Abrahamse \cite{Ab}가 Halmos' Problem 5에
+대한 매우 일반적인 충분조건을 주었는데, 이 오래 된 정리가 약간
+놀랍게도 오늘날까지 알려진 가장 좋은 충분조건이다.
+
+\vspace{0.3cm} {\bf Theorem 4.1.1.} Abrahamse's Theorem) {\rm
+\cite{Ab}} {\sl If
+\begin{itemize}
+\item[{\rm (i)}] $T_{\varphi}$ is hyponormal;
+\item[{\rm (ii)}] $\varphi$ or $\overline\varphi$ is of bounded type;
+\item[{\rm (iii)}] ${\rm ker}[T_{\varphi}^*,T_{\varphi}]$ is invariant for $T_{\varphi}$,
+\end{itemize}
+then $T_{\varphi}$ is normal or analytic.}
+%\end{thm}
+
+\vspace{0.3cm} 한편, 만일 $S$가 $\mathcal H$ 상의 부분정규이고
+$N:=\mbox{mne}\,(S)$이면,
+$$
+{\rm ker}[S^*,S]=\{ f:\ <f, [S^*,S]f>=0\}=\{ f:\ ||S^*f||=||Sf||\}=\{ f:\ N^{*}f\in\mathcal{H}\}.
+$$
+그러므로 $S({\rm ker}[S^*,S])\subseteq {\rm ker}[S^*,S]$. 따라서,
+Theorem 4.1.1에 의헤서 다음을 얻는다.
+
+\vspace{0.3cm} {\bf Corollary 4.1.2.}\ {\sl If $T_{\varphi}$ is
+subnormal and if $\varphi$ or $\overline\varphi$ is of bounded type,
+then $T_{\varphi}$ is normal or analytic.} \vspace{0.3cm}
+
+위의 Abrahamse's Theorem은 최근에 저자와 공저자들이 행렬함수심벌로
+확장하는 데 성공하였다 (\cite{CHL2}). 다음은 M. Abrahamse
+\cite{Ab}이  밝혀낸 유계형 함수의 특성화이다.
+
+\vspace{0.3cm} {\bf Corollary 4.1.3} {\sl  A function $\varphi$ is
+of bounded type if and only if ${\rm ker}H_{\varphi}\neq\{0\}$. }
+
+\vspace{0.3cm} Toeplitz 작용소의 부분정규성을 잘 연구할 수 있는 방법
+중의 하나가 기존의 잘 알려진 부분정규 작용소와 유니터리 동치인
+경우를 찾아내는 것인데, 가중이동 작용소가 비교적 부분정규를 알기
+쉬운 경우이므로 어떤 가중이동 작용소가 Toeplitz 작용소와 유니터리
+동치인지 물어볼 수 있을 것이다. 다음은 그 첫번째 답이다.
+
+
+\newpage\leftline{\large{\it 192}\ \ \
+\small 학문 연구의 동향과 쟁점 -- 수학} \vspace{0.8cm}
+
+{\bf Proposition 4.1.4.} {\sl If $A$ is a weighted shift with
+weights $a_0, a_1, a_2, \cdots $ such that
+$$
+0\le a_0 \le a_1 \le \cdots < a_N = a_{N+1}= \cdots = 1,
+$$
+then $A$ is not unitarily equivalent to any Toeplitz operator. }
+
+\vspace{.2 cm} 이제 유명한 Bergman 이동작용소(shift) (가중수열이
+$\sqrt{{n+1}\over{n+2}}$로 주어지는 이동 작용소)는 부분정규이므로
+우리는 약간의 기대감을 가지고 다음을 물을 수 있을 것이다.
+\begin{equation}\label{4.1.2}
+\mbox{Bergman 이동 작용소는 어떤 Toeplitz 작용소와 유니터리
+동치인가?}
+\end{equation}
+
+만일 위의 질문 (\ref{4.1.2})의 대답이 긍정적이라면, Halmos' Problem
+5의 대답은 부정적이 될 것이다. 이를 알기 위해서 Bergman 이동작용소
+$S$가 Toeplitz 작용소 $T_\varphi$와 유니터리 동치라고 가정하자.
+그러면,
+$$
+\frak{R}(\varphi)\subseteq\ \sigma
+_e(T_\varphi )=\sigma_e(S)=\mbox{the unit circle}\ \mathbb{T}.
+$$
+따라서, $\varphi$는 그 절대값이 1인 함수(unimodular)이다. 그런데
+$S$가 등장함수가 아니므로 $\varphi$는 내적함수가 아니다. 그러므로,
+$T_\varphi$는 해석적 Toeplitz 작용소가 아니다. 1983년에 S. Sun
+\cite{Sun}이 문제 (\ref{4.1.2})에 부정적인 해답을 주었다. \vspace{.2
+cm}
+
+{\bf Theorem 4.1.5.} (Sun's Theorem) {\rm \cite{Sun}} {\sl Let $T$
+be a weighted shift with a strictly increasing weight sequence
+$\{a_{n}\}_{n=0}^{\infty}$. If $T\cong T_{\varphi}$ then
+$$
+a_{n}=\sqrt{1-{\alpha}^{2n+2}} \,||T_{\varphi}||\quad (0<\alpha <1).
+$$}
+\indent 위의 Theorem 4.1.5에 의하여 다음을 얻는데 이는 문제
+(\ref{4.1.2})의 답을 준다. \vspace{.2 cm}
+
+{\bf Corollary 4.1.6} {\sl The Bergman shift is not unitarily
+equivalent to any Toeplitz operator.} \vspace{.2 cm}
+%\end{cor}
+
+\vspace{.2 cm}
+
+마침내, 1984년에 Cowen과 Long \cite{CoL}이 Halmos' Problem 5를
+해결하였는데, 우선 이를 위해 다음이 필요하다.
+
+\vspace{.2 cm} {\bf Lemma 4.1.7.} {\sl The weighted shift $T\equiv
+W_{\alpha}$ with weights $\alpha_n\equiv
+(1-\alpha^{2n+2})^{\frac{1}{2}}\ (0<\alpha <1)$ is subnormal.}
+%\end{lem}
+
+\vspace{.2 cm} 더구나 Toeplitz 작용소가 가중이동 작용소와 유니터리
+동치이면 부분정규가 됨이 알려졌다.
+
+
+
+\newpage\rightline{\small 이우영:
+토에플리츠 작용소에 대한 브리지 이론\ \ \ \large\it 193}
+
+\vspace{.8 cm}
+
+{\bf Corollary 4.1.8.} {\sl If $T_{\varphi} \cong$ a weighted shift,
+then $T_\varphi$ is subnormal.} \vspace{.2 cm}
+
+만일  $T_\varphi$가 가중이동 작용소와 동치이면,
+$\varphi$는 어떤 형태일까?
+\cite[Theorem 3.7]{Sun}의 증명을 분석해보면,
+다음을 알 수 있다.
+$$
+\psi=\varphi -\alpha\overline{\varphi}\in {\bold H}^{\infty}.
+$$
+그러나,
+\begin{align*}
+T_\psi =T_\varphi -\alpha T_{\varphi}^* &=
+{\begin{pmatrix}
+0 &-\alpha a_0\\
+a_0&0&-\alpha a_1\\
+&a_1&0&-\alpha a_2\\
+&&a_2&0&\ddots\\
+&&&\ddots&\ddots
+ \end{pmatrix}}\\
+&=\begin{pmatrix}
+0 &-\alpha\\
+1&0&-\alpha\\
+&1&0&-\alpha\\
+&&1&0&\ddots\\
+ &&&\ddots&\ddots
+\end{pmatrix} + K\quad \mbox{($K$ compact)}\\
+&\cong T_{z-\alpha\overline{z}}+K.
+\end{align*}
+따라서,
+$\mbox{ran}\,(\psi)=\sigma_{e}(T_{\psi})
+=\sigma_{e}(T_{z-\alpha\overline{z}})={\rm ran}(z-\alpha\overline{z})$.
+그러므로, $\psi$는 단위원판을 꼭지점이  $\pm i(1+\alpha)$이고,  $\pm(1-\alpha)$을
+지나는 타원으로 보내는 등각사상이다.
+한편, $\psi=\varphi -\alpha\overline{\varphi}$.
+그래서,
+$\alpha\overline{\psi}=\alpha\overline{\varphi} -\alpha^2\varphi$
+이고, 다음이 성립한다.
+$$
+\varphi=\frac{1}{1-\alpha^2}(\psi +\alpha\overline{\psi}).
+$$
+
+이제 다음을 얻게 된다.
+
+\vspace{.2 cm}{\bf Theorem 4.1.9.} (Cowen and Long Theorem) {\rm
+\cite{CoL}} {\sl For $0<\alpha <1$, let $\psi$ be a conformal map of
+$\mathbb{D}$ onto the interior of the ellipse with vertices $\pm
+i(1-\alpha)^{-1}$ and passing through $\pm (1+\alpha)^{-1}$. Then
+$T_{\psi +\alpha\overline{\psi}}$ is a subnormal weighted shift that
+is neither analytic nor normal.}
+%\end{thm}
+\vspace{.2 cm}
+
+Abrahamse's Theorem 과 Theorem 4.1.9\,로부터 다음을 얻는다.
+
+\vspace{.2 cm}
+
+\newpage\leftline{\large{\it 194}\ \ \ \small 학문 연구의 동향과 쟁점 --
+수학}\vspace{0.8cm}
+
+{\bf Corollary 4.1.10.} {\sl If $\varphi=\psi
++\alpha\overline{\psi}$ is as in Theorem 4.1.9, then neither
+$\varphi$ nor $\overline{\varphi}$ is bounded type.} \vspace{.2 cm}
+
+이제 Halmos' Problem 5가 해결되었다고는 하나, 본질적으로 Toeplitz
+작용소의 부분정규성은 여전히 암흑 속에 갇혀 있다고 해도 과언이
+아니다. Abrahamse's Theorem 정도가 가장 좋은 대답이므로 앞으로 계속
+Toeplitz 작용소의 부분정규성을 탐험해 갈 필요가 있다. 지난 십 수년간
+저자와 공동 연구자들은 이 문제를 끊임없이 고찰해 왔으며 부분적으로
+흥미로운 결과들을 만들어내기는 하였지만, 여전히 그 여정은
+미미하였으며 앞으로도 얼마나 더 긴 여정을 거쳐야 할 지 모른다. 물론
+지나온 여정 중에 종종 신기루 같은 것을 보긴 하였지만 가까이 가보면
+그냥 신기루였을 뿐, 여전히 그 단서를 찾지 못하고 있다. 다음 절에서는
+그 중 한 가지를 살펴볼 것이다.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{.3 cm} {\bf 4.2. Toeplitz 작용소의 $k$-아정규성과 부분정규성
+사이의 틈}
+
+\vspace{.3 cm} Toeplitz 작용소의 $k$-아정규성과 부분정규성 사이의 틈
+을 이해하는 것은 매우 흥미로워 보인다. 이 문제에 대한 첫번째
+후보로서 우리는 다음을 생각할 수 있다 (\cite{CuL1}): 모든 2-아정규
+Toeplitz 작용소는 부분정규인가?
+
+\medskip
+
+이 문제에 대하여 \cite{CuL1}에서 다음이 보여졌다:
+
+\vspace{.2 cm}{\bf Theorem 4.2.1.} {\rm \cite{CuL1}}  {\sl Every
+trigonometric Toeplitz operator whose square is hyponormal must be
+normal or analytic. Hence, in particular, every 2-hyponormal
+trigonometric Toeplitz operator is subnormal.}
+%\end{thm}
+
+\vspace{.2 cm} \cite{Cu1}에서 가중이동 작용소에 대한 아정규성과
+2-아정규성 사이에 틈이 존재함을 보였다. 위의 Theorem 4.2.1\,은 역시
+Toeplitz 작용소에 대해서도  아정규성과 2-아정규성 사이에 틈이
+존재함을 보여주고 있다. 예를 들어, 만일
+$$
+\varphi(z)=\sum_{n=-m}^N a_n z^n\quad (m<N)
+$$
+에 대하여 $T_\varphi$가 아정규이면, Theorem 4.2.1에 의해
+$T_\varphi$는 결코 2-아정규가 아니다 (그 이유: $T_\varphi$가 정규도
+해석적도 아님). 비교하여 다음을 상기할 필요가 있다: 만일,
+$\varphi(z)=\sum_{n=-m}^N a_n z^n$에 대하여 $T_\varphi$가 정규이면,
+$m=N$ (cf. \cite{FL1}).
+
+\vspace{.2 cm} 우리는 Abrahamse's Theorem을 약간 확장할 수 있다.
+이를 위하여 다음 관찰이 필요하다.
+
+
+\newpage\rightline{\small 이우영: 토에플리츠 작용소에 대한 브리지 이론\
+\ \ \large\it 195}
+
+\vspace{.8 cm}
+
+{\bf Proposition 4.2.2.} {\rm \cite{CuL2}} {\sl If
+$T\in\mathcal{B(H)}$ is 2-hyponormal then
+\begin{equation}\label{4.2.1}
+T\bigl(\text{ker}\,[T^*,T]\bigr)\ \subseteq \text{ker}\,[T^*,T].
+\end{equation}}
+
+그러면  즉시 다음을 얻는다.
+
+\vspace{.2 cm}{\bf Corollary 4.2.3.} {\sl If $T_\varphi$ is
+$2$-hyponormal and if $\varphi$ or $\bar\varphi$ is of bounded type
+then $T_\varphi$ is normal or analytic, so that $T_\varphi$ is
+subnormal.}  \vspace{.2 cm}
+
+우리는 역시 다음을 증명할 수 있다.
+
+\vspace{.2 cm}{\bf Corollary 4.2.4.} {\sl If $T_\varphi$ is a
+$2$-hyponormal operator such that $\mathcal{E}(\varphi)$ contains at
+least two elements then $T_\varphi$ is normal or analytic, so that
+$T_\varphi$ is subnormal.}
+%\end{cor}
+\vspace{.2 cm}
+
+Corollary 4.2.3\,과 Corollary 4.2.4\,로부터, 만일 $T_\varphi$가
+$2$-아정규이지만 부분정규가 아니면, $\varphi$는 유계형 함수가 아니고
+$\mathcal{E}(\varphi)$는 꼭 하나의 원소로 이루어짐을 알 수 있다.
+우리는 나아가 Toeplitz 작용소에 대하여 임의의 $k$-아정규성과
+부분정규성 사이에 틈이 존재함을 보였다.
+
+\vspace{.2 cm}{\bf Theorem 4.2.5.} {\rm \cite{CLL}} {\sl Let
+$0<\alpha<1$ and let $\psi$ be the conformal map of the unit disk
+onto the interior of the ellipse with vertices $\pm(1+\alpha)i$ and
+passing through $\pm(1-\alpha)$. Let $\varphi=\psi+\lambda\bar\psi$
+and let $T_\varphi$ be the corresponding Toeplitz operator on $H^2$.
+Then $T_\varphi$ is $k$-hyponormal if and only if $\lambda$ is in
+the circle $\left|z-\frac{\alpha(1-\alpha^{2j})}
+{1-\alpha^{2j+2}}\right|
+=\frac{\alpha^j(1-\alpha^2)}{1-\alpha^{2j+2}}$ for $j=0,1,\cdots
+,k-2 $ or in the closed disk
+$\left|z-\frac{\alpha(1-\alpha^{2(k-1)})} {1-\alpha^{2k}}\right| \le
+\frac{\alpha^{k-1}(1-\alpha^2)}{1-\alpha^{2k}}$. }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{.3 cm} {\bf 4.3 미해결 문제}
+
+\vspace{.3 cm} Cowen과 Long의 아이디어 \cite{CoL}는 Toeplitz
+작용소와 부분정규성 사이의 관계에 대한 어떤 일반적인 특징도 주지
+못했다. 결국 지금까지 누구도 Toeplitz 작용소의 부분정규성에 대하여
+심벌에 의한 특성화를 만들지 못했다. 따라서 다음 문제는 여전히
+매력적이고 흥미롭다:
+
+\vspace{.2 cm}
+
+{\bf Problem A.}  {\sl Characterize the subnormality of
+$T_\varphi$ in terms of $\varphi$\,? }
+
+\vspace{.2 cm} 이제 Toeplitz 작용소에 대한 부분정규성과 관련된 보다
+구체적인 미해결 문제들을 제시한다.
+
+
+
+\newpage \leftline{\large{\it 196}\ \ \ \small 학문 연구의
+동향과 쟁점 -- 수학} \vspace{.8 cm}
+
+{\bf Problem B.}  {\sl For which $f\in{\bold H}^{\infty}$, is there
+$\lambda\ (0<\lambda<1)$ with $T_{f +\lambda\overline{f}}$
+subnormal\,? }
+
+\vspace{.2 cm} {\bf Problem C.} {\sl Suppose $\psi$ is as in Theorem
+4.1.9 (i.e., the ellipse map). Are there $g\in{\bold H}^{\infty}$,
+$g\neq\lambda\psi +c$, such that $T_{\psi+\overline{g}}$ is
+subnormal\,? }
+
+\vspace{.2 cm}
+
+{\bf Problem D.} {\sl More generally, if $\psi
+\in\bold{H}^\infty$, define
+$$
+\mathcal{S}(\psi):=\{g\in\bold{H}^\infty:\ T_{\psi+\overline g}\ \mbox{is subnormal}\ \}.
+$$
+Describe $\mathcal{S}(\psi)$. For example, for which $\psi\in \bold{H}^\infty$, is it balanced?, or is it convex?, or is it weakly closed?
+What is ${\rm ext}\,\mathcal{S}(\psi)$\,?
+For which $\psi\in \bold{H}^\infty$, is it strictly convex ?, i.e.,
+$\partial\mathcal{S}(\psi)\subset{\rm ext}\,\mathcal{S}(\psi)$\,?
+}
+
+\vspace{.2 cm} C.\ Cowen \cite{Cow3}은 어떤 논증도 없이 다음의
+흥미로운 언급을 하였다: ``{\it If $T_\varphi$ is subnormal then
+$\mathcal{E}(\varphi)=\{\lambda\}$ with $|\lambda|<1$".} 그러나
+우리는 이것이 참인지 아닌지 보일 수가 없었다. 물론 만일
+$T_\varphi$가 정규이면, $\mathcal{E}(\varphi)=\{e^{i\theta}\}$ 이다.
+따라서 다음은 자연스러운 질문이다.
+
+\vspace{.2 cm} {\bf Problem E.} {\sl Is the above Cowen's remark
+true\,? That is, if $T_\varphi$ is subnormal, does it follow that
+$\mathcal{E}(\varphi)=\{\lambda\}$ with $|\lambda|<1$\,? }
+
+\vspace{.2 cm}
+
+만일 Problem E의 대답이 긍정적이면, 즉,
+위의 Cowen의 언급이 참이면, $\varphi=\overline g+f$에 대하여,
+$$
+\mbox{$T_\varphi$ is subnormal}\ \Longrightarrow \ \overline
+g-\lambda \overline f\in \bold{H}^2\ \ \mbox{with}\ |\lambda|<1\
+\Longrightarrow\ g=\overline\lambda f+c.
+$$
+($c$는 상수). 이는 Problem C의 해답이 부정적임을 보여준다.
+
+\vspace{.2 cm}
+
+한편, Corollary 4.9.3\,으로부터 $T_\varphi$가 $2$-아정규이고
+$\varphi$ 또는 $\bar\varphi$가 유계형식 함수이면, $T_\varphi$는
+비자명 불변 부분공간(nontrivial invariant subspace)을 가진다. 그래서
+다음 문제가 자연스럽게 떠오른다: \vspace{.2 cm}
+
+ {\bf Problem F.} {\sl Does every $2$-hyponormal
+Toeplitz operator have a nontrivial invariant subspace\,? More
+generally, does every $2$-hyponormal operator have a nontrivial
+invariant subspace\,? }
+
+\vspace{.2 cm}
+
+
+\newpage\rightline{\small 이우영: 토에플리츠 작용소에 대한 브리지 이론\ \ \
+\large\it 197} \vspace{0.8cm}
+
+ 만일, $T$가 아정규이고 $R(\sigma(T))\ne
+C(\sigma(T))$이면 $T$가 비자명 불변부분공간을 가진다는 사실이 널리
+알려져 있다(\cite{Bro}). 그러나 $T$가 아정규이고,
+$R(\sigma(T))=C(\sigma(T))$이면 (즉, thin spectrum을 가지면) $T$가
+비자명 불변 부분공간을 가지는지는 여전히 미해결 문제이다. 한편,
+$T\in\mathcal{B(H)}$가 von Neumann 작용소라고 함은 $\sigma(T)$
+밖에서 pole을 가지는 유리함수 $f$에 대하여 $f(T)$가 normaloid (i.e.,
+norm = spectral radius)임을 뜻한다. B. Prunaru \cite{Pru}는 모든
+다항 아정규작용소는 비자명 불변 부분공간을 가짐을 보였다. 역시
+\cite{Ag}에서 von Neumann 작용소도 비자명 불변부분공간을 가짐을
+보였다. 다음은 Problem F의 부분 문제이다.
+
+\vspace{.2 cm}
+
+
+{\bf Problem G.} {\sl Is every 2-hyponormal operator with thin
+spectrum a von-Neumann operator\,? }
+
+\vspace{.2 cm}
+
+비록, 부분정규가 아닌 다항정규 가중이동작용소의 존재가 알려져 있기는
+하지만 (cf. \cite{CP1}, \cite{CP2}), 토에플리츠 작용소에 대하여
+``다항정규 $\Rightarrow$ 부분정규" 인지 아닌지는 알려져 있지 않다.
+그래서 다음 문제도 자연스럽게 떠오른다.
+
+\vspace{.2 cm}
+
+{\bf Problem H.} {\sl Does there exist a Toeplitz operator which is
+polynomially hyponormal but not subnormal\,? }
+
+\vspace{.2 cm}
+
+한편, \cite{CuL2}에서 모든 순수(pure -- it has no normal direct
+summand) $2$-아정규 작용소 $T$의 자기-가환자의 계수(rank)가 1이면
+$T$는 이동작용소의 선형함수임이 밝혀졌다. McCarthy 와 Yang
+\cite{McCYa}은 유한 계수를 가지는 자기-가환자의 모든 유리
+순환(rationally cyclic) 부분정규 작용소를 특성화하였다. 그러나
+여전히 유한 계수의 자기-가환자를 가지는 모든 순수 부분정규 작용소를
+특성화하지는 못했다. 그래서 다음의 질문이 즉시 떠오른다.
+
+\vspace{.2 cm} {\bf Problem I.} {\sl If $T_\varphi$ is a
+$2$-hyponormal Toeplitz operator with nonzero finite rank
+self-commutator, does it follow that $T_\varphi$ is analytic\,? }
+
+\vspace{.2 cm}
+
+위의 미해결 문제들은 모두 쉽지 않은 문제들로 보여진다. 그러나
+Toeplitz 작용소의 성질을 충분히 이해하기 위해서는 위 문제의 답을
+찾는 것은 필수불가결한 일이다. 더구나 작용소의 브리지 이론의 완성을
+위해서는 Toeplitz 작용소의 부분정규성 확립에 대한 노력을 더욱 경주할
+필요가 있다. 미해결 문제에 대한 도전이야말로 수학 최고의 미덕이 아닐
+수 없다
+
+\newpage
+\leftline{\large{\it 198}\ \ \ \small 학문 연구의 동향과 쟁점 --
+수학}
+
+\vspace{0.8cm}
+
+참으로, Morris Kline\,이 Bertrand Russel의 한 작품에 헌사한 서문에서
+처럼 ``미해결 문제에 대한 도전은 인류를 깨어 있게 만들고 궁극적으로
+인류를 정신적 무기력으로부터 보호할 것이다."
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{thebibliography}{99}\footnotesize
+
+
+\bibitem[1]{Ab} M. B. Abrahamse,
+{\it Subnormal Toeplitz operators and functions of bounded type},
+Duke Math. J. {\bf 43} (1976), 597--604.
+
+\bibitem[2]{Ag} J. Agler, {\it An invariant subspace problem}, J. Funct. Anal.
+{\bf 38} (1980), 315--323.
+
+\bibitem[3]{Bro} S. Brown, {\it Hyponormal operators with thick spectra have invariant subspaces},
+Ann. of Math. {\bf 125} (1987), 93--103.
+
+\bibitem[4]{BH} A. Brown and P. R. Halmos, {\it Algebraic properties of Toeplitz operators},
+J. Reine Angew. Math. {\bf 213} (1963-1964), 89--102.
+
+
+\bibitem[5]{Con2} J. B. Conway, The Theory of Subnormal Operators,
+Math. Surveys and Monographs, vol. 36, Amer. Math. Soc., Providence, 1991.
+
+
+\bibitem[6]{Cow2} C. Cowen, {\it Hyponormal and subnormal Toeplitz operators},
+Surveys of Some Recent Results in Operator Theory, I (J. B. Conway
+and B. B. Morrel, eds.) Pitman Research Notes in Mathematics,
+Longman, Vol.{\bf 171} (1988), 155--167.
+
+\bibitem[7]{Cow3} C. Cowen, {\it Hyponormality of Toeplitz operators}, Proc. Amer. Math. Soc.
+{\bf 103} (1988), 809--812.
+
+\bibitem[8]{CoL} C. C. Cowen and J. J. Long, {\it Some subnormal Toeplitz operators},
+J. Reine Angew. Math. {\bf 351} (1984), 216--220.
+
+\bibitem[9]{Cu1} R. E. Curto, {\it Quadratically hyponormal weighted shifts},
+Integral Equations Operator Theory, {\bf 13} (1990), 49--66.
+
+\bibitem[10]{CHL1}R. E. Curto, I. S. Hwang and W. Y. Lee,
+{\it Hyponormality and subnormality of block Toeplitz operators},
+Adv. Math. {\bf 230} (2012), 2094--2151.
+
+
+\bibitem[11]{CHL2}  R. E. Curto, I. S. Hwang and W. Y. Lee,
+{\it Which subnormal Toeplitz operators are either normal or
+analytic\,?}, J. Funct. Anal. {\bf 263}(8) (2012), 2333--2354.
+
+
+\newpage  \rightline{\small 이우영: 토에플리츠 작용소에 대한 브리지
+이론\ \ \ \large\it 199}
+
+\vspace{.4 cm}
+
+\bibitem[12]{CLL} R. E. Curto, S. H. Lee and W. Y. Lee, {\it Subnormality and 2-hyponormality for Toeplitz operators},
+Integral Equations Operator Theory, {\bf 44} (2002), 138--148.
+
+
+\bibitem[13]{CuL1} R. E. Curto and W. Y. Lee, {\it Joint hyponormality of Toeplitz pairs},
+Memoirs Amer. Math. Soc. No.{\bf 712}, Amer. Math. Soc., Providence,
+2001.
+
+\bibitem[14]{CuL2} R. E. Curto and W. Y. Lee, {\it Towards a model theory for $2$--hyponormal operators},
+Integral Equations Operator Theory, {\bf 44} (2002), 290--315.
+
+\bibitem[15]{CP1} R. E. Curto and M. Putinar, {\it Existence of non-subnormal polynomially hyponormal operators},
+Bull. Amer. Math. Soc. (N.S.), {\bf 25} (1991), 373--378.
+
+\bibitem[16]{CP2} R. E. Curto and M. Putinar, {\it Nearly subnormal operators and moment problems},
+J. Funct. Anal. {\bf 115} (1993), 480--497.
+
+\bibitem[17]{FL1} D. R. Farenick and W. Y. Lee, {\it Hyponormality and spectra of Toeplitz operators},
+Trans. Amer. Math. Soc., {\bf 348} (1996), 4153--4174.
+
+\bibitem[18]{FF} C. Foia\c s and A. Frazho, {\it The commutant lifting approach to
+interpolation problems}, Operator Theory: Adv. Appl., vol.{\bf 44},
+Birkh\" auser-Verlag, Boston, 1990.
+
+\bibitem[19]{GGK} I. Gohberg, S. Goldberg and M.A. Kaashoek, {\it Classes Linear Operators},
+vol.{\bf II}, Birkh\" auser-Verlag, Boston, 1993.
+
+\bibitem[20]{Ha1} P. R. Halmos, {\it Ten problems in Hilbert space},
+Bull. Amer. Math. Soc., {\bf 76} (1970), 887--933.
+
+\bibitem[21]{Ha2} P. R. Halmos, {\it Ten years in Hilbert space},
+Integral Equations Operator Theory, {\bf 2} (1979), 529--564.
+
+\bibitem[22]{McCYa} J. E. McCarthy and L. Yang, {\it Subnormal operators and quadrature domains},
+Adv. Math. {\bf 127} (1997), 52--72.
+
+\bibitem[23]{NaT} T. Nakazi and K. Takahashi, {\it Hyponormal Toeplitz operators and extremal problems of Hardy spaces}
+Trans. Amer. Math. Soc. {\bf 338} (1993), 753--767.
+
+\bibitem[24]{Ni} N. K. Nikolskii, {\it Treatise on the shift operator}, Springer, New York, 1986.
+
+\bibitem[25]{Pru} B. Prunaru, {\it Invariant subspaces for polynomially hyponormal operators},
+Proc. Amer. Math. Soc. {\bf 125} (1997), 1689--1691.
+
+\bibitem[26]{Sun} S. Sun, {\it Bergman shift is not unitarily equivalent to a Toeplitz operator},
+Kexue Tongbao(English Ed.) {\bf 28} (1983), 1027--1030.
+
+
+\end{thebibliography}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage\leftline{\large{\it 200}\ \ \ \small 학문
+연구의 동향과 쟁점 -- 수학}
+
+ \vspace{0.5cm}
+
+\centerline{\bf Abstract}
+
+\vspace{.3 cm}
+
+\centerline{\large Bridge theory for Toeplitz operators}
+
+\vspace{.3 cm} \centerline{\sc Woo Young Lee}
+
+\vspace{0.4 cm} Toeplitz operators arise naturally in several fields
+of mathematics and in a variety of problems in physics. \ Also the
+theory of hyponormal and subnormal operators is an extensive and
+highly developed area, which has made important contributions to a
+number of problems in functional analysis, operator theory, and
+mathematical physics. \ Thus, it becomes of central significance to
+describe in detail hyponormality and subnormality for Toeplitz
+operators. In this sense, the following question is challenging and
+interesting:
+$$
+\hbox{Which Toeplitz operators are hyponormal or subnormal ?}
+$$
+While the precise relation between normality and subnormality has
+been extensively studied, as have been the classes of subnormal and
+hyponormal operators, the relative position of the class of
+subnormals inside the classes of hyponormals is still far from being
+well understood. We call it a `bridge theory' for operators to
+explore the gap between hyponormality and subnormality for bounded
+linear operators acting on an infinite dimensional complex Hilbert
+(or Banach) space. In this survey note, we provide a bridge theory
+for Toeplitz operators. This is originated from Halmos' Problem 5
+(in 1970): $\hbox{\it Is every subnormal Toeplitz operator either
+normal or analytic\,?}$ \ Even though Halmos's Problem 5 was, in
+1984, answered in the negative by C. Cowen and J. Long, until now
+researchers have been unable to characterize subnormal Toeplitz
+operators in terms of their symbols. In this survey note we study
+the subnormality and hyponormality of Toeplitz operators acting on
+the vector-valued Hardy space $H^2_{\mathbf{C}^n}$ of the unit
+circle.
+
+\vspace{.3 cm}
+
+{\footnotesize 2010 Mathematics Subject Classification: 47B20,
+47B35, 46J15, 15A83, 30H10, 47A20.
+
+\vspace{.2 cm}
+
+\indent Key words and phrases: Hardy spaces, Toeplitz operators,
+Hankel operators, normal, subnormal, hyponormal, $k$-hyponormal. }
+
+
+\end{document}
+\end
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%
+%%
+%%                           END
+%%
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
