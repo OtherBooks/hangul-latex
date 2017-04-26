@@ -1,0 +1,1671 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%              ÇÐ¼ú¿ø ÃÑ¼­ Æò¼³ ³í¹®
+%
+%                Åä¿¡ÇÃ¸®Ã÷ ÀÛ¿ë¼Ò¿¡ ´ëÇÑ ºê¸®Áö ÀÌ·Ð
+%                        ÀÌ ¿ì ¿µ
+%                  ¼­¿ï´ëÇÐ±³ ¼ö¸®°úÇÐºÎ
+%
+%                     2013³â 9¿ù 21ÀÏ
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,a4paper,2sided]{article}
+\usepackage{hangul}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amscd}
+\usepackage{amsfonts}
+%\usepackage{fancyhdr}
+
+\topmargin 2mm \textwidth 140mm \textheight 230mm
+
+\pagestyle{empty}
+
+\newcommand{\mm}{\multimap}
+\newcommand{\sub}{\subset}
+\newcommand{\g}{\gamma}
+\newcommand{\G}{\Gamma}
+\newcommand{\ol}{\overline}
+\newcommand{\ul}{\underline}
+\newcommand{\ti}{\times}
+\newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda}
+\newcommand{\bcup}{\bigcup}
+\newcommand{\bcap}{\bigcap}
+\newcommand{\De}{\Delta}
+\newcommand{\de}{\delta}
+\newcommand{\back}{\backslash}
+\newcommand{\f}{\frak}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+\newcommand{\wh}{\widehat}
+\newcommand{\emp}{\emptyset}
+\newcommand{\vs}{\vspace}
+\newcommand{\hs}{\hspace}
+
+
+\newtheorem{thm}{Theorem}[subsection]
+\newtheorem{df}[thm]{Definition}
+\newtheorem{pro}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{ex}[thm] {Example}
+\newtheorem{rema}[thm] {Remark}
+\newtheorem{lem}[thm] {Lemma}
+\newtheorem{prob}[thm]{Problem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\rightline{\large\it 173} \vspace{1.5cm}
+
+\centerline{\Large{\bf Åä¿¡ÇÃ¸®Ã÷ ÀÛ¿ë¼Ò¿¡ ´ëÇÑ ºê¸®Áö ÀÌ·Ð}}
+\vspace{1.5 cm} \rightline{\large{\bf ÀÌ  ¿ì  ¿µ}\
+{\small(¼­¿ï´ëÇÐ±³ ±³¼ö)}}
+
+\vspace{.5 cm}
+\begin{abstract}
+Toeplitz ÀÛ¿ë¼Ò´Â ¼öÇÐ°ú ¹°¸®ÇÐÀÇ ´Ù¾çÇÑ ¹®Á¦¿¡¼­ ÀÚ¿¬½º·´°Ô
+¹ß»ýÇÑ´Ù. ¶ÇÇÑ ¾ÆÁ¤±Ô¿Í ºÎºÐÁ¤±Ô ÀÛ¿ë¼Ò ÀÌ·ÐÀº ¿À´Ã³¯ ±¤¹üÀ§ÇÏ°Ô Àß
+¹ß´ÞµÈ ºÐ¾ß·Î ¼ºÀåÇÏ¿´À¸¸ç ÇÔ¼öÇØ¼®ÇÐ, ÀÛ¿ë¼Ò ÀÌ·Ð, ¼ö¸®¹°¸®ÇÐ µîÀÇ
+¸¹Àº ¹®Á¦¸¦ Çª´Â µ¥ Áö´ëÇÑ ±â¿©¸¦ ÇØ¿Ô´Ù. µû¶ó¼­, Toeplitz ÀÛ¿ë¼Ò¿¡
+´ëÇÑ ¾ÆÁ¤±Ô¼º°ú ºÎºÐÁ¤±Ô¼ºÀ» »ó¼¼ÇÏ°Ô ¹¦»çÇÏ´Â °ÍÀº ¸Å¿ì Áß¿äÇÑ
+¹®Á¦·Î ¶°¿Ã¶ú´Ù. ±×·± ÀÇ¹Ì¿¡¼­ ´ÙÀ½ Áú¹®Àº Èï¹Ì·Ó°í ¸Å·ÂÀûÀÌ´Ù: {\it
+¾î¶² Toeplitz ÀÛ¿ë¼Ò°¡ ¾ÆÁ¤±ÔÀÌ°Å³ª ºÎºÐÁ¤±ÔÀÎ°¡?} Á¤±Ô¼º°ú
+ºÎºÐÁ¤±Ô¼º¿¡ ´ëÇÑ Á¤È®ÇÑ °ü°è°¡ ±¤¹üÀ§ÇÏ°Ô ¿¬±¸µÇ¾î ¿Â ¹Ý¸é¿¡,
+¾ÆÁ¤±Ô¼º ¾È¿¡¼­ÀÇ ºÎºÐÁ¤±Ô¼ºÀÇ À§Ä¡¿¡ °üÇÑ ¿¬±¸´Â ¿©ÀüÈ÷ ÀÌÇØ°¡
+ºÎÁ·ÇÑ ÆíÀÌ´Ù. ¹«ÇÑÂ÷¿ø º¹¼Ò Hilbert (È¤Àº Banach) °ø°£ »óÀÇ
+À¯°èÀÛ¿ë¼Ò¿¡ °üÇÑ ¾ÆÁ¤±Ô¼º°ú ºÎºÐÁ¤±Ô¼º »çÀÌÀÇ Æ´À» ¿¬±¸ÇÏ´Â ºÐ¾ß¸¦
+`ºê¸®Áö ÀÌ·Ð'ÀÌ¶ó ºÎ¸£´Âµ¥, ÀÌ ±Û¿¡¼­´Â Toeplitz ÀÛ¿ë¼Ò¿¡ ´ëÇÑ
+ºê¸®Áö ÀÌ·ÐÀÇ ¹ßÀüÀ» ¼³¸íÇÑ´Ù. ÀÌ´Â 1970³â¿¡ P.\,R.\ Halmos°¡ Á¦½ÃÇÑ
+¿­ °³ÀÇ ¹®Á¦ Áß ´ÙÀ½°ú °°Àº ´Ù¼¸¹øÂ° ¹®Á¦·ÎºÎÅÍ ¾ß±âµÈ´Ù: {\it ¸ðµç
+ºÎºÐÁ¤±Ô Toeplitz ÀÛ¿ë¼Ò´Â Á¤±ÔÀÌ°Å³ª ÇØ¼®ÀûÀÎ°¡?}
+\end{abstract}
+
+\vspace{.5 cm} {\large\bf 1. ¼­·Ð}
+
+\vspace{.5 cm}
+
+ÀÛ¿ë¼Ò ÀÌ·Ð(Operator Theory)Àº ÇÔ¼ö °ø°£°ú ±× °ø°£ »ó¿¡¼­ ÀÛ¿ëÇÏ´Â
+ÇÔ¼ö¸¦ ´Ù·ç´Â ÇÐ¹®ÀÌ´Ù. ÀÛ¿ë¼Ò ÀÌ·ÐÀÇ ¿¬±¸´Â 1713³â¿¡ B.\ Taylor°¡
+Áøµ¿ÇÏ´Â\linebreak
+
+\vspace{.5 cm} \footnoterule
+
+\vspace{.2 cm} {\footnotesize 2010 Mathematics Subject
+Classification: 47B20, 47B35, 46J15, 15A83, 30H10, 47A20.
+
+Key words and phrases: Hardy °ø°£, Toeplitz ÀÛ¿ë¼Ò, Hankel ÀÛ¿ë¼Ò,
+Á¤±Ô¼º, ºÎºÐÁ¤±Ô¼º, ¾ÆÁ¤±Ô¼º, $k$-¾ÆÁ¤±Ô¼º.}
+
+\newpage
+
+\leftline{\large{\it 174}\ \ \ \small ÇÐ¹® ¿¬±¸ÀÇ µ¿Çâ°ú ÀïÁ¡ --
+¼öÇÐ}  \vspace{0.8cm}
+
+\noindent ²öÀ» ³íÀÇÇÏ¸é¼­ ±× ¾¾¾ÑÀÌ »Ñ·ÁÁ³´Âµ¥ ÀÌ ¶§°¡ NewtonÀÇ
+`ÇÁ¸°Å°ÇÇ¾Æ'°¡ Ãâ°£µÈÁö 25³âÂë Áö³­ ÈÄÀÌ´Ù. Çö´ë¼öÇÐÀÇ ¿ª»ç Ä¡°í ²Ï
+À¯¼­°¡ ±íÀº ÇÐ¹®ÀÌ¶ó ÇÏ°Ú´Ù.
+
+  ±× ÈÄ ¼öÇÐÀÌ ±Þ°ÝÈ÷ ¹ßÀüÇÏ°Ô µÇ°í 19¼¼±â ÃÊÀÇ
+Sturm°ú Liouville¿¡ ÀÇÇØ¼­ ¸Å¿ì °­·ÂÇÑ ÀÌ·ÐÀÌ ¸¸µé¾îÁ³À¸¸ç 1910³â¿¡
+H.\ WeylÀÇ ÀÚ±â¼ö¹Ý ÀÛ¿ë¼Ò¿¡ °üÇÑ Áß¿äÇÑ ¹ß°ßµé°ú 20¼¼±â ÃÊÀÇ F.\
+Volterra, M.\ Riesz, D.\ Hilbert, ±«ÆÃ°ÕÇÐÆÄ, Banach, Mazur,
+Schauder, ±×¸®°í Æú¶õµåÀÇ ¸¹Àº ¼öÇÐÀÚµé¿¡ ÀÇÇÏ¿© Ç³¼ºÇÑ ¿­¸Å°¡
+¿­·È´Ù. ¶Ç 1930³â°ú 1970³â´ë »çÀÌ¿¡ Gelfand, Krein, Naimark,
+Kakutani, Kato, ÇÁ¶û½ºÀÇ Bourbaki ±×·ì, ·ç¸¶´Ï¾ÆÀÇ Colojoara, Foias,
+¹Ì±¹ÀÇ Hille, Phillips, Friedrichs, von Neumann, Paley, Wiener µîÀÌ
+ÀÌ ºÐ¾ßÀÇ ¿¬±¸¸¦ ´õ¿í Ç³¼ºÇÏ°Ô ÇÏ¿´´Ù. ¿À´Ã³¯, ÀÛ¿ë¼Ò ÀÌ·ÐÀÌ
+Çö´ë¼öÇÐ¿¡¼­ Â÷ÁöÇÏ´Â ºñÁßÀº ½Ç·Î ´ë´ÜÇÏ´Ù. ¿ì¼± ¼öÇÐ ºÐ¾ß¿¡¼­¸¸
+º¸´õ¶óµµ Æí¹ÌºÐ¹æÁ¤½Ä·Ð, ±Ù»çÀÌ·Ð, ÀûºÐ¹æÁ¤½Ä·Ð, È®·ü·Ð µî¿¡ ±íÀº
+¿µÇâÀ» ÁÖ°í ÀÖÀ¸¸ç, ÀÀ¿ëºÐ¾ß¿¡¼­´Â ¾çÀÚ¿ªÇÐ, À¯Ã¼¿ªÇÐ, ÀüÀÚ±âÇÐ,
+»ý¸í°øÇÐ µî ´Ù¾çÇÑ ºÐ¾ß·Î ÀÀ¿ëµÇ°í ÀÖ´Ù.
+
+Toeplitz ÀÛ¿ë¼Ò¿¡ ´ëÇÏ¿© ²÷ÀÓ¾øÀÌ °ü½ÉÀÌ Áõ´ëµÇ´Â ÀÌÀ¯´Â Àû¾îµµ µÎ
+°¡Áö°¡ ÀÖ´Ù. Ã¹Â°´Â Toeplitz ÀÛ¿ë¼Ò°¡ ¹°¸®ÇÐ, È®·ü·Ð, Á¤º¸ ¹×
+Á¦¾îÀÌ·Ð, ±× ¹ÛÀÇ ¿©·¯ ºÐ¾ßÀÇ ´Ù¾çÇÑ ¹®Á¦µé°ú ¹ÐÁ¢ÇÑ °ü·ÃÀÌ ÀÖ±â
+¶§¹®ÀÌ¸ç, µÑÂ°´Â Toeplitz ÀÛ¿ë¼Ò°¡ À¯°è ÀÛ¿ë¼ÒÀÇ ÁýÇÕ Áß °¡Àå Å«
+ÁýÇÕÀ¸·Î¼­ ÀÛ¿ë¼Ò ÀÌ·Ð, ÇÔ¼ö·Ð, Banach ´ë¼ö ÀÌ·Ð µîÀÇ ÁÖÁ¦µé »çÀÌÀÇ
+¸Å·ÂÀûÀÎ »óÈ£ ¿¬°ü¼ºÀ» º¸¿©ÁÖ°í Ç³ºÎÇÑ ¿¹µéÀ» Á¦°øÇÏ±â ¶§¹®ÀÌ´Ù.
+
+ÇÑÆí, 1950³â¿¡´Â Paul Halmos°¡ ¾ÆÁ¤±Ô¼º(hyponormality)°ú
+ºÎºÐÁ¤±Ô¼º\newline\noindent(subnormality)À» µµÀÔÇÏ¿´´Âµ¥, ±× ÀÌÈÄ·Î
+¾ÆÁ¤±Ô¼º°ú ºÎºÐÁ¤±Ô¼º ÀÌ·ÐÀº ÀÛ¿ë¼Ò·Ð¿¡¼­ ±¤¹üÀ§ÇÏ°Ô ¿¬±¸µÇ¾î ¸Å¿ì
+ÈÇ¸¢ÇÑ ÀÌ·ÐÀ¸·Î ÀÚ¸®¸¦ Àâ¾Ò´Ù. ±×·± ÀÇ¹Ì¿¡¼­, ´ÙÀ½ ¹®Á¦´Â Èï¹Ì·Ó°í
+¸Å·ÂÀûÀÌ´Ù:
+
+\vspace{.2 cm}\centerline {\it ¾î¶² Toeplitz ÀÛ¿ë¼Ò°¡ ¾ÆÁ¤±ÔÀÎ°¡? ¶Ç
+ºÎºÐÁ¤±ÔÀÎ°¡?}\vspace{.2 cm}
+
+ÀÌ ±Û¿¡¼­´Â ÀÌ ¹®Á¦¿¡ ´ëÇÑ ¿ª»ç¿Í ¹ßÀü, °ü·ÃµÈ ¹ÌÇØ°á ¹®Á¦µéÀ»
+Á¦½ÃÇÏ°íÀÚ ÇÑ´Ù.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{.8 cm} {\large\bf 2. ¿¹ºñ ÀÌ·Ð}
+
+\vspace{.5 cm}
+
+ÀÌ  ±Û¿¡¼­´Â ¸ðµç Hilbert °ø°£Àº º¹¼Ò Hilbert °ø°£À¸·Î ÀÌÇØÇÏ¸ç
+$\mathcal{H}$¸¦\linebreak
+
+\rightline{\small ÀÌ¿ì¿µ: Åä¿¡ÇÃ¸®Ã÷ ÀÛ¿ë¼Ò¿¡ ´ëÇÑ ºê¸®Áö ÀÌ·Ð\ \ \
+\large\it 175}
+
+\vspace{.8 cm}
+
+\noindent  °¡»ê Hilbert °ø°£À¸·Î ¾à¼ÓÇÑ´Ù. ¶ÇÇÑ, $\mathcal{B(H)}$´Â
+$\mathcal{H}$ »óÀÇ ¸ðµç À¯°è ¼±ÇüÀÛ¿ë¼ÒÀÇ ÁýÇÕÀÌ¶ó ÇÏ°í
+$\mathcal{K(H)}$´Â ÄÄÆÑÆ® ÀÛ¿ë¼ÒµéÀÇ ÁýÇÕÀÌ¶ó ÇÏÀÚ. ¸¸ÀÏ
+$T\in\mathcal{B(H)}$ÀÌ¸é $T$ÀÇ ½ºÆåÆ®·³(spectrum) $\sigma(T)$°ú Á¡
+½ºÆåÆ®·³(point spectrum) $\sigma_p(T)$Àº ´ÙÀ½°ú °°ÀÌ Á¤ÀÇµÈ´Ù.
+\begin{align*}
+\sigma(T)&:=\{\lambda\in\mathbb{C}: T-\lambda\ \text{°¡ °¡¿ªÀÌ ¾Æ´Ï´Ù}\};\\
+\sigma_p(T)&:=\{\lambda\in\mathbb{C}: T-\lambda\ \text{°¡ ÀÏ´ëÀÏÀÌ ¾Æ´Ï´Ù}\}.
+\end{align*}
+
+
+
+¸¸ÀÏ $U$°¡ $\ell^2$ »óÀÇ ÀÌµ¿ ÀÛ¿ë¼Ò(the unilateral shift)
+$$
+U:=
+\begin{pmatrix}
+0\\
+1&0\\
+&1&0\\&&1&0\\&&&\ddots&\ddots
+\end{pmatrix}
+$$
+ÀÌ¸é $\sigma_p(T)=\emptyset$ÀÌ´Ù. \ ¾çÀÇ À¯°è¼ö¿­
+$\alpha:\alpha_0,\alpha_1,\cdots$ÀÌ ÁÖ¾îÁú ¶§,
+$\ell^2(\mathbb{Z}_+)$ »óÀÇ $\alpha$¿¡ ´ëÇÑ °¡ÁßÀÌµ¿ ÀÛ¿ë¼Ò (the
+unilateral weighted shift) $W_\alpha$´Â ´ÙÀ½°ú °°ÀÌ Á¤ÀÇµÈ´Ù.
+$$
+W_\alpha e_n:=\alpha_n e_{n+1}\quad \hbox{(¸ðµç $n\ge 0$)},
+$$
+¿©±â¿¡¼­ $\{e_n\}_{n=0}^\infty$Àº $\ell^2$¿¡ ´ëÇÑ
+´ÜÀ§Á÷±³±âÀúÀÌ´Ù. ÀÛ¿ë¼Ò $T\in\mathcal{B(H)}$ÀÇ
+¼ö¹ÝÀÛ¿ë¼Ò(adjoint)¸¦ $T^*$·Î ³ªÅ¸³½´Ù. $T$°¡ Á¤±Ô(normal)¶ó ÇÔÀº
+$T^*T=TT^*$ÀÌ°í, ¾ÆÁ¤±Ô(hyponormal)¶ó ÇÔÀº
+ÀÚ±â°¡È¯ÀÚ(self-commutator) $[T^*,T]\equiv T^*T-TT^*\ge 0$ÀÌ°í,
+ºÎºÐÁ¤±Ô(subnormal)¶ó ÇÔÀº $T=N\vert_{\mathcal{H}}$ (¿©±â¿¡¼­,
+$N$Àº ¾î¶² Hilbert °ø°£ $\mathcal{K}\supseteq \mathcal{H}$ »ó¿¡¼­
+Á¤±ÔÀÌ´Ù). ¸í¹éÈ÷, $T$°¡ ºÎºÐÁ¤±ÔÀÌ¸é $T$´Â ¾ÆÁ¤±ÔÀÌ´Ù.
+
+´ÙÀ½Àº ¹®Çå¿¡¼­ Àß ¾Ë·ÁÁø ¾ÆÁ¤±Ô ÀÛ¿ë¼ÒÀÇ ±âº» ¼ºÁúÀÌ´Ù.
+
+\vs{0.3cm}{\bf Proposition 2.0.1.} {\rm (Basic Properties of
+Hyponormal Operators)\cite{Con2}}\label{pro3.4} {\sl Let
+$T\in\mathcal{L(H)}$ be a hyponormal operator. Then we have:
+\begin{itemize}
+\item[\rm(a)] If $T\cong S$ then $S$ is also hyponormal;
+
+\item[\rm(b)] $T-\lambda$ is hyponormal for every
+$\lambda\in\mathbb{C}$;
+
+\item[\rm(c)] If $T\mathcal{M}\subset\mathcal{M}$ then
+$T\vert_\mathcal{M}$ is hyponormal; \end{itemize}}
+
+\newpage
+\leftline{\large{\it 176}\ \ \ \small ÇÐ¹® ¿¬±¸ÀÇ µ¿Çâ°ú ÀïÁ¡ --
+¼öÇÐ}
+
+ \vspace{0.4cm}
+
+{\sl \begin{itemize} \item[\rm(d)] $||T^*h||\le ||Th||$ for all $h$,
+so that $\text{\rm ker}(T-\lambda)\subset \text{\rm
+ker}(T-\lambda)^*$;
+\item[\rm(e)] If $f$ and $g$ are eigenvectors corresponding to
+distinct eigenvalues of $T$ then $f\perp g$; \item[\rm(f)] If
+$\lambda\in\sigma_p(T)$ then $\text{\rm ker}\,(T-\lambda)$ reduces
+$T$; \item[\rm(g)] If $T$ is invertible then $T^{-1}$ is hyponormal;
+\item[\rm(h)] \text{\rm(Stampfli, 1962)} $||T^n||=||T||^n$, so that
+$||T||=r(T)$ {\rm (}$r(\cdot)$ denotes spectral radius{\rm )};
+\item[\rm(i)] $T$ is isoloid, i.e., $\text{\rm
+iso}\,\sigma(T)\subset \sigma_p(T)$; \item[\rm(j)] If $\lambda\notin
+\sigma(T)$ then $\text{\rm dist}(\lambda,\,
+\sigma(T))=||(T-\lambda)^{-1}||^{-1}$. \item[\rm(k)] \text{\rm
+(Berger-Shaw theorem)} If $T$ is cyclic then $\text{\rm
+tr}\,[T^*,T]\le\frac{1}{\pi}\mu(\sigma(T))$; \item[\rm(l)] \text{\rm
+(Putnam's Inequality)} $||\,[T^*,T]\,||\le\frac{1}{\pi}
+\mu(\sigma(T))$.
+\end{itemize} }
+%\end{pro}
+
+
+
+´ÙÀ½µµ ¹®Çå¿¡¼­ Àß ¾Ë·ÁÁø ºÎºÐÁ¤±ÔÀÇ Æ¯¼ºÈ­ÀÌ´Ù.
+
+\vs{0.3cm}{\bf Proposition 2.0.2.} {\rm (A Characterization of
+Subnormality) \cite{Con2}}\label{thm3.5} {\sl If
+$T\in\mathcal{L(H)}$ then the following are equivalent:
+\begin{itemize}
+\item[\rm(a)] $T$ is subnormal;
+\item[\rm(b)] {\rm (Bram-Halmos, 1955)}
+$$
+\begin{pmatrix}
+I&T^*&\hdots& T^{*k}\\
+T& T^*T& \hdots& T^{*k}T\\
+\vdots&\vdots& \ddots& \vdots\\
+T^k& T^*T^k& \hdots& T ^{*k}T^k
+\end{pmatrix}
+\ge 0\qquad\text{(all $k\ge 1$)}.
+$$
+\item[\rm(c)]
+$$
+\begin{pmatrix}
+[T^*,T]&[T^{*2},T]&\hdots&[T^{*k},T]\\
+[T^*,T^2]&[T^{*2},T^2]&\hdots&[T^{*k},T^2]\\
+\vdots&\vdots&\hdots&\vdots\\
+[T^*,T^k]&[T^{*2},T^k]&\hdots&[T^{*k},T^k]
+\end{pmatrix}
+\ge 0\qquad\text{(all $k\ge 1$)}.
+$$  \end{itemize}}
+
+\newpage
+
+\rightline{\small ÀÌ¿ì¿µ: Åä¿¡ÇÃ¸®Ã÷ ÀÛ¿ë¼Ò¿¡ ´ëÇÑ ºê¸®Áö ÀÌ·Ð\ \ \
+\large\it 177} \vspace{.4 cm}
+
+{\sl \begin{itemize}
+\item[\rm(d)] {\rm (Embry, 1973)}  There is a positive
+operator-valued measure $Q$ on some interval $[0,a]\subset
+\mathbb{R}$ such that
+$$
+T^{*n}T^n=\int t^{2n} dQ(t)\quad\text{for all}\ n\ge 0.
+$$
+\end{itemize}}
+%\end{pro}
+
+À§ÀÇ Á¶°Ç (b) (È¤Àº µ¿Ä¡·Î¼­ Á¶°Ç (c))´Â ¾ÆÁ¤±Ô¿Í ºÎºÐÁ¤±Ô »çÀÌÀÇ
+Æ´¿¡ ´ëÇÑ Ãøµµ¸¦ Á¦°øÇÑ´Ù. »ç½Ç, $k=1$¿¡ ´ëÇÑ ¾çÀÇ Á¶°Ç (b)°¡ $T$ÀÇ
+¾ÆÁ¤±Ô¼ºÀÌ°í, ºÎºÐÁ¤±Ô´Â ¸ðµç $k$¿¡ ´ëÇÑ Á¶°Ç (b)ÀÌ´Ù. µû¶ó¼­, (b)¿¡
+ÀÖ´Â $(k+1)\times (k+1)$ ÀÛ¿ë¼Ò Çà·ÄÀÌ ¾çÀÇ Çà·ÄÀÏ ¶§, $T$¸¦
+$k$-¾ÆÁ¤±Ô¶ó°í Á¤ÀÇÇÒ ¼ö ÀÖ´Ù. ±×·¯¸é, Bram-Halmos Æ¯¼ºÈ­´Â $T$°¡
+ºÎºÐÁ¤±ÔÀÌ±â À§ÇÑ ÇÊ¿äÃæºÐÁ¶°ÇÀº ¸ðµç $k$¿¡ ´ëÇÏ¿© $T$°¡
+$k$-¾ÆÁ¤±ÔÀÓÀ» ¸»ÇØÁØ´Ù.
+
+°¡ÁßÀÌµ¿ ÀÛ¿ë¼ÒÀÇ ºÎºÐÁ¤±Ô¼ºÀº Ãøµµ¿Í °ü·ÃµÈ ¸ð¸àÆ® ¹®Á¦·Î ÆÇÁ¤µÉ ¼ö ÀÖ´Ù.
+
+\vs{0.2cm}{\bf Proposition 2.0.2.} {\rm (Berger's
+Theorem)}\label{thm3.6} {\sl Let $T\equiv W_\alpha$ be a weighted
+shift with weight sequence $\alpha\equiv\{\alpha_n\}$ and define the
+moment of $T$ by
+$$
+\gamma_0:=1\quad\text{and}\quad \gamma_n:=\alpha_0^2\alpha_1^2\cdots \alpha_{n-1}^2\ (n\ge 1).
+$$
+Then $T$ is subnormal if and only if there exists a probability
+measure $\nu$ on $[0,||T||^2]$ such that}
+\begin{equation}\label{2.0.1}
+\gamma_n=\int_{[0,||T||^2]} t^{n} d\nu(t)\quad (n\ge 1).
+\end{equation}
+%\end{pro}
+
+\vs{0.2cm} ÇÑÆí,  $T\in\mathcal{B(H)}$°¡ {¾à $k$-¾ÆÁ¤±Ô}(weakly
+$k$-hyponormal)¶ó ÇÔÀº ´ÙÀ½ÀÇ ÁýÇÕ
+$$
+LS((T,T^2,\cdots,T^k)):=\left\{\sum_{j=1}^k \alpha_jT^j: \alpha=
+(\alpha_1,\cdots,\alpha_k)\in {\mathbb C}^k\right\}
+$$
+°¡ ¾ÆÁ¤±Ô ÀÛ¿ë¼Ò·Î ÀÌ·ç¾îÁö´Â °ÍÀÌ´Ù. ¸¸ÀÏ $k=2$ÀÌ¸é, $T$¸¦
+2Â÷-¾ÆÁ¤±Ô (quadratically hyponormal)¶ó ÇÏ°í, $p(T)$°¡ ¸ðµç ´ÙÇ×½Ä
+$p\in{\mathbb C}[z]$¿¡ ´ëÇÏ¿© ¾ÆÁ¤±ÔÀÌ¸é $T$¸¦ ´ÙÇ×Á¤±Ô(polynomially
+hyponormal)¶ó ÇÑ´Ù. ÀÏ¹ÝÀûÀ¸·Î, $k$-¾ÆÁ¤±Ô $\Rightarrow$ ¾à
+$k$-¾ÆÁ¤±ÔÀÌ°í, ±× ¿ªÀº ¼º¸³ÇÏÁö ¾Ê´Â´Ù. ¾à-¾ÆÁ¤±Ô ÀÛ¿ë¼Ò´Â ¾ÆÁ¤±Ô¿Í
+ºÎºÐÁ¤±Ô »çÀÌÀÇ Æ´À» ¿¬°áÇÏ´Â ½Ãµµ¿¡¼­ ¸¹Àº ¿¬±¸°¡ ÀÌ·ç¾îÁ³´Ù.
+
+\newpage\leftline{\large{\it 178}\ \ \ \small ÇÐ¹® ¿¬±¸ÀÇ
+µ¿Çâ°ú ÀïÁ¡ -- ¼öÇÐ}
+
+ \vspace{0.8cm}
+
+ÀÌÁ¦, $P$¸¦ ${\bold L}^2(\mathbb T)\equiv{\bold L}^2$¿¡¼­ ${\bold
+H}^2(\mathbb T)\equiv {\bold H}^2$ À§·ÎÀÇ Á÷±³»ç¿µÀÌ¶ó°í ÇÏÀÚ.
+±×·¯¸é ÇÔ¼ö $\varphi\in{\bold L}^{\infty}(\mathbb T)\equiv {\bold
+L}^{\infty}$¿¡ ´ëÇÏ¿©, ½É¹ú $\varphi$¸¦ °¡Áö´Â Toeplitz ÀÛ¿ë¼Ò
+$T_\varphi$´Â ´ÙÀ½°ú °°ÀÌ Á¤ÀÇµÈ´Ù:
+$$
+T_\varphi f=P(\varphi f)\quad\text{($f\in {\bold H}^2$)}.
+$$
+ÇÑÆí, $\{z^n : n=0,1,2,\cdots \}$ÀÌ ${\bold H}^{2}$ÀÇ Á¤±ÔÁ÷±³±âÀú¶ó
+ÇÏ°í $\varphi\in{\bold L}^{\infty}$°¡ ´ÙÀ½°ú °°Àº Fourier °è¼ö¸¦
+°¡Áø´Ù°í ÇÏÀÚ:
+$$
+\widehat\varphi(n)=\frac{1}{2\pi}\int_{0}^{2\pi} \varphi{\overline z}^n dt
+$$
+±×·¯¸é ±âÀú $\{z^n : n=0,1,2,\cdots\}$¿¡ °üÇÑ $T_\varphi$ÀÇ Çà·Ä $(a_{ij})$´Â ´ÙÀ½°ú °°´Ù:
+$$
+a_{ij}=(T_{\varphi}z^j,z^i)=\frac{1}{2\pi}\int_{0}^{2\pi} \varphi \overline{z}^{i-j} dt=\widehat\varphi(i-j).
+$$
+Áï, $T_\varphi$¿¡ ´ëÇÑ Çà·ÄÀº ´ë°¢¼±ÀÌ ¸ðµÎ ÀÏÁ¤ÇÑ Çà·ÄÀÌ´Ù:
+$$
+(a_{ij})=\begin{pmatrix}
+c_0 & c_{-1}& c_{-2}& c_{-3}& \cdots \\
+c_1 & c_{0}& c_{-1}& c_{-2}& \cdots \\
+c_2 & c_{1}& c_{0}& c_{-1}& \cdots \\
+c_3 & c_{2}& c_{1}& c_{0}& \cdots \\
+\vdots& \ddots& \ddots& \ddots& \ddots
+\end{pmatrix}, \quad \hbox{(¿©±â¼­, $c_{j}=\widehat\varphi(j)$)}:
+$$
+ÀÌ·¯ÇÑ Çà·ÄÀ» Toeplitz Çà·ÄÀÌ¶ó°í ÇÑ´Ù.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\vspace{.8 cm} {\large\bf 3. Toeplitz ÀÛ¿ë¼ÒÀÇ ¾ÆÁ¤±Ô¼º}
+
+\vspace{.5 cm}
+
+
+1988³â¿¡, C. Cowen \cite{Cow3}ÀÇ ¿ì¾ÆÇÏ°í À¯¿ëÇÑ Á¤¸®°¡ ´ÜÀ§¿ø
+${\mathbb T}\subset{\mathbb C}$ÀÇ Hardy °ø°£ $\bold H^2$ »óÀÇ
+Toeplitz ÀÛ¿ë¼ÒÀÇ ¾ÆÁ¤±Ô¼ºÀ» ±×ÀÇ ½É¹ú $\varphi\in \bold
+L^{\infty}$À» ½á¼­ Æ¯¼ºÈ­ÇÏ¿´´Ù. ÀÌ °á°ú´Â ÀÛ¿ë¼Ò ÀÌ·ÐÀ¸·ÎºÎÅÍ
+¶°¿À¸¥ ´ë¼öÀû ¹®Á¦ -- Áï, $T_{\varphi}$°¡ ¾ÆÁ¤±ÔÀÎ°¡? -- ÀÇ ÇØ´äÀÌ
+ÇÔ¼ö $\varphi$¸¦ ¿¬±¸ÇÔÀ¸·Î½á °¡´ÉÇÏ°Ô µÇ¾ú´Ù. Á¤±Ô Toeplitz
+ÀÛ¿ë¼Ò´Â 1960³â´ë¿¡ A.\ Brown°ú P.\,R.\ Halmos \cite{BH}°¡ ±× ½É¹úÀ»
+½á¼­ Æ¯¼ºÈ­ÇÏ¿´´Ù. ±×·±µ¥ ´Ù¼Ò ³î¶ø°Ôµµ ¾ÆÁ¤±Ô Toeplitz ÀÛ¿ë¼ÒÀÇ
+½É¹ú¿¡ ÀÇÇÑ Æ¯¼ºÈ­(CowenÀÇ Á¤¸®)°¡ ¹ß°ßµÇ±â±îÁö ¹«·Á 25³âÀÌ
+Èê·¯°¬´Ù. ÀÌ´Â CowenÀÌ ±×ÀÇ ÇØ¼³³í¹® \cite{Cow2}¿¡¼­ ÁöÀûÇÏ¿´µíÀÌ
+¾Æ¸¶µµ 1970³â´ë¿Í 1980³â´ë¿¡ ºÎºÐÁ¤±Ô\linebreak
+
+\newpage
+\rightline{\small ÀÌ¿ì¿µ: Åä¿¡ÇÃ¸®Ã÷ ÀÛ¿ë¼Ò¿¡ ´ëÇÑ ºê¸®Áö ÀÌ·Ð\ \ \
+\large\it 179}
+\vspace{.8 cm}
+
+
+\noindent  Toeplitz ÀÛ¿ë¼Ò¿¡ ´ëÇÑ ¶ß°Å¿î ¿¬±¸ ºÐÀ§±â°¡ ¾ÆÁ¤±ÔÀÇ
+¿¬±¸¸¦ µÚ´Ê°Ô ÇßÀ» °ÍÀÌ¶ó´Â ÃßÃøÀÌ °¡´ÉÇÏ´Ù. CowenÀÇ Á¤¸®¿¡ ÀÇÇÑ
+¾ÆÁ¤±Ô¼ºÀÇ Æ¯¼ºÈ­´Â $\bold H^{\infty}$ÀÇ ´ÜÀ§±¸¿¡¼­ÀÇ ¾î¶²
+ÇÔ¼ö¹æÁ¤½ÄÀ» Çª´Â °ÍÀÌ´Ù. ±×·¯³ª ÀÌ´Â ÀÌ·ÐÀûÀ¸·Î °¡´ÉÇÏ´Ù´Â °ÍÀÌÁö
+½ÇÁ¦·Î ÀÌ ÇÔ¼ö¹æÁ¤½ÄÀ» Çª´Â ¹®Á¦´Â ¹«Ã´ ¾î·Æ´Ù. ÂüÀ¸·Î, ½É¹ú
+$\varphi$¿¡ °üÇÑ ¾î¶² Á¦ÇÑÀÌ ¾ø´Ù¸é $T_{\varphi}$ÀÇ ¾ÆÁ¤±Ô¼ºÀ»
+$\varphi$ÀÇ Fourier °è¼ö·Î ³ªÅ¸³½´Ù´Â °ÍÀº ¾îÂ¼¸é ºÒ°¡´ÉÇÒ ¼öµµ
+ÀÖ´Ù. ÀÌ Àý¿¡¼­´Â ÀÌ ¿¬±¸ÀÇ ÃÖ±ÙÀÇ ¹ßÀü »óÈ²À» »ìÆìº»´Ù.
+
+\vspace{.3 cm} {\bf 3.1. CowenÀÇ Á¤¸®} \vspace{.3 cm}
+
+ÀÌ Àý¿¡¼­´Â Cowen Á¤¸®¸¦ Á¦½ÃÇÑ´Ù. CowenÀÇ Á¤¸®´Â Toeplitz ÀÛ¿ë¼ÒÀÇ
+¾ÆÁ¤±Ô¼º¿¡ ´ëÇÑ ÀÛ¿ë¼Ò·ÐÀÇ ¹®Á¦¸¦ ±× ½É¹ú°ú °ü·ÃµÈ ÇÔ¼ö¹æÁ¤½ÄÀÇ ÇØ¸¦
+¹ß°ßÇÏ´Â ¹®Á¦·Î ¹Ù²Ù¾î ÁØ´Ù. ÀÌ¿Í °°Àº Á¢±Ù¹ýÀº Toeplitz ÀÛ¿ë¼Ò
+¿¬±¸ÀÇ ¸¹Àº ³í¹®¿¡ µîÀåÇÏ¿´´Ù.
+
+\vs{0.3cm} ´ÙÀ½ÀÇ µÎ °á°ú´Â \cite{BH}¿¡¼­ ¾Ë·ÁÁø »ç½ÇÀÌ´Ù.
+
+\vs{0.3cm}{\bf Lemma 3.1.1.} {\sl A necessary and sufficient
+condition that two Toeplitz operators commute is that either both be
+analytic or both be co-analytic or one be a linear function of the
+other.}
+
+\vs{0.3cm}{\bf Theorem 3.1.2.} {\rm(Brown-Halmos) \cite{BH}} {\sl
+Normal Toeplitz operators are translations and rotations of
+hermitian Toeplitz operators, i.e.,
+$$
+T_\varphi\ \mbox{normal}\ \Longleftrightarrow\ \exists\ \alpha,\beta\in\mathbb{C},
+\ \mbox{a real valued}\ \psi\in {\bold L}^{\infty}\ \mbox{s.t.}\
+T_{\varphi}=\alpha T_{\psi} +\beta 1.
+$$}
+
+ÇÔ¼ö $\psi\in{\bold L}^{\infty}$¿¡ ´ëÇÏ¿©, ${\bold H}^2$ »óÀÇ Hankel
+ÀÛ¿ë¼Ò $H_\psi$´Â ´ÙÀ½°ú °°ÀÌ Á¤ÀÇµÈ´Ù:
+$$
+H_{\psi}f=J(I-P)(\psi f)\quad (f\in {\bold H}^{2}),
+$$
+¿©±â¿¡¼­ $J$\,´Â ¾Æ·¡¿Í °°ÀÌ Á¤ÀÇµÈ $({{\bold H}^2})^{\perp}$\,¿¡¼­
+${\bold H}^2$ À§·ÎÀÇ À¯´ÏÅÍ¸® ÀÛ¿ë¼ÒÀÌ´Ù:
+$$
+J(z^{-n})=z^{n-1}\ (n\ge 1).
+$$
+\medskip
+¸¸ÀÏ $\psi$°¡ Fourier ±Þ¼ö $\psi:=\sum_{n=-\infty}^{\infty}a_n
+z^n$·Î Ç¥ÇöµÇ¸é, $H_\psi$ÀÇ Çà·ÄÀº ´ÙÀ½°ú °°ÀÌ ÁÖ¾îÁø´Ù:
+
+\bigskip\bigskip
+
+\newpage\leftline{\large{\it 180}\ \ \ \small ÇÐ¹® ¿¬±¸ÀÇ
+µ¿Çâ°ú ÀïÁ¡ -- ¼öÇÐ}  \vspace{0.3cm}
+
+$$
+H_\psi \equiv
+\begin{pmatrix}
+a_{-1}&a_{-2}&a_{-3}&\cdots\\
+a_{-2}&a_{-3}& & \\
+a_{-3}& &\ddots&  \\
+\vdots& & &\ddots \\
+\end{pmatrix}.
+$$
+
+´ÙÀ½Àº Hankel ÀÛ¿ë¼ÒÀÇ ±âº» ¼ºÁúµéÀÌ´Ù.
+\begin{itemize}
+\item[1.]  $H_{\psi}^*=H_{{\psi}^*}$;
+\item[2.]  $H_{\psi}U=U^*H_{\psi}$ ($U$´Â ÀÌµ¿ÀÛ¿ë¼Ò);
+\item[3.]  ${\rm Ker}H_{\psi}=\{0\}$ ¶Ç´Â $\theta{\bold H}^2$ (¾î¶² ³»Àû(inner)ÇÔ¼ö $\theta$) (Beurling's theorem¿¡ ÀÇÇØ);
+\item[4.]  $T_{\varphi\psi}-T_{\varphi}T_{\psi}=H_{\overline{\varphi}}^*H_{\psi}$;
+\item[5.]  $H_{\varphi}T_{h}=H_{\varphi h}=T_{h^*}^*H_{\varphi}\ (h\in{\bold H}^{\infty})$.
+\end{itemize}
+
+1988³â¿¡ Carl CowenÀÌ Toeplitz ÀÛ¿ë¼Ò $T_\varphi$ÀÇ ¾ÆÁ¤±Ô¼ºÀ» ½É¹ú
+$\varphi$¿¡ ÀÇÇØ Æ¯¼ºÈ­ÇÏ´Â µ¥ ¼º°øÇÏ¿´´Ù.
+
+\vs{0.2cm}{\bf Theorem 3.1.3.} (Cowen's Theorem)\ [7]\ {\sl If
+$\varphi\in{\bold L}^{\infty}$ is such that \linebreak
+$\varphi=\overline{g} +f$ {\rm (}$f,g\in {\bold H}^2${\rm )}, then
+$$
+T_\varphi\ \mbox{is hyponormal}\ \Longleftrightarrow\ g=c+T_{\overline{h}}f
+$$
+for some constant $c$ and some $h\in{\bold
+H}^{\infty}(\mathbb{D})$ with $||h||_{\infty}\le 1$.}
+%\end{thm}
+
+
+\vs{0.2cm}{\bf Theorem 3.1.4.} (Nakazi-Takahashi Variation) [23]
+{\sl For $\varphi\in{\bold L}^{\infty}$, put
+$$
+\mathcal{E} (\varphi):=\{k\in{\bold H}^{\infty}:||k||_{\infty}\le 1\
+\mbox{and}\ \varphi-k{\overline{\varphi}}\in{\bold H}^{\infty}\}.
+$$
+Then $T_\varphi$ is hyponormal if and only if} $\mathcal{E}
+(\varphi)\neq\varnothing$.
+%\end{thm}
+
+
+\vspace{.3 cm}
+
+{\bf 3.2. »ï°¢´ÙÇ× ½É¹úÀÇ °æ¿ì} \vspace{.3 cm}
+
+ÀÌ ºÐÀý¿¡¼­´Â »ï°¢´ÙÇ× ½É¹úÀ» °¡Áø Toeplitz ÀÛ¿ë¼ÒÀÇ ¾ÆÁ¤±Ô¼ºÀ»
+»ìÆìº»´Ù. ÀÌ¸¦ À§ÇÏ¿©  ÆØÃ¢ÀÌ·Ð(dilation theory)À» ¸ÕÀú »ìÆìº»´Ù.
+¸¸ÀÏ $B=\begin{pmatrix} A&*\\ *&* \end{pmatrix}$ÀÌ¸é, $B$¸¦ $A$ÀÇ
+ÆØÃ¢ÀÌ¶ó ÇÏ°í, $A$¸¦ $B$ÀÇ Ãà¼Ò¶ó°í ÇÑ´Ù. ¸ðµç ¼öÃà \linebreak
+
+\rightline{\small ÀÌ¿ì¿µ: Åä¿¡ÇÃ¸®Ã÷ ÀÛ¿ë¼Ò¿¡ ´ëÇÑ ºê¸®Áö ÀÌ·Ð\ \ \
+\large\it 181}
+
+\vspace{.8 cm} \noindent ÀÛ¿ë¼Ò(contraction)´Â À¯´ÏÅÍ¸® ÆØÃ¢À»
+°¡Áø´Ù´Â °ÍÀÌ Àß ¾Ë·ÁÁ® ÀÖ´Ù. ½ÇÁ¦·Î, $||A||\le 1$ÀÌ¸é,
+$$
+B\equiv
+\begin{pmatrix} A&(I-AA^*)^{\frac{1}{2}}\\(I-A^*A)^{\frac{1}{2}}&-A^*\end{pmatrix}
+$$
+´Â À¯´ÏÅÍ¸®ÀÌ´Ù. ÇÑÆí, ¸ðµç ÀÚ¿¬¼ö $n$¿¡ ´ëÇÏ¿© $B^n$ÀÌ $A^n$ÀÇ
+ÆØÃ¢ÀÌ¸é, ÀÛ¿ë¼Ò $B$¸¦ $A$ÀÇ °­ÆØÃ¢(strong dilation)ÀÌ¶ó°í ÇÑ´Ù.
+µû¶ó¼­ ¸¸ÀÏ $B$°¡ $A$ÀÇ °­ÆØÃ¢ÀÌ¸é, $B$´Â $B=\begin{pmatrix} A &0\\
+*&*\end{pmatrix}$ÀÇ ²Ã·Î ³ªÅ¸³­´Ù. Á¾Á¾ $B$¸¦ $A$ÀÇ
+¸®ÇÁÆÃ(lifting)ÀÌ¶ó ÇÏ°í, $A$°¡ $B$·Î ½Â°­µÈ´Ù°í ¸»ÇÑ´Ù. ¸ðµç ¼öÃà
+ÀÛ¿ë¼Ò°¡ µîÀå(isometric) °­ÆØÃ¢À» °¡Áø´Ù´Â °ÍÀÌ ¾Ë·ÁÁ® ÀÖ´Ù. »ç½Ç
+¼öÃà ÀÛ¿ë¼Ò $A$ÀÇ ÃÖ¼Ò µîÀå °­ÆØÃ¢Àº ´ÙÀ½°ú °°ÀÌ ÁÖ¾îÁø´Ù:
+$$
+B\equiv
+\begin{pmatrix}A&0&0&0&\cdots\\
+(I-A^*A)^{\frac{1}{2}}&0&0&0&\cdots\\
+0&I&0&0&\cdots\\
+0&0&I&0&\cdots\\
+\vdots&\vdots&\vdots&\ddots&
+\end{pmatrix}.
+$$
+
+±×·¯¸é  ´ÙÀ½ÀÇ À¯¸íÇÑ Á¤¸®¸¦ ¾òÀ» ¼ö ÀÖ´Ù.
+
+
+\vs{0.2cm}{\bf Theorem 3.2.1.} (Commutant Lifting Theorem) {\rm
+\cite[p.658]{GGK}} {\sl  Let $A$ be a contraction and $T$ be a
+minimal isometric dilation of $A$. If $BA=AB$ then there exists a
+dilation $S$ of $B$ such that}
+$$
+S=\begin{pmatrix} B &0\\ *&*\end{pmatrix},\quad ST=TS,\quad \mbox{and}\quad ||S||=||B||.
+$$
+%\end{thm}
+
+
+ÀÌÁ¦ ´ÙÀ½ÀÇ º¸°£¹®Á¦(interpolation problem) -- ¼ÒÀ§ Carath\'
+eodory-Schur º¸°£¹®Á¦·Î ºÒ¸² -- (CSIP)¸¦ »ìÆìº¸ÀÚ. º¹¼Ò¼ö $c_0,
+\cdots, c_{N-1}$ÀÌ ÁÖ¾îÁú ¶§, ´ÙÀ½À» ¸¸Á·ÇÏ´Â $\mathbb{D}$ »óÀÇ
+ÇØ¼®ÇÔ¼ö $\varphi$¸¦ Ã£¾Æ¶ó:
+\begin{itemize}
+\item[(i)] $\widehat{\varphi}(j)=c_j\ (j=0,\cdots, N-1)$;
+\item[(ii)] $||\varphi||_{\infty}\le 1$.
+\end{itemize}
+
+±×·¯¸é CSIPÀÇ ÇØ´Â ´ÙÀ½°ú °°ÀÌ ÁÖ¾îÁø´Ù.
+
+\newpage\leftline{\large{\it 182}\ \ \ \small ÇÐ¹® ¿¬±¸ÀÇ
+µ¿Çâ°ú ÀïÁ¡ -- ¼öÇÐ}
+
+\vspace{0.8cm}
+
+
+
+{\bf Theorem 3.2.2.} {\rm \cite{FF}} {\sl
+$$
+\mbox{CSIP is solvable}\ \Longleftrightarrow\ C\equiv
+\begin{pmatrix}
+c_0\\
+c_1&c_0&&\mbox{\rm{\Huge{O}}}\\
+c_2&c_1&c_0\\
+\vdots&\vdots&\ddots&\ddots\\
+c_{N-1}&c_{N-2}&\cdots&c_1&c_0
+\end{pmatrix}\ \mbox{is a contraction.}
+$$
+Moreover, if $\varphi$ is a solution if and only if  $T_\varphi$
+is a contractive lifting of $C$ which commutes with the unilateral
+shift.}
+%\end{thm}
+
+\vs{0.3cm} ÀÌÁ¦ $\varphi$°¡ ´ÙÀ½°ú °°Àº »ï°¢´ÙÇ×ÇÔ¼ö¶ó°í ÇÏÀÚ:
+$$
+\varphi(z)=\sum_{n=-N}^{N} a_{n}z^n\ (a_{N}\neq 0).
+$$
+ÇÔ¼ö $k\in{\bold H}^{\infty}$°¡ $\varphi -k\overline{\varphi}\in {\bold H}^{\infty}$
+¸¦ ¸¸Á·ÇÏ¸é, $k$´Â ´ÙÀ½À» ¸¸Á·ÇØ¾ß ÇÑ´Ù.
+\begin{equation}\label{3.2.1}
+k\sum_{n=1}^{N}\overline{a_n} z^{-n} -\sum_{n=1}^{N}a_{-n}z^{-n}\in{\bold H}^{\infty}.
+\end{equation}
+½Ä (\ref{3.2.1})·ÎºÎÅÍ ¿ì¸®´Â Fourier °è¼ö $\widehat{k}(0),\cdots
+,\widehat{k}(N-1)$°¡ $\widehat{k}(n)=c_n\ (n=0,1,\cdots,N-1)$À»
+¸¸Á·ÇÏµµ·Ï ÇÏ´Â °ÍÀ» ±¸ÇÒ ¼ö ÀÖ´Ù. ¿©±â¿¡¼­,
+$c_0,c_1,\cdots,\linebreak c_{N-1}$Àº $\varphi$ÀÇ °è¼ö·ÎºÎÅÍ
+À¯ÀÏÇÏ°Ô ´ÙÀ½ °ü°è½ÄÀ» ½á¼­ ¾ò¾îÁø´Ù.
+\begin{equation}\label{3.2.2}
+\begin{pmatrix}c_0\\c_1\\ \vdots\\ \vdots\\c_{N-1}\end{pmatrix}=
+\begin{pmatrix}\overline{a_1}&\overline{a_2}&\overline{a_3}&\cdots&\overline{a_N}\\
+\overline{a_2}&\overline{a_3}&\hdots&\cdot\\
+\overline{a_3}&\hdots&\cdots\\
+\vdots&\cdots & &\mbox{{\Huge{O}}}\\
+\overline{a_N}
+\end{pmatrix}^{-1}
+\begin{pmatrix}
+a_{-1}\\ a_{-2}\\ \vdots\\ \vdots\\ a_{-N}
+\end{pmatrix}.
+\end{equation}
+µû¶ó¼­, ¸¸ÀÏ $k(z)=\sum_{j=0}^{\infty} c_{j}z^j$°¡ ${\bold
+H}^{\infty}$¿¡ ¼ÓÇÏ¸é ´ÙÀ½ÀÌ ¼º¸³ÇÑ´Ù.
+$$
+\varphi -k\overline{\varphi}\in {\bold H}^{\infty}\ \Longleftrightarrow
+\ c_0,c_1,\cdots ,c_{N-1}\mbox{ÀÌ (\ref{3.2.2})¿¡ ÀÇÇØ ÁÖ¾îÁø´Ù}.
+$$
+±×·¯¸é  CowenÀÇ Á¤¸®¿¡ ÀÇÇØ, ¸¸ÀÏ $ c_0,c_1,\cdots ,c_{N-1}$ÀÌ
+(\ref{3.2.2})À¸·Î ÁÖ¾îÁö¸é,\linebreak $T_\varphi$ÀÇ ¾ÆÁ¤±Ô¼ºÀº
+´ÙÀ½À» ¸¸Á·ÇÏ´Â ÇÔ¼ö $k\in{\bold H}^{\infty}$ÀÇ Á¸Àç¿Í µ¿Ä¡ÀÌ´Ù:
+$$
+\begin{cases}\widehat{k}(j)=c_j\ (j=0,\cdots , N-1)\\||k||_{\infty}\le 1
+\end{cases}
+$$
+
+
+\newpage\rightline{\small ÀÌ¿ì¿µ: Åä¿¡ÇÃ¸®Ã÷ ÀÛ¿ë¼Ò¿¡ ´ëÇÑ ºê¸®Áö ÀÌ·Ð\ \ \
+\large\it 183} \vspace{.8 cm}
+
+
+ÀÌ´Â Á¤È®È÷ CSIP¿Í °°Àº ¹®Á¦ÀÌ´Ù. µû¶ó¼­ ´ÙÀ½À» Áï½Ã ¾ò´Â´Ù.
+
+
+\vs{0.2cm}{\bf Theorem 3.2.3.} {\sl If $\varphi(z)=\sum_{n=-N}^{N}
+a_{n}z^n$, where $a_N\neq 0$ and if $c_0,c_1,\cdots,\linebreak
+c_{N-1}$ are given by (\ref{3.2.2}) then
+$$
+T_\varphi\ \mbox{is hyponormal}\ \Longleftrightarrow\ C\equiv
+\begin{pmatrix}
+c_0\\
+c_1&c_0&&\mbox{\rm{\Huge{O}}}\\
+c_2&c_1&c_0\\
+\vdots&\vdots&\ddots&\ddots\\
+c_{N-1}&c_{N-2}&\cdots&c_1&c_0
+\end{pmatrix}\ \mbox{is a contraction.}
+$$}
+%\end{thm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vs{0.3cm} { \bf 3.3 À¯¸®ÇÔ¼ö ½É¹úÀÇ °æ¿ì}
+
+\vs{0.3cm} ÇÔ¼ö $\varphi\in \bold L^\infty$°¡ À¯°èÇü(bounded
+type)ÀÌ¶ó ÇÔÀº $\bold H^\infty (\mathbb{D})$ »óÀÇ ´ÙÀ½À» ¸¸Á·ÇÏ´Â
+ÇÔ¼ö $\psi_1, \psi_2$°¡ Á¸ÀçÇÒ ¶§ÀÌ´Ù:
+$$
+\varphi(z)=\frac{\psi_1(z)}{\psi_2(z)}\quad\hbox{(°ÅÀÇ ¸ðµç $z\in\mathbb{T}$¿¡ ´ëÇÏ¿©)}
+$$
+¸í¹éÈ÷ À¯¸®ÇÔ¼ö´Â À¯°èÇüÀÌ´Ù. ÀÌÁ¦, $\theta$°¡ ³»ÀûÇÔ¼ö(inner
+function)¶ó ÇÏÀÚ. ¸¸ÀÏ $\theta$°¡ ´ÙÀ½ÀÇ À¯ÇÑ Blaschke °ö(finite
+Blaschke product)ÀÌ¸é,
+$$
+\theta(z)=e^{i\xi}\prod_{j=1}^n
+\frac{z-\beta_j}{1-\overline{\beta_j}z}\quad \hbox{($|\beta_j|<1$,
+$j=1,\cdots,n$)},
+$$
+$\theta$ÀÇ Â÷¼ö(degree) $\text{deg}(\theta)$´Â °³ ´ÜÀ§¿øÆÇ $\mathbb
+D$ ¾ÈÀÇ ±ÙÀÇ °³¼ö·Î Á¤ÀÇµÇ¸ç, ±×·¸Áö ¾ÊÀ¸¸é ¹«ÇÑ´ë·Î Á¤ÀÇÇÑ´Ù. ÀÌÁ¦,
+³»ÀûÇÔ¼ö $\theta$¿¡ ´ëÇÏ¿© ´ÙÀ½°ú °°ÀÌ ¾²ÀÚ:
+$$
+\mathcal H(\theta):=\bold H^2 \ominus \theta \bold H^2.
+$$
+
+±×·¯¸é, $f\in \bold H^2$¿¡ ´ëÇÏ¿© ´ÙÀ½ÀÌ ¼º¸³ÇÑ´Ù.
+
+\begin{align*}
+\langle [T_\varphi^*,T_\varphi]f,f\rangle
+=||T_\varphi f||^2-||T_{\overline{\varphi}}f||^2
+&=||\varphi f||^2-||H_\varphi f||^2-(||\overline{\varphi} f||^2-||H_{\overline{\varphi}} f||^2)\\
+&=||H_{\overline\varphi}f||^2-||H_\varphi f||^2.
+\end{align*}
+
+µû¶ó¼­ ´ÙÀ½À» ¾ò´Â´Ù.
+$$
+T_\varphi\ \text{hyponormal}\ \Longleftrightarrow\
+||H_{\overline\varphi} f||\ge ||H_\varphi f||\quad (f\in \bold H^2).
+$$
+\newpage\leftline{\large{\it 184}\ \ \ \small ÇÐ¹® ¿¬±¸ÀÇ
+µ¿Çâ°ú ÀïÁ¡ -- ¼öÇÐ}
+
+
+\vspace{0.8cm}
+
+ÀÌÁ¦ $\varphi = \overline{g}+ f \in \bold L^{\infty}$ ($f,g\in\bold
+H^2$)¶ó ÇÏÀÚ. ±×·¯¸é $H_\varphi U=U^*H_\varphi$
+($U=$ÀÌµ¿ÀÛ¿ë¼Ò)ÀÌ¹Ç·Î, Beurling Á¤¸®·ÎºÎÅÍ ´ÙÀ½À» ¾ò´Â´Ù.
+$$
+\text{ker}\, H_{\overline f}=\theta_0 \bold H^2\quad\text{and}\quad \text{ker}\,H_{\overline g}
+=\theta_1 \bold H^2\quad\text{(¾î¶² ³»ÀûÇÔ¼ö $\theta_0, \theta_1$¿¡ ´ëÇÏ¿©)}.
+$$
+¸¸ÀÏ $T_\varphi$°¡ ¾ÆÁ¤±ÔÀÌ¸é, $||H_{\overline f} h||\ge ||H_{\overline g} h||$
+($h\in \bold H^2$)ÀÌ¹Ç·Î ´ÙÀ½À» ¾ò´Â´Ù.
+\begin{equation}\label{3.2.4}
+\theta_0 \bold H^2=\text{ker}\, H_{\overline f}\subset \text{ker}\, H_{\overline g}=\theta_1 \bold H^2.
+\end{equation}
+ÀÌ´Â $\theta_1$°¡ $\theta_0$À» ³ª´«´Ù´Â °ÍÀ» ÀÇ¹ÌÇÏ¸ç, µû¶ó¼­
+$\theta_0=\theta_1\theta_2$ ($\theta_2$´Â ³»ÀûÇÔ¼ö). ÇÑÆí, ÇÔ¼ö
+$f\in \bold H^2$¿¡ ´ëÇÏ¿© $\overline{f}$°¡ À¯°èÇüÀÌ¸é, Áï,
+$\overline{f}=\psi_2/\psi_1$ ($\psi_i\in \bold H^\infty$)ÀÌ¸é
+$\psi_1$ÀÇ ¿ÜÀû ºÎºÐ(outer part)À»  $\psi_2$·Î ³ª´©¾î
+$\overline{f}=\psi/\theta$ ($\theta$´Â ³»ÀûÇÔ¼ö, $\psi\in \bold
+H^\infty$)ÀÌ´Ù. µû¶ó¼­, $f=\theta\overline{\psi}$·Î ³ªÅ¸³­´Ù. ±×·¯³ª
+$f\in \bold H^2$ÀÌ¹Ç·Î, $\psi\in\mathcal{H}(\theta)$ÀÌ´Ù. µû¶ó¼­
+$f\in \bold H^2$ÀÌ°í $\overline{f}$ÀÌ À¯°èÇüÀÌ¸é ´ÙÀ½°ú °°ÀÌ
+¾²¿©Áø´Ù.
+\begin{equation}\label{3.2.5}
+f=\theta\overline{\psi}\quad (\theta\ \text{inner},\ \psi\in \mathcal{H}(\theta)).
+\end{equation}
+±×·¯¹Ç·Î ¸¸ÀÏ $\varphi=\overline g+f$ÀÌ À¯°èÇüÀÌ°í $T_\varphi$°¡
+¾ÆÁ¤±ÔÀÌ¸é, (\ref{3.2.4})¿Í (\ref{3.2.5})¿¡ ÀÇÇÏ¿© ´ÙÀ½°ú °°ÀÌ ¾µ ¼ö
+ÀÖ´Ù:
+$$
+f=\theta_1\theta_2\overline{a}\quad\text{and}\quad g=\theta_1\overline b,
+$$
+(¿©±â¿¡¼­, $a\in \mathcal{H}(\theta_1\theta_2)$,
+$b\in\mathcal{H}(\theta_1)$ÀÌ´Ù).
+
+
+´ÙÀ½ º¸Á¶Á¤¸®´Â \cite{CuL1}À¸·ÎºÎÅÍ ³ª¿Â´Ù.
+
+\vs{0.2cm}{\bf Lemma 3.3.1.} {\sl Let $\varphi = \overline{g}+ f \in
+\bold L^{\infty}$, where $f$ and $g$ are in $\bold H^2$. Assume that
+\begin{equation}\label{3.2.6}
+f= \theta_1 \theta_2 \overline{a}\quad\text{and}\quad g = \theta_1
+\overline{b}
+\end{equation}
+for $a \in \mathcal H (\theta_1 \theta_2)$ and $b \in \mathcal H
+(\theta_1)$. Let $\psi: = \theta_1 \overline{P_{ \mathcal H
+(\theta_1)}(a)} + \overline{g}$. Then $T_{\varphi}$ is hyponormal
+if and only if $T_{\psi}$ is.}
+%\end{lem}
+
+\vs{0.2cm} Lemma 3.3.1ÀÇ °üÁ¡¿¡¼­, À¯°èÇü ½É¹úÀ» °¡Áø Toeplitz
+ÀÛ¿ë¼ÒÀÇ ¾ÆÁ¤±Ô¼ºÀ» ¿¬±¸ÇÒ ¶§, ½É¹ú $\varphi= \overline{g}+ f \in
+\bold L^{\infty}$´Â ´ÙÀ½°ú °°ÀÌ ¾µ ¼ö ÀÖ´Ù.
+\begin{equation}\label{3.2.7}
+f=\theta \overline{a},\quad \quad g=\theta \overline{b},
+\end{equation}
+
+\newpage\rightline{\small ÀÌ¿ì¿µ: Åä¿¡ÇÃ¸®Ã÷ ÀÛ¿ë¼Ò¿¡ ´ëÇÑ ºê¸®Áö ÀÌ·Ð\ \ \
+\large\it 185}
+
+ \vspace{.8 cm} \noindent (¿©±â¿¡¼­, $\theta$´Â
+³»ÀûÇÔ¼öÀÌ°í $a,b \in \mathcal H (\theta)$¿Í $\theta$\,´Â ¼­·Î
+¼ÒÀÌ´Ù). ÇÑÆí, $f \in \bold H^{\infty}$¸¦ À¯¸®ÇÔ¼ö¶ó°í ÇÏÀÚ. ±×·¯¸é
+´ÙÀ½°ú °°ÀÌ ¾µ ¼ö ÀÖ´Ù.
+$$
+f=p_m(z)+\sum_{i=1}^n \sum_{j=0}^{l_i -1}
+\frac{a_{ij}}{(1-\overline{\alpha_i}z)^{l_i -j}} \quad
+(0<|\alpha_i|<1),
+$$
+(¿©±â¿¡¼­, $p_m(z)$´Â Â÷¼ö°¡ $m$ÀÎ ´ÙÇ×½ÄÀÌ´Ù). ÀÌÁ¦ $\theta$°¡
+´ÙÀ½°ú °°Àº À¯ÇÑ Blaschke °öÀÌ¶ó°í ÇÏÀÚ:
+$$
+\theta=z^{m} \prod_{i=1}^{n} \left(\frac{z- \alpha_i}{1- \overline{\alpha_i}z}\right)^{l_i}.
+$$
+´ÙÀ½À» °üÂûÇÏÀÚ.
+$$
+\frac{a_{ij}}{1-\overline{\alpha_i}z}=
+\frac{\overline{\alpha_i}a_{ij}}{1 - |\alpha_i|^2}
+\Bigl(\frac{z-\alpha_i}{1- \overline{\alpha_i}z}
++\frac{1}{\overline{\alpha_i}} \Bigr).
+$$
+µû¶ó¼­ $f \in \mathcal H (z\theta)$ÀÌ´Ù. ÀÌÁ¦ $a := \theta
+\overline{f}$¶ó ÇÏ¸é, $a \in \mathcal H (z \theta)$ÀÌ°í  $f= \theta
+\overline{a}$ÀÌ´Ù. µû¶ó¼­ ¸¸ÀÏ $\varphi = \overline{g} + f \in \bold
+L^{\infty}$ ($f,g$´Â À¯¸®ÇÔ¼ö)ÀÌ°í $T_{\varphi}$°¡ ¾ÆÁ¤±ÔÀÌ¸é ´ÙÀ½°ú
+°°ÀÌ ¾µ ¼ö ÀÖ´Ù.
+$$
+f=\theta \overline{a},\quad\quad g=\theta \overline{b}
+$$
+($\theta$\,´Â À¯ÇÑ Blaschke °öÀÌ°í $\theta (0)=0$, $a,b \in \mathcal
+H (\theta)$). ÀÌÁ¦ $\theta$\,¸¦ Â÷¼ö $d$\;ÀÇ À¯ÇÑ Blaschke °öÀÌ¶ó
+ÇÏ¸é ´ÙÀ½°ú °°ÀÌ ¾µ ¼ö ÀÖ´Ù.
+\begin{equation}\label{3.2.8}
+\theta = e^{i \xi} \prod_{i=1}^n B_i ^{n_i},
+\end{equation}
+
+\noindent (¿©±â¿¡¼­, $B_i(z) := \frac{z- \alpha_i}{1-
+\overline{\alpha_i}z}$, $|\alpha_i| < 1$, $n_i \geq 1$,
+$\sum_{i=1}^n n_i =d$). ±×¸®°í $\theta =e^{i\xi} \prod_{j=1}^d B_j
+$¶ó ÇÏ°í $\theta$\,ÀÇ °¢ ±ÙÀÌ ±×ÀÇ °è¼ö(multiplicity)¸¸Å­ ¹Ýº¹µÈ´Ù°í
+ÇÏÀÚ. ±×·¯¸é ÀÌ Blaschke °öÀº Á¤È®È÷ (\ref{3.2.8})¿¡ ÀÖ´Â Blaschke
+°ö°ú °°´Ù. ´ÙÀ½°ú °°ÀÌ µÎÀÚ.
+\begin{equation}\label{3.2.9}
+\phi_j :=\frac{d_j}{1- \overline{\alpha_j}z}\,B_{j-1}B_{j-2} \cdots
+B_1 \quad (1 \leq j \leq d)
+\end{equation}
+
+\noindent (¿©±â¿¡¼­, $\phi_1 :=d_1(1- \overline{\alpha_1}z)^{-1}$,
+$d_j:=(1-|\alpha_j |^2)^{\frac{1}{2}}$). ±×·¯¸é $\{\phi_j \}_1^d$°¡
+$\mathcal H (\theta)$ÀÇ Á¤±ÔÁ÷±³±âÀú¸¦ ÀÌ·ëÀÌ Àß ¾Ë·ÁÁ® ÀÖ´Ù (cf.
+\cite[Theorem X.1.5]{FF}). ÀÌÁ¦ $\varphi=\overline g+f\in \bold
+L^\infty$ (¿©±â¿¡¼­, $g=\theta \overline b$, $f=\theta \overline a$,
+$a, b\in \mathcal H (\theta)$)¶ó ÇÏ°í ´ÙÀ½°ú °°ÀÌ ¾²ÀÚ:
+$$
+\mathcal{C}(\varphi):= \{k \in \bold H^{\infty} : \varphi -k
+\overline{\varphi} \in \bold H^{\infty}\}.
+$$
+\newpage\leftline{\large{\it 186}\ \ \ \small ÇÐ¹® ¿¬±¸ÀÇ
+µ¿Çâ°ú ÀïÁ¡ -- ¼öÇÐ}
+
+\vspace{.8 cm} \noindent ±×·¯¸é, $k$°¡ $\mathcal{C}(\varphi)$ ¾È¿¡
+ÀÖ±â À§ÇÑ ÇÊ¿äÃæºÐÁ¶°ÇÀº $\overline {\theta} b-k \overline{\theta}a
+\in \bold H^2$ÀÌ´Ù. Áï,
+\begin{equation}\label{3.2.10}
+b-ka \in \theta \bold H^2 .
+\end{equation}
+±×·¯¸é, $\theta^{(n)} (\alpha_i) =0$ (¸ðµç $0 \leq n  < n_i$).
+µû¶ó¼­ Á¶°Ç (\ref{3.2.10})Àº ´ÙÀ½°ú µ¿Ä¡ÀÌ´Ù:
+¸ðµç $1 \leq i \leq n,$¿¡ ´ëÇÏ¿©,
+\begin{equation}\label{3.2.11}
+\begin{pmatrix} k_{i,0}\\
+k_{i,1}\\
+k_{i,2}\\
+\vdots\\
+k_{i,n_i -2}\\
+k_{i,n_i -1}
+\end{pmatrix}
+=\begin{pmatrix} a_{i,0}&0&0&0&\cdots&0\\
+a_{i,1}&a_{i,0}&0&0&\cdots&0\\
+a_{i,2}&a_{i,1}&a_{i,0}&0&\cdots&0\\
+\vdots&\ddots&\ddots&\ddots&\ddots&\vdots \\
+a_{i,n_i -2}&a_{i,n_i -3}&\ddots&\ddots&a_{i,0}&0\\
+a_{i,n_i -1}&a_{i,n_i -2}&\hdots&a_{i,2}&a_{i,1}&a_{i,0}
+\end{pmatrix}^{-1}
+\begin{pmatrix} b_{i,0}\\
+b_{i,1}\\
+b_{i,2}\\
+\vdots\\
+b_{i,n_i -2}\\
+b_{i,n_i -1}
+\end{pmatrix},
+\end{equation}
+¿©±â¿¡¼­,
+$$
+k_{i,j}:= \frac{k^{(j)}(\alpha_i)}{j!},\quad a_{i,j}:=
+\frac{a^{(j)}(\alpha_i)}{j!} \quad\text{and}\quad
+b_{i,j}:=\frac{b^{(j)}(\alpha_i)}{j!}.
+$$
+¿ªÀ¸·Î, $k \in \bold H^{\infty}$°¡ (\ref{3.2.11})À» ¸¸Á·ÇÏ¸é $k$´Â
+$\mathcal{C}(\varphi)$¿¡ ¼ÓÇÑ´Ù. µû¶ó¼­, $k$°¡
+$\mathcal{C}(\varphi)$¿¡ ¼ÓÇÏ±â À§ÇÑ ÇÊ¿äÃæºÐÁ¶°ÇÀº  $k$°¡ ´ÙÀ½À»
+¸¸Á·ÇÏ´Â $\bold H^{\infty}$ ¾ÈÀÇ ÇÔ¼öÀÌ´Ù:
+\begin{equation}\label{3.2.12}
+\frac{k^{(j)}(\alpha_i)}{j!} = k_{i,j} \qquad (1 \leq i \leq n, \
+0 \leq j < n_i),
+\end{equation}
+(¿©±â¿¡¼­, $k_{i,j}$´Â ¹æÁ¤½Ä (\ref{3.2.11})¿¡ ÀÇÇØ ÁÖ¾îÁø´Ù).
+´õ±¸³ª $||k||_\infty\le 1$\,ÀÌ¶ó¸é ÀÌ´Â Á¤È®È÷  classical
+Hermite-Fej\' er Interpolation Problem (HFIP)ÀÌ´Ù. ±×·¯¹Ç·Î ´ÙÀ½À»
+¾ò´Â´Ù.
+
+\medskip{\bf Theorem 3.3.2.}\ {\sl Let $\varphi=\overline{g}+f\in
+\bold L^\infty$, where $f$ and $g$ are rational\linebreak functions.
+Then $T_\varphi$ is hyponormal if and only if the corresponding HFIP
+$(12)$ is solvable.}
+
+
+\vspace{0.2cm} ÀÌÁ¦ ¿ì¸®´Â Toeplitz ÀÛ¿ë¼Ò $T_\varphi$ÀÇ ¾ÆÁ¤±Ô¼º¿¡
+´ëÇÑ °è»ê°¡´ÉÇÑ ÆÇÁ¤¹ýÀÌ ½É¹ú $\varphi$°¡ »ï°¢´ÙÇ×ÇÔ¼öÀÌ°Å³ª
+À¯¸®ÇÔ¼öÀÌ¸é º¸°£¹®Á¦ÀÇ ÇØ¿¡ ÀÇÇÏ¿© ¾ò¾îÁú ¼ö ÀÖ´Ù°í ¸»ÇÒ ¼ö ÀÖ´Ù.
+
+\newpage\rightline{\small ÀÌ¿ì¿µ: Åä¿¡ÇÃ¸®Ã÷ ÀÛ¿ë¼Ò¿¡
+´ëÇÑ ºê¸®Áö ÀÌ·Ð\ \ \ \large\it 187}
+
+\vspace{0.8cm}
+
+{\bf 3.4. À¯°èÇü ½É¹úÀÇ °æ¿ì}
+
+\vspace{0.3cm}
+
+ÀÌ ºÐÀýÀº Toeplitz ÀÛ¿ë¼ÒÀÇ ¾ÆÁ¤±Ô¼º¿¡ °üÇÏ¿© ÀúÀÚ¿Í ÀúÀÚÀÇ
+°øÀúÀÚµéÀÌ ¾òÀº °¡Àå ÃÖ±ÙÀÇ °á°ú·Î¼­, ÀÏ¹ÝÀûÀÎ ½É¹úÀÎ À¯°èÇü ½É¹ú¿¡
+´ëÇÑ ÆÇÁ¤¹ýÀ» Á¦½ÃÇÒ °ÍÀÌ´Ù. ÀÌ °á°ú°¡ CowenÀÇ Á¤¸®¸¦ Á¦¿ÜÇÏ°í
+Áö±Ý±îÁö ¾ò¾îÁø Toeplitz ÀÛ¿ë¼ÒÀÇ ¾ÆÁ¤±Ô¼º¿¡ °üÇÑ °¡Àå ÀÏ¹ÝÀûÀÎ
+°á°ú¶ó ÇÒ ¼ö ÀÖÀ» °ÍÀÌ´Ù. ¿ì¼± ÀÌ¸¦ ¾Ë¾Æº¸±â Àü¿¡ ÀÌµ¿ÀÛ¿ë¼Ò $U
+\equiv T_z$ÀÇ ¾ÐÃà(compression)¿¡ ´ëÇÑ »ï°¢Çà·Ä Ç¥ÇöÀ» ¾Ë¾Æº¸ÀÚ.
+³»ÀûÇÔ¼ö $\theta$¿¡ ´ëÇÏ¿©, $U_\theta$¸¦ ´ÙÀ½°ú °°ÀÌ Á¤ÀÇÇÏÀÚ.
+\begin{equation}\label{3.1}
+U_\theta= P_{\mathcal H (\theta)} U \vert_{\mathcal H (\theta)}.
+\end{equation}
+ÀÌÁ¦ ¼¼ °¡Áö °æ¿ì·Î ³ª´©¾î »ý°¢ÇÑ´Ù.
+
+\vspace{0.3cm}
+
+\noindent {\bf °æ¿ì 1} : $B$¸¦ Blaschke °öÀÌ¶ó ÇÏ°í
+$\Lambda:=\{\lambda_n : n \geq 1\}$¸¦ $B$ÀÇ ±ÙµéÀÌ¶ó°í ÇÏÀÚ. ´ÙÀ½°ú
+°°ÀÌ ¾²ÀÚ.
+$$
+\beta_1:=1, \quad
+\beta_k:=\prod_{n=1}^{k-1}\frac{\lambda_n-z}{1-\overline{\lambda}_n z}\cdot
+\frac{|\lambda_n|}{\lambda_n}\qquad (k\geq 2);
+$$
+$$
+\delta_j\label{deltaj}:=\frac{d_j}{1-\overline{\lambda}_j z}\beta_j \qquad (j \geq
+1),
+$$
+¿©±â¿¡¼­, $d_j\label{dj}:=(1-|\lambda_j|^2)^{\frac{1}{2}}$.
+$\mu_B\label{mub}$¸¦ $\mathbb N$ »óÀÇ Ãøµµ·Î¼­
+$\mu_B(\{n\}):=\frac{1}{2}d_n^2, (n \in \mathbb N)$¶ó°í ÇÏÀÚ. ÀÌÁ¦
+ÇÔ¼ö  $V_B\label{VB}: L^2(\mu_B)\to \mathcal H(B)$ °¡ ´ÙÀ½°ú °°ÀÌ
+Á¤ÀÇµÈ´Ù°í ÇÏÀÚ.
+\begin{equation}\label{3.2}
+V_B(c):=\frac{1}{\sqrt{2}} \sum_{n \geq 1} c(n)d_n \delta_n, \quad c
+\equiv \{c(n)\}_{n \geq 1}.
+\end{equation}
+±×·¯¸é $V_B$´Â À¯´ÏÅÍ¸®ÀÌ°í $U_B$´Â ´ÙÀ½ÀÇ ÇÔ¼ö·Î º¸³»Áø´Ù.
+\begin{equation}\label{3.3}
+V_B^*U_B V_B=(I-J_B)M_B,
+\end{equation}
+¿©±â¿¡¼­, $(M_B\label{MB} c)(n):=\lambda_n c(n)$ ($n\in \mathbb
+N$)Àº °ö ÀÛ¿ë¼ÒÀÌ°í
+$$
+(J_B\label{JB} c)(n):=\sum_{k=1}^{n-1}c(k)|\lambda_k|^{-2} \cdot
+\frac{\beta_n(0)}{\beta_k(0)}d_k d_n \ \ \hbox{$(n \in \mathbb N$)}
+$$
+´Â ÇÏ»ï°¢ Hilbert-Schmidt ÀÛ¿ë¼ÒÀÌ´Ù. \
+
+\newpage \leftline{\large{\it 188}\ \ \
+\small ÇÐ¹® ¿¬±¸ÀÇ µ¿Çâ°ú ÀïÁ¡ -- ¼öÇÐ}
+
+\vspace{0.8cm}
+
+\noindent {\bf °æ¿ì 2} : $s$¸¦ ¿¬¼ÓÇ¥ÇöÃøµµ  $\mu\equiv
+\mu_{s}\label{mus}$¸¦ °¡Áø Æ¯ÀÌ³»ÀûÇÔ¼ö(singular inner function)¶ó°í
+ÇÏÀÚ. ÀÌÁ¦, $\mu_{\lambda}$À» $\mu$¿¡¼­ È£ $\{\zeta: \zeta \in
+\mathbb T, \ 0< \text{arg}\zeta \leq \text{arg}\lambda\}$ À§·ÎÀÇ
+»ç¿µÀÌ¶ó ÇÏ°í ´ÙÀ½°ú °°ÀÌ µÎÀÚ.
+$$
+s_{\lambda}(\zeta)\label{slambdazeta}:=\text{exp}\Bigl(-\int_{\mathbb
+T}\frac{t+\zeta}{t-\zeta}d\mu_{\lambda}(t) \Bigr) \ \ \hbox{($\zeta
+\in \mathbb D$)}.
+$$
+ÀÌÁ¦ ÇÔ¼ö $V_s\label{Vs}: L^2(\mu)\to \mathcal H (s)$°¡ ´ÙÀ½°ú °°ÀÌ Á¤ÀÇµÈ´Ù°í ÇÏÀÚ.
+\begin{equation}\label{3.4}
+(V_s c)(\zeta)=\sqrt{2}\int_{\mathbb
+T}c(\lambda)s_{\lambda}(\zeta)\frac{\lambda
+d\mu(\lambda)}{\lambda-\zeta}\quad\hbox{($\zeta \in \mathbb D$)}
+\end{equation}
+±×·¯¸é $V_s$´Â À¯´ÏÅÍ¸®ÀÌ°í $U_s$´Â ´ÙÀ½ÀÇ ÇÔ¼ö·Î º¸³»Áø´Ù.
+\begin{equation}\label{3.5}
+V_s^*U_s V_s=(I-J_s)M_s,
+\end{equation}
+¿©±â¿¡¼­, $(M_s c)(\lambda):=\lambda c(\lambda)$ ($\lambda\in\mathbb
+T$) ´Â °ö ÀÛ¿ë¼ÒÀÌ°í
+$$
+(J_s\label{Js} c)(\lambda)=2 \int _{\mathbb T} e^{\mu(t)-\mu(\lambda)}
+c(t)d_{\mu_{\lambda}}(t)\ \ \hbox{($\lambda \in \mathbb T$)}
+$$
+´Â ÇÏ»ï°¢ Hilbert-Schmidt ÀÛ¿ë¼ÒÀÌ´Ù. \
+
+\vspace{.3 cm}
+
+\noindent {\bf °æ¿ì 3} : $\Delta$¸¦ ¼ø¼öÇÑ Á¡Ç¥ÇöÃøµµ $\mu\equiv
+\mu_{\Delta}\label{mudelta}$¸¦ °¡Áø Æ¯ÀÌ³»ÀûÇÔ¼ö(singular inner
+function)¶ó°í ÇÏÀÚ. ±×¸®°í ÁýÇÕ $\{t\in \mathbb T: \mu(\{t\})>0
+\}$À» ¼ö¿­ $\{t_k\}_{k \in \mathbb N}$·Î ¹è¿­ÇÏ°í ´ÙÀ½°ú  °°ÀÌ ¾²ÀÚ:
+$\mu_k:=\mu(\{t_k\}), \ k \geq 1$. \  ´õ±¸³ª, $\mu_{\Delta}$¸¦
+$\mathbb R_{+}=[0, \infty)$ »óÀÇ Ãøµµ·Î¼­
+$d\mu_{\Delta}(\lambda)=\mu_{[\lambda]+1}d \lambda$¶ó°í ÇÏÀÚ.ÀÌÁ¦
+´ÜÀ§¿øÆÇ $\mathbb D$ À§ÀÇ ÇÔ¼ö
+$\Delta_{\lambda}\label{deltalambda}$¸¦ ´ÙÀ½°ú °°ÀÌ Á¤ÀÇÇÏÀÚ.
+$$
+\Delta_{\lambda}(\zeta):=\text{exp}\Biggl\{-\sum_{k=1}^{[\lambda]}\mu_k
+\frac{t_k+\zeta}{t_k-\zeta}-(\lambda-[\lambda])\mu_{[\lambda]+1}
+\frac{t_{[\lambda]+1}+\zeta}{t_{[\lambda]+1}-\zeta}\Biggr \},
+$$
+¿©±â¿¡¼­, $[\lambda]$´Â $\lambda$ ($\lambda \in \mathbb R_{+}$)ÀÇ
+Á¤¼ö ºÎºÐÀÌ°í $\Delta_0:=1$·Î ¾à¼ÓÇÑ´Ù. \ ±×¸®°í ÇÔ¼ö
+$V_{\Delta}\label{Vdelta}: L^2(\mu_{\Delta})\to \mathcal H
+(\Delta)$°¡ ´ÙÀ½°ú °°ÀÌ Á¤ÀÇµÈ´Ù°í ÇÏÀÚ.
+\begin{equation}\label{3.6}
+(V_{\Delta}c)(\zeta):=\sqrt{2} \int_{\mathbb
+R_{+}}c(\lambda)\Delta_{\lambda}(\zeta)(1-\overline{t}_{[\lambda]+1}
+\zeta)^{-1}d\mu_{\Delta}(\lambda) \ \hbox{($\zeta \in \mathbb D$)}
+\end{equation}
+±×·¯¸é $V_{\Delta}$´Â À¯´ÏÅÍ¸®ÀÌ°í $U_\Delta$´Â ´ÙÀ½ÀÇ ÇÔ¼ö·Î º¸³»Áø´Ù.
+\begin{equation}\label{3.7}
+V_{\Delta}^*U_\Delta V_{\Delta}=(I-J_{\Delta})M_{\Delta},
+\end{equation}
+
+\newpage\rightline{\small ÀÌ¿ì¿µ:
+Åä¿¡ÇÃ¸®Ã÷ ÀÛ¿ë¼Ò¿¡ ´ëÇÑ ºê¸®Áö ÀÌ·Ð\ \ \ \large\it 189}
+
+\vspace{.8 cm}
+
+\noindent ¿©±â¿¡¼­, $(M_{\Delta}c)(\lambda):= t_{[\lambda]+1}
+c(\lambda)$, ($\lambda\in \mathbb R_+$)Àº °ö ÀÛ¿ë¼ÒÀÌ°í
+$$
+(J_{\Delta}\label{Jdelta} c)(\lambda) := 2 \int _{0}^{\lambda}c(t)
+\frac{\Delta_{\lambda}(0)}{\Delta_{t}(0)} d\mu_{\Delta}(t) \ \
+\hbox{($\lambda \in \mathbb R_+$)}
+$$
+´Â ÇÏ»ï°¢ Hilbert-Schmidt ÀÛ¿ë¼ÒÀÌ´Ù. \
+
+\medskip
+
+ÀÌÁ¦ À§ÀÇ ¼¼ °æ¿ì¸¦ Á¾ÇÕÇÏ¸é ´ÙÀ½À» ¾ò´Â´Ù.
+
+\medskip
+
+{\bf Triangularization theorem.} \cite [p.123] {Ni} {\sl Let
+$\theta$ be an inner function with the canonical factorization
+$\theta=B\cdot s \cdot \Delta$, where $B$ is a Blaschke product,
+and $s$ and $\Delta$ are singular functions with representing
+measures $\mu_{s}$ and $\mu_{\Delta}$ respectively, with $\mu_{s}$
+continuous and $\mu_{\Delta}$ a pure point measure. \  Then the
+map $V:\,L^2(\mu_B)\times L^2(\mu_s) \times L^2(\mu_{\Delta})\to
+\mathcal H(\theta)$ defined by
+\begin{equation}\label{3.8}
+V:=\begin{bmatrix}V_B&0&0\\0&BV_s&0\\0&0&BsV_{\Delta}\end{bmatrix}
+\end{equation}
+is unitary, where $V_B, \mu_B, V_S, \mu_S, V_\Delta, \mu_\Delta$ are
+defined in (\ref{3.2}) - (\ref{3.7}) and $U_\theta$ is mapped onto
+the operator
+$$
+M:= V^*U_\theta V =
+\begin{bmatrix}M_B&0&0\\0&M_{s}&0\\0&0&M_{\Delta}\end{bmatrix}+J,
+$$
+where $M_B, M_S, M_{\Delta}$ are defined in (\ref{3.3}), (\ref{3.5})
+and (\ref{3.7}) and
+$$
+J:=-\begin{bmatrix}J_BM_B&0&0\\0&J_sM_s&0\\0&0&J_{\Delta}M_\Delta\end{bmatrix}+A
+$$
+is a lower-triangular Hilbert-Schmidt operator, with $A^3=0$,
+$\text{rank}\,A\leq 3$.}
+
+\
+
+À§ÀÇ Á¤¸®¸¦ ÀÌ¿ëÇÏ¸é À¯°èÇü ½É¹úÀ» °¡Áø Toeplitz ÀÛ¿ë¼ÒÀÇ ¾ÆÁ¤±Ô¼ºÀ»
+ÆÇº°ÇÒ ¼ö ÀÖ´Â ÆÇÁ¤¹ýÀ» ¾òÀ» ¼ö ÀÖ´Ù.
+
+\newpage\leftline{\large{\it 190}\ \ \ \small ÇÐ¹® ¿¬±¸ÀÇ µ¿Çâ°ú ÀïÁ¡ --
+¼öÇÐ} \vspace{0.8cm}
+
+{\bf Theorem 3.4.1.} {\rm \cite{CHL1}} {\sl Let $\varphi\equiv
+\varphi_-^*+\varphi_+\in \bold L^\infty$ be such that $\varphi$
+and $\overline\varphi$ are of bounded type of the form
+$$
+\varphi_+=\theta_1\theta_0\overline a\quad\hbox{and}\quad
+\varphi_-=\theta_1\overline b,
+$$
+where $\theta_1$ and $\theta_0$ are inner functions and $a,b\in
+H^2$. \  If $k\in\mathcal{C}(\varphi)$ then
+$$
+T_\varphi\ \hbox{is hyponormal}\ \Longleftrightarrow\ k(M)\ \hbox{is
+contractive},
+$$
+where $M$ is defined as follows:
+\begin{equation}\label{3.10}
+\begin{cases}
+V: L\equiv L^2(\mu_B) \times L^2(\mu_s)
+         \times L^2(\mu_{\Delta})\to \mathcal H(\theta_1 \theta_0)\ \
+            \hbox{\rm is unitary as in (\ref{3.8})};\\
+M:= V^*U_{\theta_1\theta_0}V;\\
+\mathcal L :=L \otimes \mathbb C^n\\
+\mathcal V := V \otimes I_n.
+\end{cases}
+\end{equation}}
+%\end{thm}
+À§¿¡¼­ $k(M)$Àº $H^\infty$-ÇÔ¼ö°è»êÀ» µû¸¥´Ù.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{.8 cm} {\large\bf 4. Toeplitz ÀÛ¿ë¼ÒÀÇ ºÎºÐÁ¤±Ô¼º}
+
+\vspace{.5 cm}
+
+
+ÀÌ ÀýÀº ´ÙÀ½ÀÇ ¹®Á¦¿¡ °üÇÑ °ÍÀÌ´Ù: {\it ¾î¶² Toeplitz ÀÛ¿ë¼Ò°¡
+ºÎºÐÁ¤±ÔÀÎ°¡?} Toeplitz ÀÛ¿ë¼Ò $T_\varphi$°¡ ÇØ¼®Àû(analytic)ÀÌ¶ó
+ÇÔÀº ½É¹ú $\varphi$°¡ $\bold H^\infty$¿¡ ¼ÓÇÒ ¶§¸¦ ¸»ÇÑ´Ù, Áï,
+$\varphi$°¡ $\mathbb{D}$ »óÀÇ À¯°è ÇØ¼®ÇÔ¼öÀÏ ¶§ÀÌ´Ù. ÀÌ´Â
+ºÎºÐÁ¤±ÔÀÓÀ» ½±°Ô ¾Ë ¼ö ÀÖ´Ù. ½ÇÁ¦·Î,
+$$
+T_\varphi h=P(\varphi h)=\varphi h=M_\varphi h\quad \hbox{($h\in \bold H^2$)},
+$$
+¿©±â¿¡¼­, $M_\varphi$´Â   $\bold L^2$ »ó¿¡¼­ $\varphi$¸¦ °öÇÏ´Â °ö
+ÀÛ¿ë¼Ò(multiplication operator)·Î¼­ Á¤±ÔÀÛ¿ë¼ÒÀÌ´Ù. 1970³â¿¡
+P.\,R.\ Halmos´Â {\it Ten Problems in Hilbert Space} (cf.
+\cite{Ha1}, \cite{Ha2})¶ó´Â °­ÀÇ·Ï¿¡¼­ ÀÛ¿ë¼Ò ÇÐ°è¿¡  Hilbert °ø°£
+»óÀÇ ¹®Á¦ ¿­ °³¸¦ Á¦½ÃÇÏ¿´´Âµ¥, ±× Áß ´Ù¼¸¹øÂ° ¹®Á¦ (¼ÒÀ§ Halmos'
+Problem 5·Î ºÒ¸®¿ò)°¡ Toeplitz ÀÛ¿ë¼ÒÀÇ ºÎºÐÁ¤±Ô¼º¿¡ ´ëÇÑ
+°ÍÀÌ¾ú´Ù:
+
+\vspace{.2 cm}\label{4.1.1}\ \ \ \ \ {\it ¸ðµç ºÎºÐÁ¤±Ô Toeplitz
+ÀÛ¿ë¼Ò´Â Á¤±ÔÀÌ°Å³ª ÇØ¼®ÀûÀÏ±î\,?}
+
+\vspace{.2 cm}  ÀÌ ¹®Á¦´Â Á¤±Ô Toeplitz ÀÛ¿ë¼Ò¿Í ÇØ¼®Àû Toeplitz
+ÀÛ¿ë¼Ò°¡ Àß ÀÌÇØµÇ°í, ¶Ç ¸ðµÎ ºÎºÐÁ¤±ÔÀÌ¹Ç·Î ¸Å¿ì ÀÚ¿¬½º·¯¿î ¹®Á¦¶ó
+ÇÏ°Ú´Ù.
+
+\vspace{.2 cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage\rightline{\small ÀÌ¿ì¿µ: Åä¿¡ÇÃ¸®Ã÷ ÀÛ¿ë¼Ò¿¡ ´ëÇÑ ºê¸®Áö ÀÌ·Ð\
+\ \ \large\it 191}
+
+
+\vspace{.8 cm}
+
+{\bf 4.1. Halmos' Problem 5}
+
+\vspace{0.3cm} ÀÌÁ¦ Halmos' Problem 5¿Í °ü·ÃµÈ ¿¬±¸¿¡ ´ëÇÏ¿©
+»ìÆìº»´Ù. 1976³â¿¡, M. Abrahamse \cite{Ab}°¡ Halmos' Problem 5¿¡
+´ëÇÑ ¸Å¿ì ÀÏ¹ÝÀûÀÎ ÃæºÐÁ¶°ÇÀ» ÁÖ¾ú´Âµ¥, ÀÌ ¿À·¡ µÈ Á¤¸®°¡ ¾à°£
+³î¶ø°Ôµµ ¿À´Ã³¯±îÁö ¾Ë·ÁÁø °¡Àå ÁÁÀº ÃæºÐÁ¶°ÇÀÌ´Ù.
+
+\vspace{0.3cm} {\bf Theorem 4.1.1.} Abrahamse's Theorem) {\rm
+\cite{Ab}} {\sl If
+\begin{itemize}
+\item[{\rm (i)}] $T_{\varphi}$ is hyponormal;
+\item[{\rm (ii)}] $\varphi$ or $\overline\varphi$ is of bounded type;
+\item[{\rm (iii)}] ${\rm ker}[T_{\varphi}^*,T_{\varphi}]$ is invariant for $T_{\varphi}$,
+\end{itemize}
+then $T_{\varphi}$ is normal or analytic.}
+%\end{thm}
+
+\vspace{0.3cm} ÇÑÆí, ¸¸ÀÏ $S$°¡ $\mathcal H$ »óÀÇ ºÎºÐÁ¤±ÔÀÌ°í
+$N:=\mbox{mne}\,(S)$ÀÌ¸é,
+$$
+{\rm ker}[S^*,S]=\{ f:\ <f, [S^*,S]f>=0\}=\{ f:\ ||S^*f||=||Sf||\}=\{ f:\ N^{*}f\in\mathcal{H}\}.
+$$
+±×·¯¹Ç·Î $S({\rm ker}[S^*,S])\subseteq {\rm ker}[S^*,S]$. µû¶ó¼­,
+Theorem 4.1.1¿¡ ÀÇÇì¼­ ´ÙÀ½À» ¾ò´Â´Ù.
+
+\vspace{0.3cm} {\bf Corollary 4.1.2.}\ {\sl If $T_{\varphi}$ is
+subnormal and if $\varphi$ or $\overline\varphi$ is of bounded type,
+then $T_{\varphi}$ is normal or analytic.} \vspace{0.3cm}
+
+À§ÀÇ Abrahamse's TheoremÀº ÃÖ±Ù¿¡ ÀúÀÚ¿Í °øÀúÀÚµéÀÌ Çà·ÄÇÔ¼ö½É¹ú·Î
+È®ÀåÇÏ´Â µ¥ ¼º°øÇÏ¿´´Ù (\cite{CHL2}). ´ÙÀ½Àº M. Abrahamse
+\cite{Ab}ÀÌ  ¹àÇô³½ À¯°èÇü ÇÔ¼öÀÇ Æ¯¼ºÈ­ÀÌ´Ù.
+
+\vspace{0.3cm} {\bf Corollary 4.1.3} {\sl  A function $\varphi$ is
+of bounded type if and only if ${\rm ker}H_{\varphi}\neq\{0\}$. }
+
+\vspace{0.3cm} Toeplitz ÀÛ¿ë¼ÒÀÇ ºÎºÐÁ¤±Ô¼ºÀ» Àß ¿¬±¸ÇÒ ¼ö ÀÖ´Â ¹æ¹ý
+ÁßÀÇ ÇÏ³ª°¡ ±âÁ¸ÀÇ Àß ¾Ë·ÁÁø ºÎºÐÁ¤±Ô ÀÛ¿ë¼Ò¿Í À¯´ÏÅÍ¸® µ¿Ä¡ÀÎ
+°æ¿ì¸¦ Ã£¾Æ³»´Â °ÍÀÎµ¥, °¡ÁßÀÌµ¿ ÀÛ¿ë¼Ò°¡ ºñ±³Àû ºÎºÐÁ¤±Ô¸¦ ¾Ë±â
+½¬¿î °æ¿ìÀÌ¹Ç·Î ¾î¶² °¡ÁßÀÌµ¿ ÀÛ¿ë¼Ò°¡ Toeplitz ÀÛ¿ë¼Ò¿Í À¯´ÏÅÍ¸®
+µ¿Ä¡ÀÎÁö ¹°¾îº¼ ¼ö ÀÖÀ» °ÍÀÌ´Ù. ´ÙÀ½Àº ±× Ã¹¹øÂ° ´äÀÌ´Ù.
+
+
+\newpage\leftline{\large{\it 192}\ \ \
+\small ÇÐ¹® ¿¬±¸ÀÇ µ¿Çâ°ú ÀïÁ¡ -- ¼öÇÐ} \vspace{0.8cm}
+
+{\bf Proposition 4.1.4.} {\sl If $A$ is a weighted shift with
+weights $a_0, a_1, a_2, \cdots $ such that
+$$
+0\le a_0 \le a_1 \le \cdots < a_N = a_{N+1}= \cdots = 1,
+$$
+then $A$ is not unitarily equivalent to any Toeplitz operator. }
+
+\vspace{.2 cm} ÀÌÁ¦ À¯¸íÇÑ Bergman ÀÌµ¿ÀÛ¿ë¼Ò(shift) (°¡Áß¼ö¿­ÀÌ
+$\sqrt{{n+1}\over{n+2}}$·Î ÁÖ¾îÁö´Â ÀÌµ¿ ÀÛ¿ë¼Ò)´Â ºÎºÐÁ¤±ÔÀÌ¹Ç·Î
+¿ì¸®´Â ¾à°£ÀÇ ±â´ë°¨À» °¡Áö°í ´ÙÀ½À» ¹°À» ¼ö ÀÖÀ» °ÍÀÌ´Ù.
+\begin{equation}\label{4.1.2}
+\mbox{Bergman ÀÌµ¿ ÀÛ¿ë¼Ò´Â ¾î¶² Toeplitz ÀÛ¿ë¼Ò¿Í À¯´ÏÅÍ¸®
+µ¿Ä¡ÀÎ°¡?}
+\end{equation}
+
+¸¸ÀÏ À§ÀÇ Áú¹® (\ref{4.1.2})ÀÇ ´ë´äÀÌ ±àÁ¤ÀûÀÌ¶ó¸é, Halmos' Problem
+5ÀÇ ´ë´äÀº ºÎÁ¤ÀûÀÌ µÉ °ÍÀÌ´Ù. ÀÌ¸¦ ¾Ë±â À§ÇØ¼­ Bergman ÀÌµ¿ÀÛ¿ë¼Ò
+$S$°¡ Toeplitz ÀÛ¿ë¼Ò $T_\varphi$¿Í À¯´ÏÅÍ¸® µ¿Ä¡¶ó°í °¡Á¤ÇÏÀÚ.
+±×·¯¸é,
+$$
+\frak{R}(\varphi)\subseteq\ \sigma
+_e(T_\varphi )=\sigma_e(S)=\mbox{the unit circle}\ \mathbb{T}.
+$$
+µû¶ó¼­, $\varphi$´Â ±× Àý´ë°ªÀÌ 1ÀÎ ÇÔ¼ö(unimodular)ÀÌ´Ù. ±×·±µ¥
+$S$°¡ µîÀåÇÔ¼ö°¡ ¾Æ´Ï¹Ç·Î $\varphi$´Â ³»ÀûÇÔ¼ö°¡ ¾Æ´Ï´Ù. ±×·¯¹Ç·Î,
+$T_\varphi$´Â ÇØ¼®Àû Toeplitz ÀÛ¿ë¼Ò°¡ ¾Æ´Ï´Ù. 1983³â¿¡ S. Sun
+\cite{Sun}ÀÌ ¹®Á¦ (\ref{4.1.2})¿¡ ºÎÁ¤ÀûÀÎ ÇØ´äÀ» ÁÖ¾ú´Ù. \vspace{.2
+cm}
+
+{\bf Theorem 4.1.5.} (Sun's Theorem) {\rm \cite{Sun}} {\sl Let $T$
+be a weighted shift with a strictly increasing weight sequence
+$\{a_{n}\}_{n=0}^{\infty}$. If $T\cong T_{\varphi}$ then
+$$
+a_{n}=\sqrt{1-{\alpha}^{2n+2}} \,||T_{\varphi}||\quad (0<\alpha <1).
+$$}
+\indent À§ÀÇ Theorem 4.1.5¿¡ ÀÇÇÏ¿© ´ÙÀ½À» ¾ò´Âµ¥ ÀÌ´Â ¹®Á¦
+(\ref{4.1.2})ÀÇ ´äÀ» ÁØ´Ù. \vspace{.2 cm}
+
+{\bf Corollary 4.1.6} {\sl The Bergman shift is not unitarily
+equivalent to any Toeplitz operator.} \vspace{.2 cm}
+%\end{cor}
+
+\vspace{.2 cm}
+
+¸¶Ä§³», 1984³â¿¡ Cowen°ú Long \cite{CoL}ÀÌ Halmos' Problem 5¸¦
+ÇØ°áÇÏ¿´´Âµ¥, ¿ì¼± ÀÌ¸¦ À§ÇØ ´ÙÀ½ÀÌ ÇÊ¿äÇÏ´Ù.
+
+\vspace{.2 cm} {\bf Lemma 4.1.7.} {\sl The weighted shift $T\equiv
+W_{\alpha}$ with weights $\alpha_n\equiv
+(1-\alpha^{2n+2})^{\frac{1}{2}}\ (0<\alpha <1)$ is subnormal.}
+%\end{lem}
+
+\vspace{.2 cm} ´õ±¸³ª Toeplitz ÀÛ¿ë¼Ò°¡ °¡ÁßÀÌµ¿ ÀÛ¿ë¼Ò¿Í À¯´ÏÅÍ¸®
+µ¿Ä¡ÀÌ¸é ºÎºÐÁ¤±Ô°¡ µÊÀÌ ¾Ë·ÁÁ³´Ù.
+
+
+
+\newpage\rightline{\small ÀÌ¿ì¿µ:
+Åä¿¡ÇÃ¸®Ã÷ ÀÛ¿ë¼Ò¿¡ ´ëÇÑ ºê¸®Áö ÀÌ·Ð\ \ \ \large\it 193}
+
+\vspace{.8 cm}
+
+{\bf Corollary 4.1.8.} {\sl If $T_{\varphi} \cong$ a weighted shift,
+then $T_\varphi$ is subnormal.} \vspace{.2 cm}
+
+¸¸ÀÏ  $T_\varphi$°¡ °¡ÁßÀÌµ¿ ÀÛ¿ë¼Ò¿Í µ¿Ä¡ÀÌ¸é,
+$\varphi$´Â ¾î¶² ÇüÅÂÀÏ±î?
+\cite[Theorem 3.7]{Sun}ÀÇ Áõ¸íÀ» ºÐ¼®ÇØº¸¸é,
+´ÙÀ½À» ¾Ë ¼ö ÀÖ´Ù.
+$$
+\psi=\varphi -\alpha\overline{\varphi}\in {\bold H}^{\infty}.
+$$
+±×·¯³ª,
+\begin{align*}
+T_\psi =T_\varphi -\alpha T_{\varphi}^* &=
+{\begin{pmatrix}
+0 &-\alpha a_0\\
+a_0&0&-\alpha a_1\\
+&a_1&0&-\alpha a_2\\
+&&a_2&0&\ddots\\
+&&&\ddots&\ddots
+ \end{pmatrix}}\\
+&=\begin{pmatrix}
+0 &-\alpha\\
+1&0&-\alpha\\
+&1&0&-\alpha\\
+&&1&0&\ddots\\
+ &&&\ddots&\ddots
+\end{pmatrix} + K\quad \mbox{($K$ compact)}\\
+&\cong T_{z-\alpha\overline{z}}+K.
+\end{align*}
+µû¶ó¼­,
+$\mbox{ran}\,(\psi)=\sigma_{e}(T_{\psi})
+=\sigma_{e}(T_{z-\alpha\overline{z}})={\rm ran}(z-\alpha\overline{z})$.
+±×·¯¹Ç·Î, $\psi$´Â ´ÜÀ§¿øÆÇÀ» ²ÀÁöÁ¡ÀÌ  $\pm i(1+\alpha)$ÀÌ°í,  $\pm(1-\alpha)$À»
+Áö³ª´Â Å¸¿øÀ¸·Î º¸³»´Â µî°¢»ç»óÀÌ´Ù.
+ÇÑÆí, $\psi=\varphi -\alpha\overline{\varphi}$.
+±×·¡¼­,
+$\alpha\overline{\psi}=\alpha\overline{\varphi} -\alpha^2\varphi$
+ÀÌ°í, ´ÙÀ½ÀÌ ¼º¸³ÇÑ´Ù.
+$$
+\varphi=\frac{1}{1-\alpha^2}(\psi +\alpha\overline{\psi}).
+$$
+
+ÀÌÁ¦ ´ÙÀ½À» ¾ò°Ô µÈ´Ù.
+
+\vspace{.2 cm}{\bf Theorem 4.1.9.} (Cowen and Long Theorem) {\rm
+\cite{CoL}} {\sl For $0<\alpha <1$, let $\psi$ be a conformal map of
+$\mathbb{D}$ onto the interior of the ellipse with vertices $\pm
+i(1-\alpha)^{-1}$ and passing through $\pm (1+\alpha)^{-1}$. Then
+$T_{\psi +\alpha\overline{\psi}}$ is a subnormal weighted shift that
+is neither analytic nor normal.}
+%\end{thm}
+\vspace{.2 cm}
+
+Abrahamse's Theorem °ú Theorem 4.1.9\,·ÎºÎÅÍ ´ÙÀ½À» ¾ò´Â´Ù.
+
+\vspace{.2 cm}
+
+\newpage\leftline{\large{\it 194}\ \ \ \small ÇÐ¹® ¿¬±¸ÀÇ µ¿Çâ°ú ÀïÁ¡ --
+¼öÇÐ}\vspace{0.8cm}
+
+{\bf Corollary 4.1.10.} {\sl If $\varphi=\psi
++\alpha\overline{\psi}$ is as in Theorem 4.1.9, then neither
+$\varphi$ nor $\overline{\varphi}$ is bounded type.} \vspace{.2 cm}
+
+ÀÌÁ¦ Halmos' Problem 5°¡ ÇØ°áµÇ¾ú´Ù°í´Â ÇÏ³ª, º»ÁúÀûÀ¸·Î Toeplitz
+ÀÛ¿ë¼ÒÀÇ ºÎºÐÁ¤±Ô¼ºÀº ¿©ÀüÈ÷ ¾ÏÈæ ¼Ó¿¡ °¤Çô ÀÖ´Ù°í ÇØµµ °ú¾ðÀÌ
+¾Æ´Ï´Ù. Abrahamse's Theorem Á¤µµ°¡ °¡Àå ÁÁÀº ´ë´äÀÌ¹Ç·Î ¾ÕÀ¸·Î °è¼Ó
+Toeplitz ÀÛ¿ë¼ÒÀÇ ºÎºÐÁ¤±Ô¼ºÀ» Å½ÇèÇØ °¥ ÇÊ¿ä°¡ ÀÖ´Ù. Áö³­ ½Ê ¼ö³â°£
+ÀúÀÚ¿Í °øµ¿ ¿¬±¸ÀÚµéÀº ÀÌ ¹®Á¦¸¦ ²÷ÀÓ¾øÀÌ °íÂûÇØ ¿ÔÀ¸¸ç ºÎºÐÀûÀ¸·Î
+Èï¹Ì·Î¿î °á°úµéÀ» ¸¸µé¾î³»±â´Â ÇÏ¿´Áö¸¸, ¿©ÀüÈ÷ ±× ¿©Á¤Àº
+¹Ì¹ÌÇÏ¿´À¸¸ç ¾ÕÀ¸·Îµµ ¾ó¸¶³ª ´õ ±ä ¿©Á¤À» °ÅÃÄ¾ß ÇÒ Áö ¸ð¸¥´Ù. ¹°·Ð
+Áö³ª¿Â ¿©Á¤ Áß¿¡ Á¾Á¾ ½Å±â·ç °°Àº °ÍÀ» º¸±ä ÇÏ¿´Áö¸¸ °¡±îÀÌ °¡º¸¸é
+±×³É ½Å±â·ç¿´À» »Ó, ¿©ÀüÈ÷ ±× ´Ü¼­¸¦ Ã£Áö ¸øÇÏ°í ÀÖ´Ù. ´ÙÀ½ Àý¿¡¼­´Â
+±× Áß ÇÑ °¡Áö¸¦ »ìÆìº¼ °ÍÀÌ´Ù.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{.3 cm} {\bf 4.2. Toeplitz ÀÛ¿ë¼ÒÀÇ $k$-¾ÆÁ¤±Ô¼º°ú ºÎºÐÁ¤±Ô¼º
+»çÀÌÀÇ Æ´}
+
+\vspace{.3 cm} Toeplitz ÀÛ¿ë¼ÒÀÇ $k$-¾ÆÁ¤±Ô¼º°ú ºÎºÐÁ¤±Ô¼º »çÀÌÀÇ Æ´
+À» ÀÌÇØÇÏ´Â °ÍÀº ¸Å¿ì Èï¹Ì·Î¿ö º¸ÀÎ´Ù. ÀÌ ¹®Á¦¿¡ ´ëÇÑ Ã¹¹øÂ°
+ÈÄº¸·Î¼­ ¿ì¸®´Â ´ÙÀ½À» »ý°¢ÇÒ ¼ö ÀÖ´Ù (\cite{CuL1}): ¸ðµç 2-¾ÆÁ¤±Ô
+Toeplitz ÀÛ¿ë¼Ò´Â ºÎºÐÁ¤±ÔÀÎ°¡?
+
+\medskip
+
+ÀÌ ¹®Á¦¿¡ ´ëÇÏ¿© \cite{CuL1}¿¡¼­ ´ÙÀ½ÀÌ º¸¿©Á³´Ù:
+
+\vspace{.2 cm}{\bf Theorem 4.2.1.} {\rm \cite{CuL1}}  {\sl Every
+trigonometric Toeplitz operator whose square is hyponormal must be
+normal or analytic. Hence, in particular, every 2-hyponormal
+trigonometric Toeplitz operator is subnormal.}
+%\end{thm}
+
+\vspace{.2 cm} \cite{Cu1}¿¡¼­ °¡ÁßÀÌµ¿ ÀÛ¿ë¼Ò¿¡ ´ëÇÑ ¾ÆÁ¤±Ô¼º°ú
+2-¾ÆÁ¤±Ô¼º »çÀÌ¿¡ Æ´ÀÌ Á¸ÀçÇÔÀ» º¸¿´´Ù. À§ÀÇ Theorem 4.2.1\,Àº ¿ª½Ã
+Toeplitz ÀÛ¿ë¼Ò¿¡ ´ëÇØ¼­µµ  ¾ÆÁ¤±Ô¼º°ú 2-¾ÆÁ¤±Ô¼º »çÀÌ¿¡ Æ´ÀÌ
+Á¸ÀçÇÔÀ» º¸¿©ÁÖ°í ÀÖ´Ù. ¿¹¸¦ µé¾î, ¸¸ÀÏ
+$$
+\varphi(z)=\sum_{n=-m}^N a_n z^n\quad (m<N)
+$$
+¿¡ ´ëÇÏ¿© $T_\varphi$°¡ ¾ÆÁ¤±ÔÀÌ¸é, Theorem 4.2.1¿¡ ÀÇÇØ
+$T_\varphi$´Â °áÄÚ 2-¾ÆÁ¤±Ô°¡ ¾Æ´Ï´Ù (±× ÀÌÀ¯: $T_\varphi$°¡ Á¤±Ôµµ
+ÇØ¼®Àûµµ ¾Æ´Ô). ºñ±³ÇÏ¿© ´ÙÀ½À» »ó±âÇÒ ÇÊ¿ä°¡ ÀÖ´Ù: ¸¸ÀÏ,
+$\varphi(z)=\sum_{n=-m}^N a_n z^n$¿¡ ´ëÇÏ¿© $T_\varphi$°¡ Á¤±ÔÀÌ¸é,
+$m=N$ (cf. \cite{FL1}).
+
+\vspace{.2 cm} ¿ì¸®´Â Abrahamse's TheoremÀ» ¾à°£ È®ÀåÇÒ ¼ö ÀÖ´Ù.
+ÀÌ¸¦ À§ÇÏ¿© ´ÙÀ½ °üÂûÀÌ ÇÊ¿äÇÏ´Ù.
+
+
+\newpage\rightline{\small ÀÌ¿ì¿µ: Åä¿¡ÇÃ¸®Ã÷ ÀÛ¿ë¼Ò¿¡ ´ëÇÑ ºê¸®Áö ÀÌ·Ð\
+\ \ \large\it 195}
+
+\vspace{.8 cm}
+
+{\bf Proposition 4.2.2.} {\rm \cite{CuL2}} {\sl If
+$T\in\mathcal{B(H)}$ is 2-hyponormal then
+\begin{equation}\label{4.2.1}
+T\bigl(\text{ker}\,[T^*,T]\bigr)\ \subseteq \text{ker}\,[T^*,T].
+\end{equation}}
+
+±×·¯¸é  Áï½Ã ´ÙÀ½À» ¾ò´Â´Ù.
+
+\vspace{.2 cm}{\bf Corollary 4.2.3.} {\sl If $T_\varphi$ is
+$2$-hyponormal and if $\varphi$ or $\bar\varphi$ is of bounded type
+then $T_\varphi$ is normal or analytic, so that $T_\varphi$ is
+subnormal.}  \vspace{.2 cm}
+
+¿ì¸®´Â ¿ª½Ã ´ÙÀ½À» Áõ¸íÇÒ ¼ö ÀÖ´Ù.
+
+\vspace{.2 cm}{\bf Corollary 4.2.4.} {\sl If $T_\varphi$ is a
+$2$-hyponormal operator such that $\mathcal{E}(\varphi)$ contains at
+least two elements then $T_\varphi$ is normal or analytic, so that
+$T_\varphi$ is subnormal.}
+%\end{cor}
+\vspace{.2 cm}
+
+Corollary 4.2.3\,°ú Corollary 4.2.4\,·ÎºÎÅÍ, ¸¸ÀÏ $T_\varphi$°¡
+$2$-¾ÆÁ¤±ÔÀÌÁö¸¸ ºÎºÐÁ¤±Ô°¡ ¾Æ´Ï¸é, $\varphi$´Â À¯°èÇü ÇÔ¼ö°¡ ¾Æ´Ï°í
+$\mathcal{E}(\varphi)$´Â ²À ÇÏ³ªÀÇ ¿ø¼Ò·Î ÀÌ·ç¾îÁüÀ» ¾Ë ¼ö ÀÖ´Ù.
+¿ì¸®´Â ³ª¾Æ°¡ Toeplitz ÀÛ¿ë¼Ò¿¡ ´ëÇÏ¿© ÀÓÀÇÀÇ $k$-¾ÆÁ¤±Ô¼º°ú
+ºÎºÐÁ¤±Ô¼º »çÀÌ¿¡ Æ´ÀÌ Á¸ÀçÇÔÀ» º¸¿´´Ù.
+
+\vspace{.2 cm}{\bf Theorem 4.2.5.} {\rm \cite{CLL}} {\sl Let
+$0<\alpha<1$ and let $\psi$ be the conformal map of the unit disk
+onto the interior of the ellipse with vertices $\pm(1+\alpha)i$ and
+passing through $\pm(1-\alpha)$. Let $\varphi=\psi+\lambda\bar\psi$
+and let $T_\varphi$ be the corresponding Toeplitz operator on $H^2$.
+Then $T_\varphi$ is $k$-hyponormal if and only if $\lambda$ is in
+the circle $\left|z-\frac{\alpha(1-\alpha^{2j})}
+{1-\alpha^{2j+2}}\right|
+=\frac{\alpha^j(1-\alpha^2)}{1-\alpha^{2j+2}}$ for $j=0,1,\cdots
+,k-2 $ or in the closed disk
+$\left|z-\frac{\alpha(1-\alpha^{2(k-1)})} {1-\alpha^{2k}}\right| \le
+\frac{\alpha^{k-1}(1-\alpha^2)}{1-\alpha^{2k}}$. }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{.3 cm} {\bf 4.3 ¹ÌÇØ°á ¹®Á¦}
+
+\vspace{.3 cm} Cowen°ú LongÀÇ ¾ÆÀÌµð¾î \cite{CoL}´Â Toeplitz
+ÀÛ¿ë¼Ò¿Í ºÎºÐÁ¤±Ô¼º »çÀÌÀÇ °ü°è¿¡ ´ëÇÑ ¾î¶² ÀÏ¹ÝÀûÀÎ Æ¯Â¡µµ ÁÖÁö
+¸øÇß´Ù. °á±¹ Áö±Ý±îÁö ´©±¸µµ Toeplitz ÀÛ¿ë¼ÒÀÇ ºÎºÐÁ¤±Ô¼º¿¡ ´ëÇÏ¿©
+½É¹ú¿¡ ÀÇÇÑ Æ¯¼ºÈ­¸¦ ¸¸µéÁö ¸øÇß´Ù. µû¶ó¼­ ´ÙÀ½ ¹®Á¦´Â ¿©ÀüÈ÷
+¸Å·ÂÀûÀÌ°í Èï¹Ì·Ó´Ù:
+
+\vspace{.2 cm}
+
+{\bf Problem A.}  {\sl Characterize the subnormality of
+$T_\varphi$ in terms of $\varphi$\,? }
+
+\vspace{.2 cm} ÀÌÁ¦ Toeplitz ÀÛ¿ë¼Ò¿¡ ´ëÇÑ ºÎºÐÁ¤±Ô¼º°ú °ü·ÃµÈ º¸´Ù
+±¸Ã¼ÀûÀÎ ¹ÌÇØ°á ¹®Á¦µéÀ» Á¦½ÃÇÑ´Ù.
+
+
+
+\newpage \leftline{\large{\it 196}\ \ \ \small ÇÐ¹® ¿¬±¸ÀÇ
+µ¿Çâ°ú ÀïÁ¡ -- ¼öÇÐ} \vspace{.8 cm}
+
+{\bf Problem B.}  {\sl For which $f\in{\bold H}^{\infty}$, is there
+$\lambda\ (0<\lambda<1)$ with $T_{f +\lambda\overline{f}}$
+subnormal\,? }
+
+\vspace{.2 cm} {\bf Problem C.} {\sl Suppose $\psi$ is as in Theorem
+4.1.9 (i.e., the ellipse map). Are there $g\in{\bold H}^{\infty}$,
+$g\neq\lambda\psi +c$, such that $T_{\psi+\overline{g}}$ is
+subnormal\,? }
+
+\vspace{.2 cm}
+
+{\bf Problem D.} {\sl More generally, if $\psi
+\in\bold{H}^\infty$, define
+$$
+\mathcal{S}(\psi):=\{g\in\bold{H}^\infty:\ T_{\psi+\overline g}\ \mbox{is subnormal}\ \}.
+$$
+Describe $\mathcal{S}(\psi)$. For example, for which $\psi\in \bold{H}^\infty$, is it balanced?, or is it convex?, or is it weakly closed?
+What is ${\rm ext}\,\mathcal{S}(\psi)$\,?
+For which $\psi\in \bold{H}^\infty$, is it strictly convex ?, i.e.,
+$\partial\mathcal{S}(\psi)\subset{\rm ext}\,\mathcal{S}(\psi)$\,?
+}
+
+\vspace{.2 cm} C.\ Cowen \cite{Cow3}Àº ¾î¶² ³íÁõµµ ¾øÀÌ ´ÙÀ½ÀÇ
+Èï¹Ì·Î¿î ¾ð±ÞÀ» ÇÏ¿´´Ù: ``{\it If $T_\varphi$ is subnormal then
+$\mathcal{E}(\varphi)=\{\lambda\}$ with $|\lambda|<1$".} ±×·¯³ª
+¿ì¸®´Â ÀÌ°ÍÀÌ ÂüÀÎÁö ¾Æ´ÑÁö º¸ÀÏ ¼ö°¡ ¾ø¾ú´Ù. ¹°·Ð ¸¸ÀÏ
+$T_\varphi$°¡ Á¤±ÔÀÌ¸é, $\mathcal{E}(\varphi)=\{e^{i\theta}\}$ ÀÌ´Ù.
+µû¶ó¼­ ´ÙÀ½Àº ÀÚ¿¬½º·¯¿î Áú¹®ÀÌ´Ù.
+
+\vspace{.2 cm} {\bf Problem E.} {\sl Is the above Cowen's remark
+true\,? That is, if $T_\varphi$ is subnormal, does it follow that
+$\mathcal{E}(\varphi)=\{\lambda\}$ with $|\lambda|<1$\,? }
+
+\vspace{.2 cm}
+
+¸¸ÀÏ Problem EÀÇ ´ë´äÀÌ ±àÁ¤ÀûÀÌ¸é, Áï,
+À§ÀÇ CowenÀÇ ¾ð±ÞÀÌ ÂüÀÌ¸é, $\varphi=\overline g+f$¿¡ ´ëÇÏ¿©,
+$$
+\mbox{$T_\varphi$ is subnormal}\ \Longrightarrow \ \overline
+g-\lambda \overline f\in \bold{H}^2\ \ \mbox{with}\ |\lambda|<1\
+\Longrightarrow\ g=\overline\lambda f+c.
+$$
+($c$´Â »ó¼ö). ÀÌ´Â Problem CÀÇ ÇØ´äÀÌ ºÎÁ¤ÀûÀÓÀ» º¸¿©ÁØ´Ù.
+
+\vspace{.2 cm}
+
+ÇÑÆí, Corollary 4.9.3\,À¸·ÎºÎÅÍ $T_\varphi$°¡ $2$-¾ÆÁ¤±ÔÀÌ°í
+$\varphi$ ¶Ç´Â $\bar\varphi$°¡ À¯°èÇü½Ä ÇÔ¼öÀÌ¸é, $T_\varphi$´Â
+ºñÀÚ¸í ºÒº¯ ºÎºÐ°ø°£(nontrivial invariant subspace)À» °¡Áø´Ù. ±×·¡¼­
+´ÙÀ½ ¹®Á¦°¡ ÀÚ¿¬½º·´°Ô ¶°¿À¸¥´Ù: \vspace{.2 cm}
+
+ {\bf Problem F.} {\sl Does every $2$-hyponormal
+Toeplitz operator have a nontrivial invariant subspace\,? More
+generally, does every $2$-hyponormal operator have a nontrivial
+invariant subspace\,? }
+
+\vspace{.2 cm}
+
+
+\newpage\rightline{\small ÀÌ¿ì¿µ: Åä¿¡ÇÃ¸®Ã÷ ÀÛ¿ë¼Ò¿¡ ´ëÇÑ ºê¸®Áö ÀÌ·Ð\ \ \
+\large\it 197} \vspace{0.8cm}
+
+ ¸¸ÀÏ, $T$°¡ ¾ÆÁ¤±ÔÀÌ°í $R(\sigma(T))\ne
+C(\sigma(T))$ÀÌ¸é $T$°¡ ºñÀÚ¸í ºÒº¯ºÎºÐ°ø°£À» °¡Áø´Ù´Â »ç½ÇÀÌ ³Î¸®
+¾Ë·ÁÁ® ÀÖ´Ù(\cite{Bro}). ±×·¯³ª $T$°¡ ¾ÆÁ¤±ÔÀÌ°í,
+$R(\sigma(T))=C(\sigma(T))$ÀÌ¸é (Áï, thin spectrumÀ» °¡Áö¸é) $T$°¡
+ºñÀÚ¸í ºÒº¯ ºÎºÐ°ø°£À» °¡Áö´ÂÁö´Â ¿©ÀüÈ÷ ¹ÌÇØ°á ¹®Á¦ÀÌ´Ù. ÇÑÆí,
+$T\in\mathcal{B(H)}$°¡ von Neumann ÀÛ¿ë¼Ò¶ó°í ÇÔÀº $\sigma(T)$
+¹Û¿¡¼­ poleÀ» °¡Áö´Â À¯¸®ÇÔ¼ö $f$¿¡ ´ëÇÏ¿© $f(T)$°¡ normaloid (i.e.,
+norm = spectral radius)ÀÓÀ» ¶æÇÑ´Ù. B. Prunaru \cite{Pru}´Â ¸ðµç
+´ÙÇ× ¾ÆÁ¤±ÔÀÛ¿ë¼Ò´Â ºñÀÚ¸í ºÒº¯ ºÎºÐ°ø°£À» °¡ÁüÀ» º¸¿´´Ù. ¿ª½Ã
+\cite{Ag}¿¡¼­ von Neumann ÀÛ¿ë¼Òµµ ºñÀÚ¸í ºÒº¯ºÎºÐ°ø°£À» °¡ÁüÀ»
+º¸¿´´Ù. ´ÙÀ½Àº Problem FÀÇ ºÎºÐ ¹®Á¦ÀÌ´Ù.
+
+\vspace{.2 cm}
+
+
+{\bf Problem G.} {\sl Is every 2-hyponormal operator with thin
+spectrum a von-Neumann operator\,? }
+
+\vspace{.2 cm}
+
+ºñ·Ï, ºÎºÐÁ¤±Ô°¡ ¾Æ´Ñ ´ÙÇ×Á¤±Ô °¡ÁßÀÌµ¿ÀÛ¿ë¼ÒÀÇ Á¸Àç°¡ ¾Ë·ÁÁ® ÀÖ±â´Â
+ÇÏÁö¸¸ (cf. \cite{CP1}, \cite{CP2}), Åä¿¡ÇÃ¸®Ã÷ ÀÛ¿ë¼Ò¿¡ ´ëÇÏ¿©
+``´ÙÇ×Á¤±Ô $\Rightarrow$ ºÎºÐÁ¤±Ô" ÀÎÁö ¾Æ´ÑÁö´Â ¾Ë·ÁÁ® ÀÖÁö ¾Ê´Ù.
+±×·¡¼­ ´ÙÀ½ ¹®Á¦µµ ÀÚ¿¬½º·´°Ô ¶°¿À¸¥´Ù.
+
+\vspace{.2 cm}
+
+{\bf Problem H.} {\sl Does there exist a Toeplitz operator which is
+polynomially hyponormal but not subnormal\,? }
+
+\vspace{.2 cm}
+
+ÇÑÆí, \cite{CuL2}¿¡¼­ ¸ðµç ¼ø¼ö(pure -- it has no normal direct
+summand) $2$-¾ÆÁ¤±Ô ÀÛ¿ë¼Ò $T$ÀÇ ÀÚ±â-°¡È¯ÀÚÀÇ °è¼ö(rank)°¡ 1ÀÌ¸é
+$T$´Â ÀÌµ¿ÀÛ¿ë¼ÒÀÇ ¼±ÇüÇÔ¼öÀÓÀÌ ¹àÇôÁ³´Ù. McCarthy ¿Í Yang
+\cite{McCYa}Àº À¯ÇÑ °è¼ö¸¦ °¡Áö´Â ÀÚ±â-°¡È¯ÀÚÀÇ ¸ðµç À¯¸®
+¼øÈ¯(rationally cyclic) ºÎºÐÁ¤±Ô ÀÛ¿ë¼Ò¸¦ Æ¯¼ºÈ­ÇÏ¿´´Ù. ±×·¯³ª
+¿©ÀüÈ÷ À¯ÇÑ °è¼öÀÇ ÀÚ±â-°¡È¯ÀÚ¸¦ °¡Áö´Â ¸ðµç ¼ø¼ö ºÎºÐÁ¤±Ô ÀÛ¿ë¼Ò¸¦
+Æ¯¼ºÈ­ÇÏÁö´Â ¸øÇß´Ù. ±×·¡¼­ ´ÙÀ½ÀÇ Áú¹®ÀÌ Áï½Ã ¶°¿À¸¥´Ù.
+
+\vspace{.2 cm} {\bf Problem I.} {\sl If $T_\varphi$ is a
+$2$-hyponormal Toeplitz operator with nonzero finite rank
+self-commutator, does it follow that $T_\varphi$ is analytic\,? }
+
+\vspace{.2 cm}
+
+À§ÀÇ ¹ÌÇØ°á ¹®Á¦µéÀº ¸ðµÎ ½±Áö ¾ÊÀº ¹®Á¦µé·Î º¸¿©Áø´Ù. ±×·¯³ª
+Toeplitz ÀÛ¿ë¼ÒÀÇ ¼ºÁúÀ» ÃæºÐÈ÷ ÀÌÇØÇÏ±â À§ÇØ¼­´Â À§ ¹®Á¦ÀÇ ´äÀ»
+Ã£´Â °ÍÀº ÇÊ¼öºÒ°¡°áÇÑ ÀÏÀÌ´Ù. ´õ±¸³ª ÀÛ¿ë¼ÒÀÇ ºê¸®Áö ÀÌ·ÐÀÇ ¿Ï¼ºÀ»
+À§ÇØ¼­´Â Toeplitz ÀÛ¿ë¼ÒÀÇ ºÎºÐÁ¤±Ô¼º È®¸³¿¡ ´ëÇÑ ³ë·ÂÀ» ´õ¿í °æÁÖÇÒ
+ÇÊ¿ä°¡ ÀÖ´Ù. ¹ÌÇØ°á ¹®Á¦¿¡ ´ëÇÑ µµÀüÀÌ¾ß¸»·Î ¼öÇÐ ÃÖ°íÀÇ ¹Ì´öÀÌ ¾Æ´Ò
+¼ö ¾ø´Ù
+
+\newpage
+\leftline{\large{\it 198}\ \ \ \small ÇÐ¹® ¿¬±¸ÀÇ µ¿Çâ°ú ÀïÁ¡ --
+¼öÇÐ}
+
+\vspace{0.8cm}
+
+ÂüÀ¸·Î, Morris Kline\,ÀÌ Bertrand RusselÀÇ ÇÑ ÀÛÇ°¿¡ Çå»çÇÑ ¼­¹®¿¡¼­
+Ã³·³ ``¹ÌÇØ°á ¹®Á¦¿¡ ´ëÇÑ µµÀüÀº ÀÎ·ù¸¦ ±ú¾î ÀÖ°Ô ¸¸µé°í ±Ã±ØÀûÀ¸·Î
+ÀÎ·ù¸¦ Á¤½ÅÀû ¹«±â·ÂÀ¸·ÎºÎÅÍ º¸È£ÇÒ °ÍÀÌ´Ù."
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{thebibliography}{99}\footnotesize
+
+
+\bibitem[1]{Ab} M. B. Abrahamse,
+{\it Subnormal Toeplitz operators and functions of bounded type},
+Duke Math. J. {\bf 43} (1976), 597--604.
+
+\bibitem[2]{Ag} J. Agler, {\it An invariant subspace problem}, J. Funct. Anal.
+{\bf 38} (1980), 315--323.
+
+\bibitem[3]{Bro} S. Brown, {\it Hyponormal operators with thick spectra have invariant subspaces},
+Ann. of Math. {\bf 125} (1987), 93--103.
+
+\bibitem[4]{BH} A. Brown and P. R. Halmos, {\it Algebraic properties of Toeplitz operators},
+J. Reine Angew. Math. {\bf 213} (1963-1964), 89--102.
+
+
+\bibitem[5]{Con2} J. B. Conway, The Theory of Subnormal Operators,
+Math. Surveys and Monographs, vol. 36, Amer. Math. Soc., Providence, 1991.
+
+
+\bibitem[6]{Cow2} C. Cowen, {\it Hyponormal and subnormal Toeplitz operators},
+Surveys of Some Recent Results in Operator Theory, I (J. B. Conway
+and B. B. Morrel, eds.) Pitman Research Notes in Mathematics,
+Longman, Vol.{\bf 171} (1988), 155--167.
+
+\bibitem[7]{Cow3} C. Cowen, {\it Hyponormality of Toeplitz operators}, Proc. Amer. Math. Soc.
+{\bf 103} (1988), 809--812.
+
+\bibitem[8]{CoL} C. C. Cowen and J. J. Long, {\it Some subnormal Toeplitz operators},
+J. Reine Angew. Math. {\bf 351} (1984), 216--220.
+
+\bibitem[9]{Cu1} R. E. Curto, {\it Quadratically hyponormal weighted shifts},
+Integral Equations Operator Theory, {\bf 13} (1990), 49--66.
+
+\bibitem[10]{CHL1}R. E. Curto, I. S. Hwang and W. Y. Lee,
+{\it Hyponormality and subnormality of block Toeplitz operators},
+Adv. Math. {\bf 230} (2012), 2094--2151.
+
+
+\bibitem[11]{CHL2}  R. E. Curto, I. S. Hwang and W. Y. Lee,
+{\it Which subnormal Toeplitz operators are either normal or
+analytic\,?}, J. Funct. Anal. {\bf 263}(8) (2012), 2333--2354.
+
+
+\newpage  \rightline{\small ÀÌ¿ì¿µ: Åä¿¡ÇÃ¸®Ã÷ ÀÛ¿ë¼Ò¿¡ ´ëÇÑ ºê¸®Áö
+ÀÌ·Ð\ \ \ \large\it 199}
+
+\vspace{.4 cm}
+
+\bibitem[12]{CLL} R. E. Curto, S. H. Lee and W. Y. Lee, {\it Subnormality and 2-hyponormality for Toeplitz operators},
+Integral Equations Operator Theory, {\bf 44} (2002), 138--148.
+
+
+\bibitem[13]{CuL1} R. E. Curto and W. Y. Lee, {\it Joint hyponormality of Toeplitz pairs},
+Memoirs Amer. Math. Soc. No.{\bf 712}, Amer. Math. Soc., Providence,
+2001.
+
+\bibitem[14]{CuL2} R. E. Curto and W. Y. Lee, {\it Towards a model theory for $2$--hyponormal operators},
+Integral Equations Operator Theory, {\bf 44} (2002), 290--315.
+
+\bibitem[15]{CP1} R. E. Curto and M. Putinar, {\it Existence of non-subnormal polynomially hyponormal operators},
+Bull. Amer. Math. Soc. (N.S.), {\bf 25} (1991), 373--378.
+
+\bibitem[16]{CP2} R. E. Curto and M. Putinar, {\it Nearly subnormal operators and moment problems},
+J. Funct. Anal. {\bf 115} (1993), 480--497.
+
+\bibitem[17]{FL1} D. R. Farenick and W. Y. Lee, {\it Hyponormality and spectra of Toeplitz operators},
+Trans. Amer. Math. Soc., {\bf 348} (1996), 4153--4174.
+
+\bibitem[18]{FF} C. Foia\c s and A. Frazho, {\it The commutant lifting approach to
+interpolation problems}, Operator Theory: Adv. Appl., vol.{\bf 44},
+Birkh\" auser-Verlag, Boston, 1990.
+
+\bibitem[19]{GGK} I. Gohberg, S. Goldberg and M.A. Kaashoek, {\it Classes Linear Operators},
+vol.{\bf II}, Birkh\" auser-Verlag, Boston, 1993.
+
+\bibitem[20]{Ha1} P. R. Halmos, {\it Ten problems in Hilbert space},
+Bull. Amer. Math. Soc., {\bf 76} (1970), 887--933.
+
+\bibitem[21]{Ha2} P. R. Halmos, {\it Ten years in Hilbert space},
+Integral Equations Operator Theory, {\bf 2} (1979), 529--564.
+
+\bibitem[22]{McCYa} J. E. McCarthy and L. Yang, {\it Subnormal operators and quadrature domains},
+Adv. Math. {\bf 127} (1997), 52--72.
+
+\bibitem[23]{NaT} T. Nakazi and K. Takahashi, {\it Hyponormal Toeplitz operators and extremal problems of Hardy spaces}
+Trans. Amer. Math. Soc. {\bf 338} (1993), 753--767.
+
+\bibitem[24]{Ni} N. K. Nikolskii, {\it Treatise on the shift operator}, Springer, New York, 1986.
+
+\bibitem[25]{Pru} B. Prunaru, {\it Invariant subspaces for polynomially hyponormal operators},
+Proc. Amer. Math. Soc. {\bf 125} (1997), 1689--1691.
+
+\bibitem[26]{Sun} S. Sun, {\it Bergman shift is not unitarily equivalent to a Toeplitz operator},
+Kexue Tongbao(English Ed.) {\bf 28} (1983), 1027--1030.
+
+
+\end{thebibliography}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage\leftline{\large{\it 200}\ \ \ \small ÇÐ¹®
+¿¬±¸ÀÇ µ¿Çâ°ú ÀïÁ¡ -- ¼öÇÐ}
+
+ \vspace{0.5cm}
+
+\centerline{\bf Abstract}
+
+\vspace{.3 cm}
+
+\centerline{\large Bridge theory for Toeplitz operators}
+
+\vspace{.3 cm} \centerline{\sc Woo Young Lee}
+
+\vspace{0.4 cm} Toeplitz operators arise naturally in several fields
+of mathematics and in a variety of problems in physics. \ Also the
+theory of hyponormal and subnormal operators is an extensive and
+highly developed area, which has made important contributions to a
+number of problems in functional analysis, operator theory, and
+mathematical physics. \ Thus, it becomes of central significance to
+describe in detail hyponormality and subnormality for Toeplitz
+operators. In this sense, the following question is challenging and
+interesting:
+$$
+\hbox{Which Toeplitz operators are hyponormal or subnormal ?}
+$$
+While the precise relation between normality and subnormality has
+been extensively studied, as have been the classes of subnormal and
+hyponormal operators, the relative position of the class of
+subnormals inside the classes of hyponormals is still far from being
+well understood. We call it a `bridge theory' for operators to
+explore the gap between hyponormality and subnormality for bounded
+linear operators acting on an infinite dimensional complex Hilbert
+(or Banach) space. In this survey note, we provide a bridge theory
+for Toeplitz operators. This is originated from Halmos' Problem 5
+(in 1970): $\hbox{\it Is every subnormal Toeplitz operator either
+normal or analytic\,?}$ \ Even though Halmos's Problem 5 was, in
+1984, answered in the negative by C. Cowen and J. Long, until now
+researchers have been unable to characterize subnormal Toeplitz
+operators in terms of their symbols. In this survey note we study
+the subnormality and hyponormality of Toeplitz operators acting on
+the vector-valued Hardy space $H^2_{\mathbf{C}^n}$ of the unit
+circle.
+
+\vspace{.3 cm}
+
+{\footnotesize 2010 Mathematics Subject Classification: 47B20,
+47B35, 46J15, 15A83, 30H10, 47A20.
+
+\vspace{.2 cm}
+
+\indent Key words and phrases: Hardy spaces, Toeplitz operators,
+Hankel operators, normal, subnormal, hyponormal, $k$-hyponormal. }
+
+
+\end{document}
+\end
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%
+%%
+%%                           END
+%%
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
