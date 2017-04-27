@@ -1,0 +1,598 @@
+
+<section xml:id="x4_1_1">
+  <title>Toeplitz 작용소의 부분정규성</title>
+  <introduction>
+    <p>
+      이 절은 다음의 문제에 관한 것이다: <em>어떤 Toeplitz 작용소가
+      부분정규인가?</em> Toeplitz 작용소 <m>T_\varphi</m>가 해석적(analytic)이라
+      함은 심벌 <m>\varphi</m>가 <m>\mathbf H^\infty</m>에 속할 때를 말한다, 즉,
+      <m>\varphi</m>가 <m>\mathbb{D}</m> 상의 유계 해석함수일 때이다. 이는
+      부분정규임을 쉽게 알 수 있다. 실제로,
+      <me>
+        T_\varphi h=P(\varphi h)=\varphi h=M_\varphi h \mbox{(\(h\in \mathbf H^2\))} ,
+      </me>
+    </p>
+
+    <p>
+      여기에서, <m>M_\varphi</m>는 <m>\mathbf L^2</m> 상에서 <m>\varphi</m>를 곱하는 곱
+      작용소(multiplication operator)로서 정규작용소이다. 1970년에
+      P. R.<nbsp />Halmos는 <em>Ten Problems in Hilbert Space</em> (cf. <xref ref="Ha1" />, <xref ref="Ha2" />)라는 강의록에서 작용소 학계에 Hilbert 공간
+      상의 문제 열 개를 제시하였는데, 그 중 다섯번째 문제 (소위 Halmos'
+      Problem 5로 불리움)가 Toeplitz 작용소의 부분정규성에 대한
+      것이었다: <em>모든 부분정규 Toeplitz
+      작용소는 정규이거나 해석적일까 ?</em>
+    </p>
+
+    <p>
+      이 문제는 정규 Toeplitz 작용소와 해석적 Toeplitz
+      작용소가 잘 이해되고, 또 모두 부분정규이므로 매우 자연스러운 문제라
+      하겠다.
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Halmos' Problem 5</title>
+    <p>
+      이제 Halmos' Problem 5와 관련된 연구에 대하여
+      살펴본다. 1976년에, M. Abrahamse<nbsp /><xref ref="Ab" />가 Halmos' Problem 5에
+      대한 매우 일반적인 충분조건을 주었는데, 이 오래 된 정리가 약간
+      놀랍게도 오늘날까지 알려진 가장 좋은 충분조건이다.
+    </p>
+
+    <theorem>
+      <statement>
+        <p>
+          Abrahamse's Theorem) {<nbsp /><xref ref="Ab" />} If
+          <ul>
+            <li>
+              <p>
+                <m>T_{\varphi}</m> is hyponormal;
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>\varphi</m> or <m>\overline\varphi</m> is of bounded type;
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>{ ker}[T_{\varphi}^*,T_{\varphi}]</m> is invariant for <m>T_{\varphi}</m>,
+              </p>
+            </li>
+          </ul>
+        </p>
+
+        <p>
+          then <m>T_{\varphi}</m> is normal or analytic.
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      한편, 만일 <m>S</m>가 <m>\mathcal H</m> 상의 부분정규이고
+      <m>N:=\mbox{mne} \,(S)</m>이면,
+      <me>
+        { ker}[S^*,S]=\{ f:\ \lt f, [S^*,S]f>=0\}=\{ f:\ ||S^*f||=||Sf||\}=\{ f:\ N^{*}f\in\mathcal{H}\}.
+      </me>
+    </p>
+
+    <p>
+      그러므로 <m>S({ ker}[S^*,S])\subseteq { ker}[S^*,S]</m>. 따라서,
+      Theorem 4.1.1에 의헤서 다음을 얻는다.
+    </p>
+
+    <corollary>
+      <statement>
+        <p>
+          If <m>T_{\varphi}</m> is
+          subnormal and if <m>\varphi</m> or <m>\overline\varphi</m> is of bounded type,
+          then <m>T_{\varphi}</m> is normal or analytic.
+        </p>
+      </statement>
+    </corollary>
+
+    <p>
+      위의 Abrahamse's Theorem은 최근에 저자와 공저자들이 행렬함수심벌로
+      확장하는 데 성공하였다 (<nbsp /><xref ref="CHL2" />). 다음은 M. Abrahamse<nbsp /><xref ref="Ab" />이 밝혀낸 유계형 함수의 특성화이다.
+    </p>
+
+    <corollary>
+      <statement>
+        <p>
+          A function <m>\varphi</m> is
+          of bounded type if and only if <m>{ ker}H_{\varphi}\neq\{0\}</m>.
+        </p>
+      </statement>
+    </corollary>
+
+    <p>
+      Toeplitz 작용소의 부분정규성을 잘 연구할 수 있는 방법
+      중의 하나가 기존의 잘 알려진 부분정규 작용소와 유니터리 동치인
+      경우를 찾아내는 것인데, 가중이동 작용소가 비교적 부분정규를 알기
+      쉬운 경우이므로 어떤 가중이동 작용소가 Toeplitz 작용소와 유니터리
+      동치인지 물어볼 수 있을 것이다. 다음은 그 첫번째 답이다.
+    </p>
+
+    <proposition>
+      <statement>
+        <p>
+          If <m>A</m> is a weighted shift with
+          weights <m>a_0, a_1, a_2, \cdots</m> such that
+          <me>
+            0\le a_0 \le a_1 \le \cdots \lt  a_N = a_{N+1}= \cdots = 1,
+          </me>
+          then <m>A</m> is not unitarily equivalent to any Toeplitz operator.
+        </p>
+      </statement>
+    </proposition>
+
+    <p>
+      이제 유명한 Bergman 이동작용소(shift) (가중수열이
+      <m>\sqrt{{n+1}\over{n+2}}</m>로 주어지는 이동 작용소)는 부분정규이므로
+      우리는 약간의 기대감을 가지고 다음을 물을 수 있을 것이다.
+      <men xml:id="x4_1_2" >
+        \mbox{Bergman 이동 작용소는 어떤 Toeplitz 작용소와 유니터리
+        동치인가?}
+      </men>
+    </p>
+
+    <p>
+      만일 위의 질문 <xref ref="x4_1_2" />의 대답이 긍정적이라면, Halmos' Problem
+      5의 대답은 부정적이 될 것이다. 이를 알기 위해서 Bergman 이동작용소
+      <m>S</m>가 Toeplitz 작용소 <m>T_\varphi</m>와 유니터리 동치라고 가정하자.
+      그러면,
+      <me>
+        \frak{R}(\varphi)\subseteq\ \sigma
+        _e(T_\varphi )=\sigma_e(S)=\mbox{the unit circle}   \mathbb{T}.
+      </me>
+    </p>
+
+    <p>
+      따라서, <m>\varphi</m>는 그 절대값이 1인 함수(unimodular)이다. 그런데
+      <m>S</m>가 등장함수가 아니므로 <m>\varphi</m>는 내적함수가 아니다. 그러므로,
+      <m>T_\varphi</m>는 해석적 Toeplitz 작용소가 아니다. 1983년에 S. Sun<nbsp /><xref ref="Sun" />이 문제 <xref ref="x4_1_2" />에 부정적인 해답을 주었다.
+    </p>
+
+    <theorem>
+      <title>Sun's Theorem</title>
+      <statement>
+        <p>
+          {<nbsp /><xref ref="Sun" />} Let <m>T</m>
+          be a weighted shift with a strictly increasing weight sequence
+          <m>\{a_{n}\}_{n=0}^{\infty}</m>. If <m>T\cong T_{\varphi}</m> then
+          <me>
+            a_{n}=\sqrt{1-{\alpha}^{2n+2}} \,||T_{\varphi}|| (0\lt \alpha \lt 1).
+          </me>
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      위의 Theorem 4.1.5에 의하여 다음을 얻는데 이는 문제
+      <xref ref="x4_1_2" />의 답을 준다.
+    </p>
+
+    <corollary>
+      <statement>
+        <p>
+          The Bergman shift is not unitarily
+          equivalent to any Toeplitz operator.
+        </p>
+      </statement>
+    </corollary>
+
+    <p>
+      마침내, 1984년에 Cowen과 Long<nbsp /><xref ref="CoL" />이 Halmos' Problem 5를
+      해결하였는데, 우선 이를 위해 다음이 필요하다.
+    </p>
+
+    <lemma>
+      <statement>
+        <p>
+          The weighted shift <m>T\equiv
+          W_{\alpha}</m> with weights <m>\alpha_n\equiv
+          (1-\alpha^{2n+2})^{\frac{1}{2}}  (0\lt \alpha \lt 1)</m> is subnormal.
+        </p>
+      </statement>
+    </lemma>
+
+    <p>
+      더구나 Toeplitz 작용소가 가중이동 작용소와 유니터리
+      동치이면 부분정규가 됨이 알려졌다.
+    </p>
+
+    <corollary>
+      <statement>
+        <p>
+          If <m>T_{\varphi} \cong</m> a weighted shift,
+          then <m>T_\varphi</m> is subnormal.
+        </p>
+      </statement>
+    </corollary>
+
+    <p>
+      만일 <m>T_\varphi</m>가 가중이동 작용소와 동치이면,
+      <m>\varphi</m>는 어떤 형태일까?<nbsp /><xref ref="Sun" />의 증명을 분석해보면,
+      다음을 알 수 있다.
+      <me>
+        \psi=\varphi -\alpha\overline{\varphi}\in {\mathbf H}^{\infty}.
+      </me>
+      <md>
+        <mrow>T_\psi =T_\varphi -\alpha T_{\varphi}^* \amp =
+        {\begin{pmatrix}
+        0 \amp -\alpha a_0</mrow>
+        <mrow>a_0\amp 0\amp -\alpha a_1</mrow>
+        <mrow>\amp a_1\amp 0\amp -\alpha a_2</mrow>
+        <mrow>\amp \amp a_2\amp 0\amp \ddots</mrow>
+        <mrow>\amp \amp \amp \ddots\amp \ddots
+         \end{pmatrix}}</mrow>
+        <mrow>\amp =\begin{pmatrix}
+        0 \amp -\alpha</mrow>
+        <mrow>1\amp 0\amp -\alpha</mrow>
+        <mrow>\amp 1\amp 0\amp -\alpha</mrow>
+        <mrow>\amp \amp 1\amp 0\amp \ddots</mrow>
+        <mrow>\amp \amp \amp \ddots\amp \ddots
+        \end{pmatrix} + K \mbox{(\(K\) compact)}</mrow>
+        <mrow>\amp \cong T_{z-\alpha\overline{z}}+K.</mrow>
+      </md>
+    </p>
+
+    <p>
+      따라서,
+      <m>\mbox{ran} \,(\psi)=\sigma_{e}(T_{\psi})
+      =\sigma_{e}(T_{z-\alpha\overline{z}})={ ran}(z-\alpha\overline{z})</m>.
+      그러므로, <m>\psi</m>는 단위원판을 꼭지점이 <m>\pm i(1+\alpha)</m>이고, <m>\pm(1-\alpha)</m>을
+      지나는 타원으로 보내는 등각사상이다.
+      한편, <m>\psi=\varphi -\alpha\overline{\varphi}</m>.
+      그래서,
+      <m>\alpha\overline{\psi}=\alpha\overline{\varphi} -\alpha^2\varphi</m>
+      이고, 다음이 성립한다.
+      <me>
+        \varphi=\frac{1}{1-\alpha^2}(\psi +\alpha\overline{\psi}).
+      </me>
+    </p>
+
+    <theorem>
+      <title>Cowen and Long Theorem</title>
+      <statement>
+        <p>
+          {<nbsp /><xref ref="CoL" />} For <m>0\lt \alpha \lt 1</m>, let <m>\psi</m> be a conformal map of
+          <m>\mathbb{D}</m> onto the interior of the ellipse with vertices <m>\pm
+          i(1-\alpha)^{-1}</m> and passing through <m>\pm (1+\alpha)^{-1}</m>. Then
+          <m>T_{\psi +\alpha\overline{\psi}}</m> is a subnormal weighted shift that
+          is neither analytic nor normal.
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      Abrahamse's Theorem 과 Theorem 4.1.9 로부터 다음을 얻는다.
+    </p>
+
+    <corollary>
+      <statement>
+        <p>
+          If <m>\varphi=\psi
+          +\alpha\overline{\psi}</m> is as in Theorem 4.1.9, then neither
+          <m>\varphi</m> nor <m>\overline{\varphi}</m> is bounded type.
+        </p>
+      </statement>
+    </corollary>
+
+    <p>
+      이제 Halmos' Problem 5가 해결되었다고는 하나, 본질적으로 Toeplitz
+      작용소의 부분정규성은 여전히 암흑 속에 갇혀 있다고 해도 과언이
+      아니다. Abrahamse's Theorem 정도가 가장 좋은 대답이므로 앞으로 계속
+      Toeplitz 작용소의 부분정규성을 탐험해 갈 필요가 있다. 지난 십 수년간
+      저자와 공동 연구자들은 이 문제를 끊임없이 고찰해 왔으며 부분적으로
+      흥미로운 결과들을 만들어내기는 하였지만, 여전히 그 여정은
+      미미하였으며 앞으로도 얼마나 더 긴 여정을 거쳐야 할 지 모른다. 물론
+      지나온 여정 중에 종종 신기루 같은 것을 보긴 하였지만 가까이 가보면
+      그냥 신기루였을 뿐, 여전히 그 단서를 찾지 못하고 있다. 다음 절에서는
+      그 중 한 가지를 살펴볼 것이다.
+    </p>
+  </subsection>
+
+  <subsection>
+    <title>Toeplitz 작용소의 <m>k</m>-아정규성과 부분정규성
+    사이의 틈</title>
+    <p>
+      Toeplitz 작용소의 <m>k</m>-아정규성과 부분정규성 사이의 틈
+      을 이해하는 것은 매우 흥미로워 보인다. 이 문제에 대한 첫번째
+      후보로서 우리는 다음을 생각할 수 있다 (<nbsp /><xref ref="CuL1" />): 모든 2-아정규
+      Toeplitz 작용소는 부분정규인가?
+    </p>
+
+    <p>
+      이 문제에 대하여<nbsp /><xref ref="CuL1" />에서 다음이 보여졌다:
+    </p>
+
+    <theorem>
+      <title><xref ref="CuL1" /></title>
+      <statement>
+        <p>
+          Every
+          trigonometric Toeplitz operator whose square is hyponormal must be
+          normal or analytic. Hence, in particular, every 2-hyponormal
+          trigonometric Toeplitz operator is subnormal.
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      <xref ref="Cu1" />에서 가중이동 작용소에 대한 아정규성과
+      2-아정규성 사이에 틈이 존재함을 보였다. 위의 Theorem 4.2.1 은 역시
+      Toeplitz 작용소에 대해서도 아정규성과 2-아정규성 사이에 틈이
+      존재함을 보여주고 있다. 예를 들어, 만일
+      <me>
+        \varphi(z)=\sum_{n=-m}^N a_n z^n (m\lt N)
+      </me>
+    </p>
+
+    <p>
+      에 대하여 <m>T_\varphi</m>가 아정규이면, Theorem 4.2.1에 의해
+      <m>T_\varphi</m>는 결코 2-아정규가 아니다 (그 이유: <m>T_\varphi</m>가 정규도
+      해석적도 아님). 비교하여 다음을 상기할 필요가 있다: 만일,
+      <m>\varphi(z)=\sum_{n=-m}^N a_n z^n</m>에 대하여 <m>T_\varphi</m>가 정규이면,
+      <m>m=N</m> (cf. <xref ref="FL1" />).
+    </p>
+
+    <p>
+      우리는 Abrahamse's Theorem을 약간 확장할 수 있다.
+      이를 위하여 다음 관찰이 필요하다.
+    </p>
+
+    <proposition>
+      <title><xref ref="CuL2" /></title>
+      <statement>
+        <p>
+          If
+          <m>T\in\mathcal{B(H)}</m> is 2-hyponormal then
+          <men xml:id="x4_2_1" >
+            T\bigl(\text{ ker } \,[T^*,T]\bigr)  \subseteq \text{ ker } \,[T^*,T].
+          </men>
+        </p>
+      </statement>
+    </proposition>
+
+    <corollary>
+      <statement>
+        <p>
+          If <m>T_\varphi</m> is
+          <m>2</m>-hyponormal and if <m>\varphi</m> or <m>\bar\varphi</m> is of bounded type
+          then <m>T_\varphi</m> is normal or analytic, so that <m>T_\varphi</m> is
+          subnormal.
+        </p>
+      </statement>
+    </corollary>
+
+    <corollary>
+      <statement>
+        <p>
+          If <m>T_\varphi</m> is a
+          <m>2</m>-hyponormal operator such that <m>\mathcal{E}(\varphi)</m> contains at
+          least two elements then <m>T_\varphi</m> is normal or analytic, so that
+          <m>T_\varphi</m> is subnormal.
+        </p>
+      </statement>
+    </corollary>
+
+    <p>
+      Corollary 4.2.3 과 Corollary 4.2.4 로부터, 만일 <m>T_\varphi</m>가
+      <m>2</m>-아정규이지만 부분정규가 아니면, <m>\varphi</m>는 유계형 함수가 아니고
+      <m>\mathcal{E}(\varphi)</m>는 꼭 하나의 원소로 이루어짐을 알 수 있다.
+      우리는 나아가 Toeplitz 작용소에 대하여 임의의 <m>k</m>-아정규성과
+      부분정규성 사이에 틈이 존재함을 보였다.
+    </p>
+
+    <theorem>
+      <title><xref ref="CLL" /></title>
+      <statement>
+        <p>
+          Let
+          <m>0\lt \alpha\lt 1</m> and let <m>\psi</m> be the conformal map of the unit disk
+          onto the interior of the ellipse with vertices <m>\pm(1+\alpha)i</m> and
+          passing through <m>\pm(1-\alpha)</m>. Let <m>\varphi=\psi+\lambda\bar\psi</m>
+          and let <m>T_\varphi</m> be the corresponding Toeplitz operator on <m>H^2</m>.
+          Then <m>T_\varphi</m> is <m>k</m>-hyponormal if and only if <m>\lambda</m> is in
+          the circle <m>\left|z-\frac{\alpha(1-\alpha^{2j})}
+          {1-\alpha^{2j+2}}\right|
+          =\frac{\alpha^j(1-\alpha^2)}{1-\alpha^{2j+2}}</m> for <m>j=0,1,\cdots
+          ,k-2</m> or in the closed disk
+          <m>\left|z-\frac{\alpha(1-\alpha^{2(k-1)})} {1-\alpha^{2k}}\right| \le
+          \frac{\alpha^{k-1}(1-\alpha^2)}{1-\alpha^{2k}}</m>.
+        </p>
+      </statement>
+    </theorem>
+  </subsection>
+
+  <subsection>
+    <title>미해결 문제</title>
+    <p>
+      Cowen과 Long의 아이디어<nbsp /><xref ref="CoL" />는 Toeplitz
+      작용소와 부분정규성 사이의 관계에 대한 어떤 일반적인 특징도 주지
+      못했다. 결국 지금까지 누구도 Toeplitz 작용소의 부분정규성에 대하여
+      심벌에 의한 특성화를 만들지 못했다. 따라서 다음 문제는 여전히
+      매력적이고 흥미롭다:
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Characterize the subnormality of
+          <m>T_\varphi</m> in terms of <m>\varphi</m> ?
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      이제 Toeplitz 작용소에 대한 부분정규성과 관련된 보다
+      구체적인 미해결 문제들을 제시한다.
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          For which <m>f\in{\mathbf H}^{\infty}</m>, is there
+          <m>\lambda\ (0\lt \lambda\lt 1)</m> with <m>T_{f +\lambda\overline{f}}</m>
+          subnormal ?
+        </p>
+      </statement>
+    </problem>
+
+    <problem>
+      <statement>
+        <p>
+          Suppose <m>\psi</m> is as in Theorem
+          4.1.9 (i.e., the ellipse map). Are there <m>g\in{\mathbf H}^{\infty}</m>,
+          <m>g\neq\lambda\psi +c</m>, such that <m>T_{\psi+\overline{g}}</m> is
+          subnormal ?
+        </p>
+      </statement>
+    </problem>
+
+    <problem>
+      <statement>
+        <p>
+          More generally, if <m>\psi
+          \in\bold{H}^\infty</m>, define
+          <me>
+            \mathcal{S}(\psi):=\{g\in\bold{H}^\infty:\ T_{\psi+\overline g}  \mbox{is subnormal}   \}.
+          </me>
+        </p>
+
+        <p>
+          Describe <m>\mathcal{S}(\psi)</m>. For example, for which <m>\psi\in \bold{H}^\infty</m>, is it balanced?, or is it convex?, or is it weakly closed?
+          What is <m>{ ext}\,\mathcal{S}(\psi)</m> ?
+          For which <m>\psi\in \bold{H}^\infty</m>, is it strictly convex ?, i.e.,
+          <m>\partial\mathcal{S}(\psi)\subset{ ext}\,\mathcal{S}(\psi)</m> ?
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      C.<nbsp />Cowen<nbsp /><xref ref="Cow3" />은 어떤 논증도 없이 다음의
+      흥미로운 언급을 하였다: ``<em>If <m>T_\varphi</m> is subnormal then
+      <m>\mathcal{E}(\varphi)=\{\lambda\}</m> with <m>|\lambda|\lt 1</m>".</em> 그러나
+      우리는 이것이 참인지 아닌지 보일 수가 없었다. 물론 만일
+      <m>T_\varphi</m>가 정규이면, <m>\mathcal{E}(\varphi)=\{e^{i\theta}\}</m> 이다.
+      따라서 다음은 자연스러운 질문이다.
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Is the above Cowen's remark
+          true ? That is, if <m>T_\varphi</m> is subnormal, does it follow that
+          <m>\mathcal{E}(\varphi)=\{\lambda\}</m> with <m>|\lambda|\lt 1</m> ?
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      만일 Problem E의 대답이 긍정적이면, 즉,
+      위의 Cowen의 언급이 참이면, <m>\varphi=\overline g+f</m>에 대하여,
+      <me>
+        \mbox{\(T_\varphi\) is subnormal}   \Longrightarrow   \overline
+        g-\lambda \overline f\in \bold{H}^2\   \mbox{with}   |\lambda|\lt 1\
+        \Longrightarrow\ g=\overline\lambda f+c.
+      </me>
+    </p>
+
+    <p>
+      (<m>c</m>는 상수). 이는 Problem C의 해답이 부정적임을 보여준다.
+    </p>
+
+    <p>
+      한편, Corollary 4.9.3 으로부터 <m>T_\varphi</m>가 <m>2</m>-아정규이고
+      <m>\varphi</m> 또는 <m>\bar\varphi</m>가 유계형식 함수이면, <m>T_\varphi</m>는
+      비자명 불변 부분공간(nontrivial invariant subspace)을 가진다. 그래서
+      다음 문제가 자연스럽게 떠오른다:
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Does every <m>2</m>-hyponormal
+          Toeplitz operator have a nontrivial invariant subspace ? More
+          generally, does every <m>2</m>-hyponormal operator have a nontrivial
+          invariant subspace ?
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      만일, <m>T</m>가 아정규이고 <m>R(\sigma(T))\ne
+      C(\sigma(T))</m>이면 <m>T</m>가 비자명 불변부분공간을 가진다는 사실이 널리
+      알려져 있다(<nbsp /><xref ref="Bro" />). 그러나 <m>T</m>가 아정규이고,
+      <m>R(\sigma(T))=C(\sigma(T))</m>이면 (즉, thin spectrum을 가지면) <m>T</m>가
+      비자명 불변 부분공간을 가지는지는 여전히 미해결 문제이다. 한편,
+      <m>T\in\mathcal{B(H)}</m>가 von Neumann 작용소라고 함은 <m>\sigma(T)</m>
+      밖에서 pole을 가지는 유리함수 <m>f</m>에 대하여 <m>f(T)</m>가 normaloid (i.e.,
+      norm = spectral radius)임을 뜻한다. B. Prunaru<nbsp /><xref ref="Pru" />는 모든
+      다항 아정규작용소는 비자명 불변 부분공간을 가짐을 보였다. 역시<nbsp /><xref ref="Ag" />에서 von Neumann 작용소도 비자명 불변부분공간을 가짐을
+      보였다. 다음은 Problem F의 부분 문제이다.
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Is every 2-hyponormal operator with thin
+          spectrum a von-Neumann operator ?
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      비록, 부분정규가 아닌 다항정규 가중이동작용소의 존재가 알려져 있기는
+      하지만 (cf. <xref ref="CP1" />, <xref ref="CP2" />), 토에플리츠 작용소에 대하여
+      <q>다항정규 <m>\Rightarrow</m> 부분정규</q> 인지 아닌지는 알려져 있지 않다.
+      그래서 다음 문제도 자연스럽게 떠오른다.
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Does there exist a Toeplitz operator which is
+          polynomially hyponormal but not subnormal ?
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      한편, <xref ref="CuL2" />에서 모든 순수(pure <mdash /> it has no normal direct
+      summand) <m>2</m>-아정규 작용소 <m>T</m>의 자기-가환자의 계수(rank)가 1이면
+      <m>T</m>는 이동작용소의 선형함수임이 밝혀졌다. McCarthy 와 Yang<nbsp /><xref ref="McCYa" />은 유한 계수를 가지는 자기-가환자의 모든 유리
+      순환(rationally cyclic) 부분정규 작용소를 특성화하였다. 그러나
+      여전히 유한 계수의 자기-가환자를 가지는 모든 순수 부분정규 작용소를
+      특성화하지는 못했다. 그래서 다음의 질문이 즉시 떠오른다.
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          If <m>T_\varphi</m> is a
+          <m>2</m>-hyponormal Toeplitz operator with nonzero finite rank
+          self-commutator, does it follow that <m>T_\varphi</m> is analytic ?
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      위의 미해결 문제들은 모두 쉽지 않은 문제들로 보여진다. 그러나
+      Toeplitz 작용소의 성질을 충분히 이해하기 위해서는 위 문제의 답을
+      찾는 것은 필수불가결한 일이다. 더구나 작용소의 브리지 이론의 완성을
+      위해서는 Toeplitz 작용소의 부분정규성 확립에 대한 노력을 더욱 경주할
+      필요가 있다. 미해결 문제에 대한 도전이야말로 수학 최고의 미덕이 아닐
+      수 없다
+    </p>
+
+    <p>
+      참으로, Morris Kline 이 Bertrand Russel의 한 작품에 헌사한 서문에서
+      처럼 ``미해결 문제에 대한 도전은 인류를 깨어 있게 만들고 궁극적으로
+      인류를 정신적 무기력으로부터 보호할 것이다."
+    </p>
+  </subsection>
+</section>

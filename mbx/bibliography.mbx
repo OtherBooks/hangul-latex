@@ -1,0 +1,117 @@
+
+<references>
+<title>Bibliography</title>
+<biblio type="raw" xml:id="Ab">M. B. Abrahamse,
+\textit{Subnormal Toeplitz operators and functions of bounded type},
+Duke Math. J. \subsection{} (1976), 597--604.</biblio>
+<biblio type="raw" xml:id="Ag">J. Agler, \textit{An invariant subspace problem}, J. Funct. Anal.
+\subsection{} (1980), 315--323.</biblio>
+<biblio type="raw" xml:id="Bro">S. Brown, \textit{Hyponormal operators with thick spectra have invariant subspaces},
+Ann. of Math. \subsection{} (1987), 93--103.</biblio>
+<biblio type="raw" xml:id="BH">A. Brown and P. R. Halmos, \textit{Algebraic properties of Toeplitz operators},
+J. Reine Angew. Math. \subsection{} (1963-1964), 89--102.</biblio>
+<biblio type="raw" xml:id="Con2">J. B. Conway, The Theory of Subnormal Operators,
+Math. Surveys and Monographs, vol. 36, Amer. Math. Soc., Providence, 1991.</biblio>
+<biblio type="raw" xml:id="Cow2">C. Cowen, \textit{Hyponormal and subnormal Toeplitz operators},
+Surveys of Some Recent Results in Operator Theory, I (J. B. Conway
+and B. B. Morrel, eds.) Pitman Research Notes in Mathematics,
+Longman, Vol.\subsection{} (1988), 155--167.</biblio>
+<biblio type="raw" xml:id="Cow3">C. Cowen, \textit{Hyponormality of Toeplitz operators}, Proc. Amer. Math. Soc.
+\subsection{} (1988), 809--812.</biblio>
+<biblio type="raw" xml:id="CoL">C. C. Cowen and J. J. Long, \textit{Some subnormal Toeplitz operators},
+J. Reine Angew. Math. \subsection{} (1984), 216--220.</biblio>
+<biblio type="raw" xml:id="Cu1">R. E. Curto, \textit{Quadratically hyponormal weighted shifts},
+Integral Equations Operator Theory, \subsection{} (1990), 49--66.</biblio>
+<biblio type="raw" xml:id="CHL1">R. E. Curto, I. S. Hwang and W. Y. Lee,
+\textit{Hyponormality and subnormality of block Toeplitz operators},
+Adv. Math. \subsection{} (2012), 2094--2151.</biblio>
+<biblio type="raw" xml:id="CHL2">R. E. Curto, I. S. Hwang and W. Y. Lee,
+\textit{Which subnormal Toeplitz operators are either normal or
+analytic\,?}, J. Funct. Anal. \subsection{}(8) (2012), 2333--2354.</biblio>
+<biblio type="raw" xml:id="CLL">R. E. Curto, S. H. Lee and W. Y. Lee, \textit{Subnormality and 2-hyponormality for Toeplitz operators},
+Integral Equations Operator Theory, \subsection{} (2002), 138--148.</biblio>
+<biblio type="raw" xml:id="CuL1">R. E. Curto and W. Y. Lee, \textit{Joint hyponormality of Toeplitz pairs},
+Memoirs Amer. Math. Soc. No.\subsection{}, Amer. Math. Soc., Providence,
+2001.</biblio>
+<biblio type="raw" xml:id="CuL2">R. E. Curto and W. Y. Lee, \textit{Towards a model theory for $2$--hyponormal operators},
+Integral Equations Operator Theory, \subsection{} (2002), 290--315.</biblio>
+<biblio type="raw" xml:id="CP1">R. E. Curto and M. Putinar, \textit{Existence of non-subnormal polynomially hyponormal operators},
+Bull. Amer. Math. Soc. (N.S.), \subsection{} (1991), 373--378.</biblio>
+<biblio type="raw" xml:id="CP2">R. E. Curto and M. Putinar, \textit{Nearly subnormal operators and moment problems},
+J. Funct. Anal. \subsection{} (1993), 480--497.</biblio>
+<biblio type="raw" xml:id="FL1">D. R. Farenick and W. Y. Lee, \textit{Hyponormality and spectra of Toeplitz operators},
+Trans. Amer. Math. Soc., \subsection{} (1996), 4153--4174.</biblio>
+<biblio type="raw" xml:id="FF">C. Foia\c s and A. Frazho, \textit{The commutant lifting approach to
+interpolation problems}, Operator Theory: Adv. Appl., vol.\subsection{},
+Birkh\" auser-Verlag, Boston, 1990.</biblio>
+<biblio type="raw" xml:id="GGK">I. Gohberg, S. Goldberg and M.A. Kaashoek, \textit{Classes Linear Operators},
+vol.\textbf{II}, Birkh\" auser-Verlag, Boston, 1993.</biblio>
+<biblio type="raw" xml:id="Ha1">P. R. Halmos, \textit{Ten problems in Hilbert space},
+Bull. Amer. Math. Soc., \subsection{} (1970), 887--933.</biblio>
+<biblio type="raw" xml:id="Ha2">P. R. Halmos, \textit{Ten years in Hilbert space},
+Integral Equations Operator Theory, \subsection{} (1979), 529--564.</biblio>
+<biblio type="raw" xml:id="McCYa">J. E. McCarthy and L. Yang, \textit{Subnormal operators and quadrature domains},
+Adv. Math. \subsection{} (1997), 52--72.</biblio>
+<biblio type="raw" xml:id="NaT">T. Nakazi and K. Takahashi, \textit{Hyponormal Toeplitz operators and extremal problems of Hardy spaces}
+Trans. Amer. Math. Soc. \subsection{} (1993), 753--767.</biblio>
+<biblio type="raw" xml:id="Ni">N. K. Nikolskii, \textit{Treatise on the shift operator}, Springer, New York, 1986.</biblio>
+<biblio type="raw" xml:id="Pru">B. Prunaru, \textit{Invariant subspaces for polynomially hyponormal operators},
+Proc. Amer. Math. Soc. \subsection{} (1997), 1689--1691.</biblio>
+<biblio type="raw" xml:id="Sun">S. Sun, \textit{Bergman shift is not unitarily equivalent to a Toeplitz operator},
+Kexue Tongbao(English Ed.) \subsection{} (1983), 1027--1030.
+
+
+\end{thebibliography}
+
+
+
+ 
+
+\begin{center} Abstract\end{center}
+
+
+
+\begin{center}\large Bridge theory for Toeplitz operators\end{center}
+
+\begin{center} Woo Young Lee\end{center}
+
+Toeplitz operators arise naturally in several fields
+of mathematics and in a variety of problems in physics.   Also the
+theory of hyponormal and subnormal operators is an extensive and
+highly developed area, which has made important contributions to a
+number of problems in functional analysis, operator theory, and
+mathematical physics.   Thus, it becomes of central significance to
+describe in detail hyponormality and subnormality for Toeplitz
+operators. In this sense, the following question is challenging and
+interesting:
+$$
+\mbox{Which Toeplitz operators are hyponormal or subnormal ?}
+$$
+While the precise relation between normality and subnormality has
+been extensively studied, as have been the classes of subnormal and
+hyponormal operators, the relative position of the class of
+subnormals inside the classes of hyponormals is still far from being
+well understood. We call it a `bridge theory' for operators to
+explore the gap between hyponormality and subnormality for bounded
+linear operators acting on an infinite dimensional complex Hilbert
+(or Banach) space. In this survey note, we provide a bridge theory
+for Toeplitz operators. This is originated from Halmos' Problem 5
+(in 1970): $\mbox{Is every subnormal Toeplitz operator either
+normal or analytic\,?}$   Even though Halmos's Problem 5 was, in
+1984, answered in the negative by C. Cowen and J. Long, until now
+researchers have been unable to characterize subnormal Toeplitz
+operators in terms of their symbols. In this survey note we study
+the subnormality and hyponormality of Toeplitz operators acting on
+the vector-valued Hardy space $H^2_{\mathbf{C}^n}$ of the unit
+circle.
+
+
+
+{ 2010 Mathematics Subject Classification: 47B20,
+47B35, 46J15, 15A83, 30H10, 47A20.
+
+
+
+ Key words and phrases: Hardy spaces, Toeplitz operators,
+Hankel operators, normal, subnormal, hyponormal, $k$-hyponormal. }</biblio>
+</references>

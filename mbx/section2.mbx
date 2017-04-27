@@ -1,0 +1,309 @@
+
+<section>
+  <title>예비 이론</title>
+  <p>
+    이 글에서는 모든 Hilbert 공간은 복소 Hilbert 공간으로 이해하며
+    <m>\mathcal{H}</m>를
+  </p>
+
+  <p>
+    가산 Hilbert 공간으로 약속한다. 또한, <m>\mathcal{B(H)}</m>는
+    <m>\mathcal{H}</m> 상의 모든 유계 선형작용소의 집합이라 하고
+    <m>\mathcal{K(H)}</m>는 컴팩트 작용소들의 집합이라 하자. 만일
+    <m>T\in\mathcal{B(H)}</m>이면 <m>T</m>의 스펙트럼(spectrum) <m>\sigma(T)</m>과 점
+    스펙트럼(point spectrum) <m>\sigma_p(T)</m>은 다음과 같이 정의된다.
+    <md>
+      <mrow>\sigma(T)\amp :=\{\lambda\in\mathbb{C}: T-\lambda\ \text{ 가 가역이 아니다 } \};</mrow>
+      <mrow>\sigma_p(T)\amp :=\{\lambda\in\mathbb{C}: T-\lambda\ \text{ 가 일대일이 아니다 } \}.</mrow>
+    </md>
+  </p>
+
+  <p>
+    만일 <m>U</m>가 <m>\ell^2</m> 상의 이동 작용소(the unilateral shift)
+    <me>
+      U:=
+      \begin{pmatrix}0\\
+      1\amp 0\\
+      \amp 1\amp 0\\\amp \amp 1\amp 0\\\amp \amp \amp \ddots\amp \ddots
+      \end{pmatrix}
+    </me>
+  </p>
+
+  <p>
+    이면 <m>\sigma_p(T)=\emptyset</m>이다. 양의 유계수열
+    <m>\alpha:\alpha_0,\alpha_1,\cdots</m>이 주어질 때,
+    <m>\ell^2(\mathbb{Z}_+)</m> 상의 <m>\alpha</m>에 대한 가중이동 작용소 (the
+    unilateral weighted shift) <m>W_\alpha</m>는 다음과 같이 정의된다.
+    <me>
+      W_\alpha e_n:=\alpha_n e_{n+1} \mbox{(모든 \(n\ge 0\))} ,
+    </me>
+  </p>
+
+  <p>
+    여기에서 <m>\{e_n\}_{n=0}^\infty</m>은 <m>\ell^2</m>에 대한
+    단위직교기저이다. 작용소 <m>T\in\mathcal{B(H)}</m>의
+    수반작용소(adjoint)를 <m>T^*</m>로 나타낸다. <m>T</m>가 정규(normal)라 함은
+    <m>T^*T=TT^*</m>이고, 아정규(hyponormal)라 함은
+    자기가환자(self-commutator) <m>[T^*,T]\equiv T^*T-TT^*\ge 0</m>이고,
+    부분정규(subnormal)라 함은 <m>T=N\vert_{\mathcal{H}}</m> (여기에서,
+    <m>N</m>은 어떤 Hilbert 공간 <m>\mathcal{K}\supseteq \mathcal{H}</m> 상에서
+    정규이다). 명백히, <m>T</m>가 부분정규이면 <m>T</m>는 아정규이다.
+  </p>
+
+  <proposition xml:id="pro3_4">
+    <title>(Basic Properties of
+    Hyponormal Operators)<nbsp /><xref ref="Con2" /></title>
+    <statement>
+      <p>
+        Let
+        <m>T\in\mathcal{L(H)}</m> be a hyponormal operator. Then we have:
+        <ul>
+          <li>
+            <p>
+              If <m>T\cong S</m> then <m>S</m> is also hyponormal;
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>T-\lambda</m> is hyponormal for every
+              <m>\lambda\in\mathbb{C}</m>;
+            </p>
+          </li>
+
+          <li>
+            <p>
+              If <m>T\mathcal{M}\subset\mathcal{M}</m> then
+              <m>T\vert_\mathcal{M}</m> is hyponormal;
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </proposition>
+
+  <p>
+    <em></em>
+    <ul>
+      <li>
+        <p>
+          <m>||T^*h||\le ||Th||</m> for all <m>h</m>,
+          so that <m>\text{ ker } (T-\lambda)\subset \text{ 
+          ker } (T-\lambda)^*</m>;
+        </p>
+      </li>
+
+      <li>
+        <p>
+          If <m>f</m> and <m>g</m> are eigenvectors corresponding to
+          distinct eigenvalues of <m>T</m> then <m>f\perp g</m>;
+        </p>
+      </li>
+
+      <li>
+        <p>
+          If
+          <m>\lambda\in\sigma_p(T)</m> then <m>\text{ ker } \,(T-\lambda)</m> reduces
+          <m>T</m>;
+        </p>
+      </li>
+
+      <li>
+        <p>
+          If <m>T</m> is invertible then <m>T^{-1}</m> is hyponormal;
+        </p>
+      </li>
+
+      <li>
+        <p>
+          \text{ (Stampfli, 1962) }  <m>||T^n||=||T||^n</m>, so that
+          <m>||T||=r(T)</m> { (}<m>r(\cdot)</m> denotes spectral radius{ )};
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <m>T</m> is isoloid, i.e., <m>\text{ 
+          iso } \,\sigma(T)\subset \sigma_p(T)</m>;
+        </p>
+      </li>
+
+      <li>
+        <p>
+          If <m>\lambda\notin
+          \sigma(T)</m> then <m>\text{ dist } (\lambda,\,
+          \sigma(T))=||(T-\lambda)^{-1}||^{-1}</m>.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          \text{ 
+          (Berger-Shaw theorem) }  If <m>T</m> is cyclic then <m>\text{ 
+          tr } \,[T^*,T]\le\frac{1}{\pi}\mu(\sigma(T))</m>;
+        </p>
+      </li>
+
+      <li>
+        <p>
+          \text{ 
+          (Putnam's Inequality) }  <m>||\,[T^*,T]\,||\le\frac{1}{\pi}
+          \mu(\sigma(T))</m>.
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  <proposition xml:id="thm3_5">
+    <title>(A Characterization of
+    Subnormality)<nbsp /><xref ref="Con2" /></title>
+    <statement>
+      <p>
+        If
+        <m>T\in\mathcal{L(H)}</m> then the following are equivalent:
+        <ul>
+          <li>
+            <p>
+              <m>T</m> is subnormal;
+            </p>
+          </li>
+
+          <li>
+            <p>
+              { (Bram-Halmos, 1955)}
+              <me>
+                \begin{pmatrix}I\amp T^*\amp \cdots\amp  T^{*k}\\
+                T\amp  T^*T\amp  \cdots\amp  T^{*k}T\\
+                \vdots\amp \vdots\amp  \ddots\amp  \vdots\\
+                T^k\amp  T^*T^k\amp  \cdots\amp  T ^{*k}T^k
+                \end{pmatrix} 
+                \ge 0\qquad\text{ (all \(k\ge 1\)) } .
+              </me>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \begin{pmatrix}\amp [T^{*2},T]\amp \cdots\amp [T^{*k},T]\\
+                [T^*,T^2]\amp [T^{*2},T^2]\amp \cdots\amp [T^{*k},T^2]\\
+                \vdots\amp \vdots\amp \cdots\amp \vdots\\
+                [T^*,T^k]\amp [T^{*2},T^k]\amp \cdots\amp [T^{*k},T^k]
+                \end{pmatrix} 
+                \ge 0\qquad\text{ (all \(k\ge 1\)) } .
+              </me>
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </proposition>
+
+  <p>
+    <em></em>
+    <ul>
+      <li>
+        <p>
+          { (Embry, 1973)}  There is a positive
+          operator-valued measure <m>Q</m> on some interval <m>[0,a]\subset
+          \mathbb{R}</m> such that
+          <me>
+            T^{*n}T^n=\int t^{2n} dQ(t)\text{ for all }   n\ge 0.
+          </me>
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    위의 조건 (b) (혹은 동치로서 조건 (c))는 아정규와 부분정규 사이의
+    틈에 대한 측도를 제공한다. 사실, <m>k=1</m>에 대한 양의 조건 (b)가 <m>T</m>의
+    아정규성이고, 부분정규는 모든 <m>k</m>에 대한 조건 (b)이다. 따라서, (b)에
+    있는 <m>(k+1)\times (k+1)</m> 작용소 행렬이 양의 행렬일 때, <m>T</m>를
+    <m>k</m>-아정규라고 정의할 수 있다. 그러면, Bram-Halmos 특성화는 <m>T</m>가
+    부분정규이기 위한 필요충분조건은 모든 <m>k</m>에 대하여 <m>T</m>가
+    <m>k</m>-아정규임을 말해준다.
+  </p>
+
+  <proposition xml:id="thm3_6">
+    <title>(Berger's
+    Theorem)</title>
+    <statement>
+      <p>
+        Let <m>T\equiv W_\alpha</m> be a weighted
+        shift with weight sequence <m>\alpha\equiv\{\alpha_n\}</m> and define the
+        moment of <m>T</m> by
+        <me>
+          \gamma_0:=1\text{ and }  \gamma_n:=\alpha_0^2\alpha_1^2\cdots \alpha_{n-1}^2\ (n\ge 1).
+        </me>
+      </p>
+
+      <p>
+        Then <m>T</m> is subnormal if and only if there exists a probability
+        measure <m>\nu</m> on <m>[0,||T||^2]</m> such that
+      </p>
+    </statement>
+  </proposition>
+
+  <men xml:id="x2_0_1" >
+    \gamma_n=\int_{[0,||T||^2]} t^{n} d\nu(t) (n\ge 1).
+  </men>
+  <p>
+    한편, <m>T\in\mathcal{B(H)}</m>가 {약 <m>k</m>-아정규}(weakly
+    <m>k</m>-hyponormal)라 함은 다음의 집합
+    <me>
+      LS((T,T^2,\cdots,T^k)):=\left\{\sum_{j=1}^k \alpha_jT^j: \alpha=
+      (\alpha_1,\cdots,\alpha_k)\in {\mathbb C}^k\right\}
+    </me>
+  </p>
+
+  <p>
+    가 아정규 작용소로 이루어지는 것이다. 만일 <m>k=2</m>이면, <m>T</m>를
+    2차-아정규 (quadratically hyponormal)라 하고, <m>p(T)</m>가 모든 다항식
+    <m>p\in{\mathbb C}[z]</m>에 대하여 아정규이면 <m>T</m>를 다항정규(polynomially
+    hyponormal)라 한다. 일반적으로, <m>k</m>-아정규 <m>\Rightarrow</m> 약
+    <m>k</m>-아정규이고, 그 역은 성립하지 않는다. 약-아정규 작용소는 아정규와
+    부분정규 사이의 틈을 연결하는 시도에서 많은 연구가 이루어졌다.
+  </p>
+
+  <p>
+    이제, <m>P</m>를 <m>{\mathbf L}^2(\mathbb T)\equiv{\mathbf L}^2</m>에서 <m>{\mathbf H}^2(\mathbb T)\equiv {\mathbf H}^2</m> 위로의 직교사영이라고 하자.
+    그러면 함수 <m>\varphi\in{\mathbf L}^{\infty}(\mathbb T)\equiv {\mathbf L}^{\infty}</m>에 대하여, 심벌 <m>\varphi</m>를 가지는 Toeplitz 작용소
+    <m>T_\varphi</m>는 다음과 같이 정의된다:
+    <me>
+      T_\varphi f=P(\varphi f)\text{(\(f\in {\mathbf H}^2\))} .
+    </me>
+  </p>
+
+  <p>
+    한편, <m>\{z^n : n=0,1,2,\cdots \}</m>이 <m>{\mathbf H}^{2}</m>의 정규직교기저라
+    하고 <m>\varphi\in{\mathbf L}^{\infty}</m>가 다음과 같은 Fourier 계수를
+    가진다고 하자:
+    <me>
+      \widehat\varphi(n)=\frac{1}{2\pi}\int_{0}^{2\pi} \varphi{\overline z}^n dt
+    </me>
+  </p>
+
+  <p>
+    그러면 기저 <m>\{z^n : n=0,1,2,\cdots\}</m>에 관한 <m>T_\varphi</m>의 행렬 <m>(a_{ij})</m>는 다음과 같다:
+    <me>
+      a_{ij}=(T_{\varphi}z^j,z^i)=\frac{1}{2\pi}\int_{0}^{2\pi} \varphi \overline{z}^{i-j} dt=\widehat\varphi(i-j).
+    </me>
+  </p>
+
+  <p>
+    즉, <m>T_\varphi</m>에 대한 행렬은 대각선이 모두 일정한 행렬이다:
+    <me>
+      (a_{ij})=\begin{pmatrix}c_0 \amp  c_{-1}\amp  c_{-2}\amp  c_{-3}\amp  \cdots \\
+      c_1 \amp  c_{0}\amp  c_{-1}\amp  c_{-2}\amp  \cdots \\
+      c_2 \amp  c_{1}\amp  c_{0}\amp  c_{-1}\amp  \cdots \\
+      c_3 \amp  c_{2}\amp  c_{1}\amp  c_{0}\amp  \cdots \\
+      \vdots\amp  \ddots\amp  \ddots\amp  \ddots\amp  \ddots
+      \end{pmatrix} ,  \mbox{(여기서, \(c_{j}=\widehat\varphi(j)\))} :
+    </me>
+  </p>
+
+  <p>
+    이러한 행렬을 Toeplitz 행렬이라고 한다.
+  </p>
+</section>

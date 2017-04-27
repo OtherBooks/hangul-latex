@@ -1,0 +1,843 @@
+
+<section>
+  <title>Toeplitz 작용소의 아정규성</title>
+  <introduction>
+    <p>
+      1988년에, C. Cowen<nbsp /><xref ref="Cow3" />의 우아하고 유용한 정리가 단위원
+      <m>{\mathbb T}\subset{\mathbb C}</m>의 Hardy 공간 <m>\mathbf H^2</m> 상의
+      Toeplitz 작용소의 아정규성을 그의 심벌 <m>\varphi\in \mathbf L^{\infty}</m>을 써서 특성화하였다. 이 결과는 작용소 이론으로부터
+      떠오른 대수적 문제 <mdash /> 즉, <m>T_{\varphi}</m>가 아정규인가? <mdash /> 의 해답이
+      함수 <m>\varphi</m>를 연구함으로써 가능하게 되었다. 정규 Toeplitz
+      작용소는 1960년대에 A.<nbsp />Brown과 P. R.<nbsp />Halmos<nbsp /><xref ref="BH" />가 그 심벌을
+      써서 특성화하였다. 그런데 다소 놀랍게도 아정규 Toeplitz 작용소의
+      심벌에 의한 특성화(Cowen의 정리)가 발견되기까지 무려 25년이
+      흘러갔다. 이는 Cowen이 그의 해설논문<nbsp /><xref ref="Cow2" />에서 지적하였듯이
+      아마도 1970년대와 1980년대에 부분정규
+    </p>
+
+    <p>
+      Toeplitz 작용소에 대한 뜨거운 연구 분위기가 아정규의
+      연구를 뒤늦게 했을 것이라는 추측이 가능하다. Cowen의 정리에 의한
+      아정규성의 특성화는 <m>\mathbf H^{\infty}</m>의 단위구에서의 어떤
+      함수방정식을 푸는 것이다. 그러나 이는 이론적으로 가능하다는 것이지
+      실제로 이 함수방정식을 푸는 문제는 무척 어렵다. 참으로, 심벌
+      <m>\varphi</m>에 관한 어떤 제한이 없다면 <m>T_{\varphi}</m>의 아정규성을
+      <m>\varphi</m>의 Fourier 계수로 나타낸다는 것은 어쩌면 불가능할 수도
+      있다. 이 절에서는 이 연구의 최근의 발전 상황을 살펴본다.
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Cowen의 정리</title>
+    <p>
+      이 절에서는 Cowen 정리를 제시한다. Cowen의 정리는 Toeplitz 작용소의
+      아정규성에 대한 작용소론의 문제를 그 심벌과 관련된 함수방정식의 해를
+      발견하는 문제로 바꾸어 준다. 이와 같은 접근법은 Toeplitz 작용소
+      연구의 많은 논문에 등장하였다.
+    </p>
+
+    <p>
+      다음의 두 결과는<nbsp /><xref ref="BH" />에서 알려진 사실이다.
+    </p>
+
+    <lemma>
+      <statement>
+        <p>
+          A necessary and sufficient
+          condition that two Toeplitz operators commute is that either both be
+          analytic or both be co-analytic or one be a linear function of the
+          other.
+        </p>
+      </statement>
+    </lemma>
+
+    <theorem>
+      <title>(Brown-Halmos)<nbsp /><xref ref="BH" /></title>
+      <statement>
+        <p>
+          Normal Toeplitz operators are translations and rotations of
+          hermitian Toeplitz operators, i.e.,
+          <me>
+            T_\varphi\ \mbox{normal}   \Longleftrightarrow\ \exists\ \alpha,\beta\in\mathbb{C},
+            \ \mbox{a real valued}   \psi\in {\mathbf L}^{\infty}  \mbox{s.t.} \
+            T_{\varphi}=\alpha T_{\psi} +\beta 1.
+          </me>
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      함수 <m>\psi\in{\mathbf L}^{\infty}</m>에 대하여, <m>{\mathbf H}^2</m> 상의 Hankel
+      작용소 <m>H_\psi</m>는 다음과 같이 정의된다:
+      <me>
+        H_{\psi}f=J(I-P)(\psi f) (f\in {\mathbf H}^{2}),
+      </me>
+    </p>
+
+    <p>
+      여기에서 <m>J</m> 는 아래와 같이 정의된 <m>({{\mathbf H}^2})^{\perp}</m> 에서
+      <m>{\mathbf H}^2</m> 위로의 유니터리 작용소이다:
+      <me>
+        J(z^{-n})=z^{n-1}  (n\ge 1).
+      </me>
+    </p>
+
+    <p>
+      만일 <m>\psi</m>가 Fourier 급수 <m>\psi:=\sum_{n=-\infty}^{\infty}a_n
+      z^n</m>로 표현되면, <m>H_\psi</m>의 행렬은 다음과 같이 주어진다:
+      <me>
+        H_\psi \equiv
+        \begin{pmatrix}a_{-1}\amp a_{-2}\amp a_{-3}\amp \cdots\\
+        a_{-2}\amp a_{-3}\amp  \amp  \\
+        a_{-3}\amp  \amp \ddots\amp   \\
+        \vdots\amp  \amp  \amp \ddots
+        \end{pmatrix} .
+      </me>
+    </p>
+
+    <p>
+      다음은 Hankel 작용소의 기본 성질들이다.
+      <ul>
+        <li>
+          <p>
+            <m>H_{\psi}^*=H_{{\psi}^*}</m>;
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>H_{\psi}U=U^*H_{\psi}</m> (<m>U</m>는 이동작용소);
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>{ Ker}H_{\psi}=\{0\}</m> 또는 <m>\theta{\mathbf H}^2</m> (어떤 내적(inner)함수 <m>\theta</m>) (Beurling's theorem에 의해);
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>T_{\varphi\psi}-T_{\varphi}T_{\psi}=H_{\overline{\varphi}}^*H_{\psi}</m>;
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>H_{\varphi}T_{h}=H_{\varphi h}=T_{h^*}^*H_{\varphi}  (h\in{\mathbf H}^{\infty})</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      1988년에 Carl Cowen이 Toeplitz 작용소 <m>T_\varphi</m>의 아정규성을 심벌
+      <m>\varphi</m>에 의해 특성화하는 데 성공하였다.
+    </p>
+
+    <theorem>
+      <title>Cowen's Theorem</title>
+      <statement>
+        <p>
+          [7] If
+          <m>\varphi\in{\mathbf L}^{\infty}</m> is such that
+          <m>\varphi=\overline{g} +f</m> { (}<m>f,g\in {\mathbf H}^2</m>{ )}, then
+          <me>
+            T_\varphi\ \mbox{is hyponormal}   \Longleftrightarrow\ g=c+T_{\overline{h}}f
+          </me>
+          for some constant <m>c</m> and some <m>h\in{\mathbf H}^{\infty}(\mathbb{D})</m> with <m>||h||_{\infty}\le 1</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <theorem>
+      <title>Nakazi-Takahashi Variation</title>
+      <statement>
+        <p>
+          [23]
+          For <m>\varphi\in{\mathbf L}^{\infty}</m>, put
+          <me>
+            \mathcal{E} (\varphi):=\{k\in{\mathbf H}^{\infty}:||k||_{\infty}\le 1\
+            \mbox{and}   \varphi-k{\overline{\varphi}}\in{\mathbf H}^{\infty}\}.
+          </me>
+        </p>
+
+        <p>
+          Then <m>T_\varphi</m> is hyponormal if and only if
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      <m>\mathcal{E}
+      (\varphi)\neq\varnothing</m>.
+    </p>
+  </subsection>
+
+  <subsection>
+    <title>삼각다항 심벌의 경우</title>
+    <p>
+      이 분절에서는 삼각다항 심벌을 가진 Toeplitz 작용소의 아정규성을
+      살펴본다. 이를 위하여 팽창이론(dilation theory)을 먼저 살펴본다.
+      만일 <m>B=\begin{pmatrix}A\amp *\\ *\amp *
+      \end{pmatrix}</m>이면, <m>B</m>를 <m>A</m>의
+      팽창이라 하고, <m>A</m>를 <m>B</m>의 축소라고 한다. 모든 수축
+    </p>
+
+    <p>
+      작용소(contraction)는 유니터리 팽창을
+      가진다는 것이 잘 알려져 있다. 실제로, <m>||A||\le 1</m>이면,
+      <me>
+        B\equiv
+        \begin{pmatrix}A\amp (I-AA^*)^{\frac{1}{2}}\\(I-A^*A)^{\frac{1}{2}}\amp -A^*
+        \end{pmatrix}
+      </me>
+    </p>
+
+    <p>
+      는 유니터리이다. 한편, 모든 자연수 <m>n</m>에 대하여 <m>B^n</m>이 <m>A^n</m>의
+      팽창이면, 작용소 <m>B</m>를 <m>A</m>의 강팽창(strong dilation)이라고 한다.
+      따라서 만일 <m>B</m>가 <m>A</m>의 강팽창이면, <m>B</m>는 <m>B=\begin{pmatrix}A \amp 0\\
+      *\amp *
+      \end{pmatrix}</m>의 꼴로 나타난다. 종종 <m>B</m>를 <m>A</m>의
+      리프팅(lifting)이라 하고, <m>A</m>가 <m>B</m>로 승강된다고 말한다. 모든 수축
+      작용소가 등장(isometric) 강팽창을 가진다는 것이 알려져 있다. 사실
+      수축 작용소 <m>A</m>의 최소 등장 강팽창은 다음과 같이 주어진다:
+      <me>
+        B\equiv
+        \begin{pmatrix}A\amp 0\amp 0\amp 0\amp \cdots\\
+        (I-A^*A)^{\frac{1}{2}}\amp 0\amp 0\amp 0\amp \cdots\\
+        0\amp I\amp 0\amp 0\amp \cdots\\
+        0\amp 0\amp I\amp 0\amp \cdots\\
+        \vdots\amp \vdots\amp \vdots\amp \ddots\amp 
+        \end{pmatrix} .
+      </me>
+    </p>
+
+    <theorem>
+      <title>Commutant Lifting Theorem</title>
+      <statement>
+        <p>
+          {<nbsp /><xref ref="GGK" />} Let <m>A</m> be a contraction and <m>T</m> be a
+          minimal isometric dilation of <m>A</m>. If <m>BA=AB</m> then there exists a
+          dilation <m>S</m> of <m>B</m> such that
+        </p>
+      </statement>
+    </theorem>
+
+    <me>
+      S=\begin{pmatrix}B \amp 0\\ *\amp *
+      \end{pmatrix} , ST=TS, \mbox{and}  ||S||=||B||.
+    </me>
+    <p>
+      이제 다음의 보간문제(interpolation problem) <mdash /> 소위 Carath&#xe9;odory-Schur 보간문제로 불림 <mdash /> (CSIP)를 살펴보자. 복소수 <m>c_0,
+      \cdots, c_{N-1}</m>이 주어질 때, 다음을 만족하는 <m>\mathbb{D}</m> 상의
+      해석함수 <m>\varphi</m>를 찾아라:
+      <ul>
+        <li>
+          <p>
+            <m>\widehat{\varphi}(j)=c_j\ (j=0,\cdots, N-1)</m>;
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>||\varphi||_{\infty}\le 1</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      그러면 CSIP의 해는 다음과 같이 주어진다.
+    </p>
+
+    <theorem>
+      <title><xref ref="FF" /></title>
+      <statement>
+        <me>
+          \mbox{CSIP is solvable}   \Longleftrightarrow\ C\equiv
+          \begin{pmatrix}c_0\\
+          c_1\amp c_0\amp \amp \mathrm{{{O}}}\\
+          c_2\amp c_1\amp c_0\\
+          \vdots\amp \vdots\amp \ddots\amp \ddots\\
+          c_{N-1}\amp c_{N-2}\amp \cdots\amp c_1\amp c_0
+          \end{pmatrix}   \mbox{is a contraction.}
+        </me>
+        <p>
+          Moreover, if <m>\varphi</m> is a solution if and only if <m>T_\varphi</m>
+          is a contractive lifting of <m>C</m> which commutes with the unilateral
+          shift.
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      이제 <m>\varphi</m>가 다음과 같은 삼각다항함수라고 하자:
+      <me>
+        \varphi(z)=\sum_{n=-N}^{N} a_{n}z^n\ (a_{N}\neq 0).
+      </me>
+    </p>
+
+    <p>
+      함수 <m>k\in{\mathbf H}^{\infty}</m>가 <m>\varphi -k\overline{\varphi}\in {\mathbf H}^{\infty}</m>
+      를 만족하면, <m>k</m>는 다음을 만족해야 한다.
+      <men xml:id="x3_2_1" >
+        k\sum_{n=1}^{N}\overline{a_n} z^{-n} -\sum_{n=1}^{N}a_{-n}z^{-n}\in{\mathbf H}^{\infty}.
+      </men>
+    </p>
+
+    <p>
+      식 <xref ref="x3_2_1" />로부터 우리는 Fourier 계수 <m>\widehat{k}(0),\cdots
+      ,\widehat{k}(N-1)</m>가 <m>\widehat{k}(n)=c_n\ (n=0,1,\cdots,N-1)</m>을
+      만족하도록 하는 것을 구할 수 있다. 여기에서,
+      <m>c_0,c_1,\cdots, c_{N-1}</m>은 <m>\varphi</m>의 계수로부터
+      유일하게 다음 관계식을 써서 얻어진다.
+      <men xml:id="x3_2_2" >
+        \begin{pmatrix}c_0\\c_1\\ \vdots\\ \vdots\\c_{N-1}
+        \end{pmatrix} =
+        \begin{pmatrix}\overline{a_1}\amp \overline{a_2}\amp \overline{a_3}\amp \cdots\amp \overline{a_N}\\
+        \overline{a_2}\amp \overline{a_3}\amp \cdots\amp \cdot\\
+        \overline{a_3}\amp \cdots\amp \cdots\\
+        \vdots\amp \cdots \amp  \amp \mbox{{{O}}} \\
+        \overline{a_N}
+        \end{pmatrix} ^{-1}
+        \begin{pmatrix}a_{-1}\\ a_{-2}\\ \vdots\\ \vdots\\ a_{-N}
+        \end{pmatrix} .
+      </men>
+    </p>
+
+    <p>
+      따라서, 만일 <m>k(z)=\sum_{j=0}^{\infty} c_{j}z^j</m>가 <m>{\mathbf H}^{\infty}</m>에 속하면 다음이 성립한다.
+      <me>
+        \varphi -k\overline{\varphi}\in {\mathbf H}^{\infty}  \Longleftrightarrow
+        \ c_0,c_1,\cdots ,c_{N-1}\mbox{이 (3.2.2)에 의해 주어진다} .
+      </me>
+    </p>
+
+    <p>
+      그러면 Cowen의 정리에 의해, 만일 <m>c_0,c_1,\cdots ,c_{N-1}</m>이
+      <xref ref="x3_2_2" />으로 주어지면, <m>T_\varphi</m>의 아정규성은
+      다음을 만족하는 함수 <m>k\in{\mathbf H}^{\infty}</m>의 존재와 동치이다:
+      <me>
+        \begin{cases}\widehat{k}(j)=c_j\ (j=0,\cdots , N-1)\\||k||_{\infty}\le 1
+        \end{cases}
+      </me>
+    </p>
+
+    <p>
+      이는 정확히 CSIP와 같은 문제이다. 따라서 다음을 즉시 얻는다.
+    </p>
+
+    <theorem>
+      <statement>
+        <p>
+          If <m>\varphi(z)=\sum_{n=-N}^{N}
+          a_{n}z^n</m>, where <m>a_N\neq 0</m> and if <m>c_0,c_1,\cdots,
+          c_{N-1}</m> are given by <xref ref="x3_2_2" /> then
+          <me>
+            T_\varphi\ \mbox{is hyponormal}   \Longleftrightarrow\ C\equiv
+            \begin{pmatrix}c_0\\
+            c_1\amp c_0\amp \amp \mathrm{{{O}}}\\
+            c_2\amp c_1\amp c_0\\
+            \vdots\amp \vdots\amp \ddots\amp \ddots\\
+            c_{N-1}\amp c_{N-2}\amp \cdots\amp c_1\amp c_0
+            \end{pmatrix}   \mbox{is a contraction.}
+          </me>
+        </p>
+      </statement>
+    </theorem>
+  </subsection>
+
+  <subsection>
+    <title>유리함수 심벌의 경우</title>
+    <p>
+      함수 <m>\varphi\in \mathbf L^\infty</m>가 유계형(bounded
+      type)이라 함은 <m>\mathbf H^\infty (\mathbb{D})</m> 상의 다음을 만족하는
+      함수 <m>\psi_1, \psi_2</m>가 존재할 때이다:
+      <me>
+        \varphi(z)=\frac{\psi_1(z)}{\psi_2(z)}\mbox{(거의 모든 \(z\in\mathbb{T}\)에 대하여)}
+      </me>
+    </p>
+
+    <p>
+      명백히 유리함수는 유계형이다. 이제, <m>\theta</m>가 내적함수(inner
+      function)라 하자. 만일 <m>\theta</m>가 다음의 유한 Blaschke 곱(finite
+      Blaschke product)이면,
+      <me>
+        \theta(z)=e^{i\xi}\prod_{j=1}^n
+        \frac{z-\beta_j}{1-\overline{\beta_j}z} \mbox{(\(|\beta_j|\lt 1\),
+        \(j=1,\cdots,n\))} ,
+      </me>
+    </p>
+
+    <p>
+      <m>\theta</m>의 차수(degree) <m>\text{ deg } (\theta)</m>는 개 단위원판 <m>\mathbb
+      D</m> 안의 근의 개수로 정의되며, 그렇지 않으면 무한대로 정의한다. 이제,
+      내적함수 <m>\theta</m>에 대하여 다음과 같이 쓰자:
+      <me>
+        \mathcal H(\theta):=\mathbf H^2 \ominus \theta \mathbf H^2.
+      </me>
+    </p>
+
+    <p>
+      그러면, <m>f\in \mathbf H^2</m>에 대하여 다음이 성립한다.
+      <md>
+        <mrow>\langle [T_\varphi^*,T_\varphi]f,f\rangle
+        =||T_\varphi f||^2-||T_{\overline{\varphi}}f||^2
+        \amp =||\varphi f||^2-||H_\varphi f||^2-(||\overline{\varphi} f||^2-||H_{\overline{\varphi}} f||^2)</mrow>
+        <mrow>\amp =||H_{\overline\varphi}f||^2-||H_\varphi f||^2.</mrow>
+      </md>
+      <me>
+        T_\varphi\ \text{ hyponormal }   \Longleftrightarrow\
+        ||H_{\overline\varphi} f||\ge ||H_\varphi f|| (f\in \mathbf H^2).
+      </me>
+    </p>
+
+    <p>
+      이제 <m>\varphi = \overline{g}+ f \in \mathbf L^{\infty}</m> (<m>f,g\in\mathbf H^2</m>)라 하자. 그러면 <m>H_\varphi U=U^*H_\varphi</m>
+      (<m>U=</m>이동작용소)이므로, Beurling 정리로부터 다음을 얻는다.
+      <me>
+        \text{ ker } \, H_{\overline f}=\theta_0 \mathbf H^2\text{ and }  \text{ ker } \,H_{\overline g}
+        =\theta_1 \mathbf H^2\text{ (어떤 내적함수 \(\theta_0, \theta_1\)에 대하여) } .
+      </me>
+    </p>
+
+    <p>
+      만일 <m>T_\varphi</m>가 아정규이면, <m>||H_{\overline f} h||\ge ||H_{\overline g} h||</m>
+      (<m>h\in \mathbf H^2</m>)이므로 다음을 얻는다.
+      <men xml:id="x3_2_4" >
+        \theta_0 \mathbf H^2=\text{ ker } \, H_{\overline f}\subset \text{ ker } \, H_{\overline g}=\theta_1 \mathbf H^2.
+      </men>
+    </p>
+
+    <p>
+      이는 <m>\theta_1</m>가 <m>\theta_0</m>을 나눈다는 것을 의미하며, 따라서
+      <m>\theta_0=\theta_1\theta_2</m> (<m>\theta_2</m>는 내적함수). 한편, 함수
+      <m>f\in \mathbf H^2</m>에 대하여 <m>\overline{f}</m>가 유계형이면, 즉,
+      <m>\overline{f}=\psi_2/\psi_1</m> (<m>\psi_i\in \mathbf H^\infty</m>)이면
+      <m>\psi_1</m>의 외적 부분(outer part)을 <m>\psi_2</m>로 나누어
+      <m>\overline{f}=\psi/\theta</m> (<m>\theta</m>는 내적함수, <m>\psi\in \mathbf H^\infty</m>)이다. 따라서, <m>f=\theta\overline{\psi}</m>로 나타난다. 그러나
+      <m>f\in \mathbf H^2</m>이므로, <m>\psi\in\mathcal{H}(\theta)</m>이다. 따라서
+      <m>f\in \mathbf H^2</m>이고 <m>\overline{f}</m>이 유계형이면 다음과 같이
+      쓰여진다.
+      <men xml:id="x3_2_5" >
+        f=\theta\overline{\psi} (\theta\ \text{ inner } ,\ \psi\in \mathcal{H}(\theta)).
+      </men>
+    </p>
+
+    <p>
+      그러므로 만일 <m>\varphi=\overline g+f</m>이 유계형이고 <m>T_\varphi</m>가
+      아정규이면, <xref ref="x3_2_4" />와 <xref ref="x3_2_5" />에 의하여 다음과 같이 쓸 수
+      있다:
+      <me>
+        f=\theta_1\theta_2\overline{a}\text{ and }  g=\theta_1\overline b,
+      </me>
+    </p>
+
+    <p>
+      (여기에서, <m>a\in \mathcal{H}(\theta_1\theta_2)</m>,
+      <m>b\in\mathcal{H}(\theta_1)</m>이다).
+    </p>
+
+    <p>
+      다음 보조정리는<nbsp /><xref ref="CuL1" />으로부터 나온다.
+    </p>
+
+    <lemma>
+      <statement>
+        <p>
+          Let <m>\varphi = \overline{g}+ f \in
+          \mathbf L^{\infty}</m>, where <m>f</m> and <m>g</m> are in <m>\mathbf H^2</m>. Assume that
+          <men xml:id="x3_2_6" >
+            f= \theta_1 \theta_2 \overline{a}\text{ and }  g = \theta_1
+            \overline{b}
+          </men>
+          for <m>a \in \mathcal H (\theta_1 \theta_2)</m> and <m>b \in \mathcal H
+          (\theta_1)</m>. Let <m>\psi: = \theta_1 \overline{P_{ \mathcal H
+          (\theta_1)}(a)} + \overline{g}</m>. Then <m>T_{\varphi}</m> is hyponormal
+          if and only if <m>T_{\psi}</m> is.
+        </p>
+      </statement>
+    </lemma>
+
+    <p>
+      Lemma 3.3.1의 관점에서, 유계형 심벌을 가진 Toeplitz
+      작용소의 아정규성을 연구할 때, 심벌 <m>\varphi= \overline{g}+ f \in
+      \mathbf L^{\infty}</m>는 다음과 같이 쓸 수 있다.
+      <men xml:id="x3_2_7" >
+        f=\theta \overline{a},  g=\theta \overline{b},
+      </men>
+    </p>
+
+    <p>
+      (여기에서, <m>\theta</m>는
+      내적함수이고 <m>a,b \in \mathcal H (\theta)</m>와 <m>\theta</m> 는 서로
+      소이다). 한편, <m>f \in \mathbf H^{\infty}</m>를 유리함수라고 하자. 그러면
+      다음과 같이 쓸 수 있다.
+      <me>
+        f=p_m(z)+\sum_{i=1}^n \sum_{j=0}^{l_i -1}
+        \frac{a_{ij}}{(1-\overline{\alpha_i}z)^{l_i -j}} 
+        (0\lt |\alpha_i|\lt 1),
+      </me>
+    </p>
+
+    <p>
+      (여기에서, <m>p_m(z)</m>는 차수가 <m>m</m>인 다항식이다). 이제 <m>\theta</m>가
+      다음과 같은 유한 Blaschke 곱이라고 하자:
+      <me>
+        \theta=z^{m} \prod_{i=1}^{n} \left(\frac{z- \alpha_i}{1- \overline{\alpha_i}z}\right)^{l_i}.
+      </me>
+      <me>
+        \frac{a_{ij}}{1-\overline{\alpha_i}z}=
+        \frac{\overline{\alpha_i}a_{ij}}{1 - |\alpha_i|^2}
+        \Bigl(\frac{z-\alpha_i}{1- \overline{\alpha_i}z}
+        +\frac{1}{\overline{\alpha_i}} \Bigr).
+      </me>
+    </p>
+
+    <p>
+      따라서 <m>f \in \mathcal H (z\theta)</m>이다. 이제 <m>a := \theta
+      \overline{f}</m>라 하면, <m>a \in \mathcal H (z \theta)</m>이고 <m>f= \theta
+      \overline{a}</m>이다. 따라서 만일 <m>\varphi = \overline{g} + f \in \mathbf L^{\infty}</m> (<m>f,g</m>는 유리함수)이고 <m>T_{\varphi}</m>가 아정규이면 다음과
+      같이 쓸 수 있다.
+      <me>
+        f=\theta \overline{a}, g=\theta \overline{b}
+      </me>
+    </p>
+
+    <p>
+      (<m>\theta</m> 는 유한 Blaschke 곱이고 <m>\theta (0)=0</m>, <m>a,b \in \mathcal
+      H (\theta)</m>). 이제 <m>\theta</m> 를 차수 <m>d</m> 의 유한 Blaschke 곱이라
+      하면 다음과 같이 쓸 수 있다.
+      <men xml:id="x3_2_8" >
+        \theta = e^{i \xi} \prod_{i=1}^n B_i ^{n_i},
+      </men>
+    </p>
+
+    <p>
+      (여기에서, <m>B_i(z) := \frac{z- \alpha_i}{1-
+      \overline{\alpha_i}z}</m>, <m>|\alpha_i| \lt  1</m>, <m>n_i \geq 1</m>,
+      <m>\sum_{i=1}^n n_i =d</m>). 그리고 <m>\theta =e^{i\xi} \prod_{j=1}^d B_j</m>라 하고 <m>\theta</m> 의 각 근이 그의 계수(multiplicity)만큼 반복된다고
+      하자. 그러면 이 Blaschke 곱은 정확히 <xref ref="x3_2_8" />에 있는 Blaschke
+      곱과 같다. 다음과 같이 두자.
+      <men xml:id="x3_2_9" >
+        \phi_j :=\frac{d_j}{1- \overline{\alpha_j}z}\,B_{j-1}B_{j-2} \cdots
+        B_1  (1 \leq j \leq d)
+      </men>
+    </p>
+
+    <p>
+      (여기에서, <m>\phi_1 :=d_1(1- \overline{\alpha_1}z)^{-1}</m>,
+      <m>d_j:=(1-|\alpha_j |^2)^{\frac{1}{2}}</m>). 그러면 <m>\{\phi_j \}_1^d</m>가
+      <m>\mathcal H (\theta)</m>의 정규직교기저를 이룸이 잘 알려져 있다 (cf. <xref ref="FF" />). 이제 <m>\varphi=\overline g+f\in \mathbf L^\infty</m> (여기에서, <m>g=\theta \overline b</m>, <m>f=\theta \overline a</m>,
+      <m>a, b\in \mathcal H (\theta)</m>)라 하고 다음과 같이 쓰자:
+      <me>
+        \mathcal{C}(\varphi):= \{k \in \mathbf H^{\infty} : \varphi -k
+        \overline{\varphi} \in \mathbf H^{\infty}\}.
+      </me>
+    </p>
+
+    <p>
+      그러면, <m>k</m>가 <m>\mathcal{C}(\varphi)</m> 안에
+      있기 위한 필요충분조건은 <m>\overline {\theta} b-k \overline{\theta}a
+      \in \mathbf H^2</m>이다. 즉,
+      <men xml:id="x3_2_10" >
+        b-ka \in \theta \mathbf H^2 .
+      </men>
+    </p>
+
+    <p>
+      그러면, <m>\theta^{(n)} (\alpha_i) =0</m> (모든 <m>0 \leq n  \lt  n_i</m>).
+      따라서 조건 <xref ref="x3_2_10" />은 다음과 동치이다:
+      모든 <m>1 \leq i \leq n,</m>에 대하여,
+      <men xml:id="x3_2_11" >
+        \begin{pmatrix}k_{i,0}\\
+        k_{i,1}\\
+        k_{i,2}\\
+        \vdots\\
+        k_{i,n_i -2}\\
+        k_{i,n_i -1}
+        \end{pmatrix} 
+        =\begin{pmatrix}a_{i,0}\amp 0\amp 0\amp 0\amp \cdots\amp 0\\
+        a_{i,1}\amp a_{i,0}\amp 0\amp 0\amp \cdots\amp 0\\
+        a_{i,2}\amp a_{i,1}\amp a_{i,0}\amp 0\amp \cdots\amp 0\\
+        \vdots\amp \ddots\amp \ddots\amp \ddots\amp \ddots\amp \vdots \\
+        a_{i,n_i -2}\amp a_{i,n_i -3}\amp \ddots\amp \ddots\amp a_{i,0}\amp 0\\
+        a_{i,n_i -1}\amp a_{i,n_i -2}\amp \cdots\amp a_{i,2}\amp a_{i,1}\amp a_{i,0}
+        \end{pmatrix} ^{-1}
+        \begin{pmatrix}b_{i,0}\\
+        b_{i,1}\\
+        b_{i,2}\\
+        \vdots\\
+        b_{i,n_i -2}\\
+        b_{i,n_i -1}
+        \end{pmatrix} ,
+      </men>
+      <me>
+        k_{i,j}:= \frac{k^{(j)}(\alpha_i)}{j!}, a_{i,j}:=
+        \frac{a^{(j)}(\alpha_i)}{j!} \text{ and } 
+        b_{i,j}:=\frac{b^{(j)}(\alpha_i)}{j!}.
+      </me>
+    </p>
+
+    <p>
+      역으로, <m>k \in \mathbf H^{\infty}</m>가 <xref ref="x3_2_11" />을 만족하면 <m>k</m>는
+      <m>\mathcal{C}(\varphi)</m>에 속한다. 따라서, <m>k</m>가
+      <m>\mathcal{C}(\varphi)</m>에 속하기 위한 필요충분조건은 <m>k</m>가 다음을
+      만족하는 <m>\mathbf H^{\infty}</m> 안의 함수이다:
+      <men xml:id="x3_2_12" >
+        \frac{k^{(j)}(\alpha_i)}{j!} = k_{i,j} \qquad (1 \leq i \leq n, \
+        0 \leq j \lt  n_i),
+      </men>
+    </p>
+
+    <p>
+      (여기에서, <m>k_{i,j}</m>는 방정식 <xref ref="x3_2_11" />에 의해 주어진다).
+      더구나 <m>||k||_\infty\le 1</m> 이라면 이는 정확히 classical
+      Hermite-Fej&#xe9;r Interpolation Problem (HFIP)이다. 그러므로 다음을
+      얻는다.
+    </p>
+
+    <theorem>
+      <statement>
+        <p>
+          Let <m>\varphi=\overline{g}+f\in
+          \mathbf L^\infty</m>, where <m>f</m> and <m>g</m> are rational functions.
+          Then <m>T_\varphi</m> is hyponormal if and only if the corresponding HFIP
+          <m>(12)</m> is solvable.
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      이제 우리는 Toeplitz 작용소 <m>T_\varphi</m>의 아정규성에
+      대한 계산가능한 판정법이 심벌 <m>\varphi</m>가 삼각다항함수이거나
+      유리함수이면 보간문제의 해에 의하여 얻어질 수 있다고 말할 수 있다.
+    </p>
+  </subsection>
+
+  <subsection>
+    <title>유계형 심벌의 경우</title>
+    <p>
+      이 분절은 Toeplitz 작용소의 아정규성에 관하여 저자와 저자의
+      공저자들이 얻은 가장 최근의 결과로서, 일반적인 심벌인 유계형 심벌에
+      대한 판정법을 제시할 것이다. 이 결과가 Cowen의 정리를 제외하고
+      지금까지 얻어진 Toeplitz 작용소의 아정규성에 관한 가장 일반적인
+      결과라 할 수 있을 것이다. 우선 이를 알아보기 전에 이동작용소 <m>U
+      \equiv T_z</m>의 압축(compression)에 대한 삼각행렬 표현을 알아보자.
+      내적함수 <m>\theta</m>에 대하여, <m>U_\theta</m>를 다음과 같이 정의하자.
+      <men xml:id="x3_1" >
+        U_\theta= P_{\mathcal H (\theta)} U \vert_{\mathcal H (\theta)}.
+      </men>
+    </p>
+
+    <p>
+      \paragraph{Case 1} <m>B</m>를 Blaschke 곱이라 하고
+      <m>\Lambda:=\{\lambda_n : n \geq 1\}</m>를 <m>B</m>의 근들이라고 하자. 다음과
+      같이 쓰자.
+      <me>
+        \beta_1:=1, 
+        \beta_k:=\prod_{n=1}^{k-1}\frac{\lambda_n-z}{1-\overline{\lambda}_n z}\cdot
+        \frac{|\lambda_n|}{\lambda_n}\qquad (k\geq 2);
+      </me>
+      <me xml:id="deltaj" >
+        \delta_j :=\frac{d_j}{1-\overline{\lambda}_j z}\beta_j \qquad (j \geq
+        1),
+      </me>
+    </p>
+
+    <p>
+      여기에서, <m>d_j :=(1-|\lambda_j|^2)^{\frac{1}{2}}</m>.
+      <m>\mu_B</m>를 <m>\mathbb N</m> 상의 측도로서
+      <m>\mu_B(\{n\}):=\frac{1}{2}d_n^2, (n \in \mathbb N)</m>라고 하자. 이제
+      함수 <m>V_B : L^2(\mu_B)\to \mathcal H(B)</m> 가 다음과 같이
+      정의된다고 하자.
+      <men xml:id="x3_2" >
+        V_B(c):=\frac{1}{\sqrt{2}} \sum_{n \geq 1} c(n)d_n \delta_n,  c
+        \equiv \{c(n)\}_{n \geq 1}.
+      </men>
+    </p>
+
+    <p>
+      그러면 <m>V_B</m>는 유니터리이고 <m>U_B</m>는 다음의 함수로 보내진다.
+      <men xml:id="x3_3" >
+        V_B^*U_B V_B=(I-J_B)M_B,
+      </men>
+    </p>
+
+    <p>
+      여기에서, <m>(M_B c)(n):=\lambda_n c(n)</m> (<m>n\in \mathbb
+      N</m>)은 곱 작용소이고
+      <me xml:id="JB" >
+        (J_B c)(n):=\sum_{k=1}^{n-1}c(k)|\lambda_k|^{-2} \cdot
+        \frac{\beta_n(0)}{\beta_k(0)}d_k d_n     \mbox{<m>(n \in \mathbb N</m>)}
+      </me>
+    </p>
+
+    <p>
+      는 하삼각 Hilbert-Schmidt 작용소이다.
+    </p>
+
+    <p>
+      \paragraph{Case 2} <m>s</m>를 연속표현측도 <m>\mu\equiv
+      \mu_{s}</m>를 가진 특이내적함수(singular inner function)라고
+      하자. 이제, <m>\mu_{\lambda}</m>을 <m>\mu</m>에서 호 <m>\{\zeta: \zeta \in
+      \mathbb T,   0\lt  \text{ arg } \zeta \leq \text{ arg } \lambda\}</m> 위로의
+      사영이라 하고 다음과 같이 두자.
+      <me xml:id="slambdazeta" >
+        s_{\lambda}(\zeta) :=\text{ exp } \Bigl(-\int_{\mathbb
+        T}\frac{t+\zeta}{t-\zeta}d\mu_{\lambda}(t) \Bigr)     \mbox{(<m>\zeta
+        \in \mathbb D</m>)} .
+      </me>
+    </p>
+
+    <p>
+      이제 함수 <m>V_s : L^2(\mu)\to \mathcal H (s)</m>가 다음과 같이 정의된다고 하자.
+      <men xml:id="x3_4" >
+        (V_s c)(\zeta)=\sqrt{2}\int_{\mathbb
+        T}c(\lambda)s_{\lambda}(\zeta)\frac{\lambda
+        d\mu(\lambda)}{\lambda-\zeta}\mbox{(<m>\zeta \in \mathbb D</m>)}
+      </men>
+    </p>
+
+    <p>
+      그러면 <m>V_s</m>는 유니터리이고 <m>U_s</m>는 다음의 함수로 보내진다.
+      <men xml:id="x3_5" >
+        V_s^*U_s V_s=(I-J_s)M_s,
+      </men>
+    </p>
+
+    <p>
+      여기에서, <m>(M_s c)(\lambda):=\lambda c(\lambda)</m> (<m>\lambda\in\mathbb
+      T</m>) 는 곱 작용소이고
+      <me xml:id="Js" >
+        (J_s c)(\lambda)=2 \int _{\mathbb T} e^{\mu(t)-\mu(\lambda)}
+        c(t)d_{\mu_{\lambda}}(t)    \mbox{(<m>\lambda \in \mathbb T</m>)}
+      </me>
+    </p>
+
+    <p>
+      는 하삼각 Hilbert-Schmidt 작용소이다.
+    </p>
+
+    <p>
+      \paragraph{Case 3} <m>\Delta</m>를 순수한 점표현측도 <m>\mu\equiv
+      \mu_{\Delta}</m>를 가진 특이내적함수(singular inner
+      function)라고 하자. 그리고 집합 <m>\{t\in \mathbb T: \mu(\{t\})>0
+      \}</m>을 수열 <m>\{t_k\}_{k \in \mathbb N}</m>로 배열하고 다음과 같이 쓰자:
+      <m>\mu_k:=\mu(\{t_k\}),   k \geq 1</m>. 더구나, <m>\mu_{\Delta}</m>를
+      <m>\mathbb R_{+}=[0, \infty)</m> 상의 측도로서
+      <m>d\mu_{\Delta}(\lambda)=\mu_{[\lambda]+1}d \lambda</m>라고 하자.이제
+      단위원판 <m>\mathbb D</m> 위의 함수
+      <m>\Delta_{\lambda}</m>를 다음과 같이 정의하자.
+      <me>
+        \Delta_{\lambda}(\zeta):=\text{ exp } \Biggl\{-\sum_{k=1}^{[\lambda]}\mu_k
+        \frac{t_k+\zeta}{t_k-\zeta}-(\lambda-[\lambda])\mu_{[\lambda]+1}
+        \frac{t_{[\lambda]+1}+\zeta}{t_{[\lambda]+1}-\zeta}\Biggr \},
+      </me>
+    </p>
+
+    <p>
+      여기에서, <m>[\lambda]</m>는 <m>\lambda</m> (<m>\lambda \in \mathbb R_{+}</m>)의
+      정수 부분이고 <m>\Delta_0:=1</m>로 약속한다. 그리고 함수
+      <m>V_{\Delta} : L^2(\mu_{\Delta})\to \mathcal H
+      (\Delta)</m>가 다음과 같이 정의된다고 하자.
+      <men xml:id="x3_6" >
+        (V_{\Delta}c)(\zeta):=\sqrt{2} \int_{\mathbb
+        R_{+}}c(\lambda)\Delta_{\lambda}(\zeta)(1-\overline{t}_{[\lambda]+1}
+        \zeta)^{-1}d\mu_{\Delta}(\lambda)   \mbox{(<m>\zeta \in \mathbb D</m>)}
+      </men>
+    </p>
+
+    <p>
+      그러면 <m>V_{\Delta}</m>는 유니터리이고 <m>U_\Delta</m>는 다음의 함수로 보내진다.
+      <men xml:id="x3_7" >
+        V_{\Delta}^*U_\Delta V_{\Delta}=(I-J_{\Delta})M_{\Delta},
+      </men>
+    </p>
+
+    <p>
+      여기에서, <m>(M_{\Delta}c)(\lambda):= t_{[\lambda]+1}
+      c(\lambda)</m>, (<m>\lambda\in \mathbb R_+</m>)은 곱 작용소이고
+      <me xml:id="Jdelta" >
+        (J_{\Delta} c)(\lambda) := 2 \int _{0}^{\lambda}c(t)
+        \frac{\Delta_{\lambda}(0)}{\Delta_{t}(0)} d\mu_{\Delta}(t)   \
+        \mbox{(<m>\lambda \in \mathbb R_+</m>)}
+      </me>
+    </p>
+
+    <p>
+      는 하삼각 Hilbert-Schmidt 작용소이다.
+    </p>
+
+    <p>
+      <em>Triangularization theorem.</em><nbsp /><xref ref="Ni" /> <em>Let</em><m>\theta</m> be an inner function with the canonical factorization
+      <m>\theta=B\cdot s \cdot \Delta</m>, where <m>B</m> is a Blaschke product,
+      and <m>s</m> and <m>\Delta</m> are singular functions with representing
+      measures <m>\mu_{s}</m> and <m>\mu_{\Delta}</m> respectively, with <m>\mu_{s}</m>
+      continuous and <m>\mu_{\Delta}</m> a pure point measure. Then the
+      map <m>V:\,L^2(\mu_B)\times L^2(\mu_s) \times L^2(\mu_{\Delta})\to
+      \mathcal H(\theta)</m> defined by
+      <men xml:id="x3_8" >
+        V:=\begin{bmatrix}V_B\amp 0\amp 0\\0\amp BV_s\amp 0\\0\amp 0\amp BsV_{\Delta}\end{bmatrix}
+      </men>
+      is unitary, where <m>V_B, \mu_B, V_S, \mu_S, V_\Delta, \mu_\Delta</m> are
+      defined in <xref ref="x3_2" /> - <xref ref="x3_7" /> and <m>U_\theta</m> is mapped onto
+      the operator
+      <me>
+        M:= V^*U_\theta V =
+        \begin{bmatrix}M_B\amp 0\amp 0\\0\amp M_{s}\amp 0\\0\amp 0\amp M_{\Delta}
+        \end{bmatrix} +J,
+      </me>
+      where <m>M_B, M_S, M_{\Delta}</m> are defined in <xref ref="x3_3" />, <xref ref="x3_5" />
+      and <xref ref="x3_7" /> and
+      <me>
+        J:=-\begin{bmatrix}J_BM_B\amp 0\amp 0\\0\amp J_sM_s\amp 0\\0\amp 0\amp J_{\Delta}M_\Delta
+        \end{bmatrix} +A
+      </me>
+      is a lower-triangular Hilbert-Schmidt operator, with <m>A^3=0</m>,
+      <m>\text{ rank } \,A\leq 3</m>.}
+    </p>
+
+    <p>
+      위의 정리를 이용하면 유계형 심벌을 가진 Toeplitz 작용소의 아정규성을
+      판별할 수 있는 판정법을 얻을 수 있다.
+    </p>
+
+    <theorem>
+      <title><xref ref="CHL1" /></title>
+      <statement>
+        <p>
+          Let <m>\varphi\equiv
+          \varphi_-^*+\varphi_+\in \mathbf L^\infty</m> be such that <m>\varphi</m>
+          and <m>\overline\varphi</m> are of bounded type of the form
+          <me>
+            \varphi_+=\theta_1\theta_0\overline a\mbox{and} 
+            \varphi_-=\theta_1\overline b,
+          </me>
+          where <m>\theta_1</m> and <m>\theta_0</m> are inner functions and <m>a,b\in
+          H^2</m>. If <m>k\in\mathcal{C}(\varphi)</m> then
+          <me>
+            T_\varphi\ \mbox{is hyponormal}   \Longleftrightarrow\ k(M)  \mbox{is
+            contractive} ,
+          </me>
+          where <m>M</m> is defined as follows:
+          <men xml:id="x3_10" >
+            \begin{cases}V: L\equiv L^2(\mu_B) \times L^2(\mu_s)
+                     \times L^2(\mu_{\Delta})\to \mathcal H(\theta_1 \theta_0)  \
+                        \mathrm{ is unitary as in (3.4.8)};\\
+            M:= V^*U_{\theta_1\theta_0}V;\\
+            \mathcal L :=L \otimes \mathbb C^n\\
+            \mathcal V := V \otimes I_n.
+            \end{cases}
+          </men>
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      위에서 <m>k(M)</m>은 <m>H^\infty</m>-함수계산을 따른다.
+    </p>
+  </subsection>
+</section>

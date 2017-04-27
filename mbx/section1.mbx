@@ -1,0 +1,63 @@
+
+<section>
+  <title>서론</title>
+  <p>
+    작용소 이론(Operator Theory)은 함수 공간과 그 공간 상에서 작용하는
+    함수를 다루는 학문이다. 작용소 이론의 연구는 1713년에 B.<nbsp />Taylor가
+    진동하는
+  </p>
+
+  <p>
+    { 2010 Mathematics Subject
+    Classification: 47B20, 47B35, 46J15, 15A83, 30H10, 47A20.
+  </p>
+
+  <p>
+    Key words and phrases: Hardy 공간, Toeplitz 작용소, Hankel 작용소,
+    정규성, 부분정규성, 아정규성, <m>k</m>-아정규성.}
+  </p>
+
+  <p>
+    끈을 논의하면서 그 씨앗이 뿌려졌는데 이 때가 Newton의
+    `프린키피아'가 출간된지 25년쯤 지난 후이다. 현대수학의 역사 치고 꽤
+    유서가 깊은 학문이라 하겠다.
+  </p>
+
+  <p>
+    그 후 수학이 급격히 발전하게 되고 19세기 초의
+    Sturm과 Liouville에 의해서 매우 강력한 이론이 만들어졌으며 1910년에
+    H.<nbsp />Weyl의 자기수반 작용소에 관한 중요한 발견들과 20세기 초의 F.\
+    Volterra, M.<nbsp />Riesz, D.<nbsp />Hilbert, 괴팅겐학파, Banach, Mazur,
+    Schauder, 그리고 폴란드의 많은 수학자들에 의하여 풍성한 열매가
+    열렸다. 또 1930년과 1970년대 사이에 Gelfand, Krein, Naimark,
+    Kakutani, Kato, 프랑스의 Bourbaki 그룹, 루마니아의 Colojoara, Foias,
+    미국의 Hille, Phillips, Friedrichs, von Neumann, Paley, Wiener 등이
+    이 분야의 연구를 더욱 풍성하게 하였다. 오늘날, 작용소 이론이
+    현대수학에서 차지하는 비중은 실로 대단하다. 우선 수학 분야에서만
+    보더라도 편미분방정식론, 근사이론, 적분방정식론, 확률론 등에 깊은
+    영향을 주고 있으며, 응용분야에서는 양자역학, 유체역학, 전자기학,
+    생명공학 등 다양한 분야로 응용되고 있다.
+  </p>
+
+  <p>
+    Toeplitz 작용소에 대하여 끊임없이 관심이 증대되는 이유는 적어도 두
+    가지가 있다. 첫째는 Toeplitz 작용소가 물리학, 확률론, 정보 및
+    제어이론, 그 밖의 여러 분야의 다양한 문제들과 밀접한 관련이 있기
+    때문이며, 둘째는 Toeplitz 작용소가 유계 작용소의 집합 중 가장 큰
+    집합으로서 작용소 이론, 함수론, Banach 대수 이론 등의 주제들 사이의
+    매력적인 상호 연관성을 보여주고 풍부한 예들을 제공하기 때문이다.
+  </p>
+
+  <p>
+    한편, 1950년에는 Paul Halmos가 아정규성(hyponormality)과
+    부분정규성(subnormality)을 도입하였는데, 그 이후로
+    아정규성과 부분정규성 이론은 작용소론에서 광범위하게 연구되어 매우
+    훌륭한 이론으로 자리를 잡았다. 그런 의미에서, 다음 문제는 흥미롭고
+    매력적이다:
+  </p>
+
+  <p>
+    어떤 Toeplitz 작용소가 아정규인가? 또
+    부분정규인가?
+  </p>
+</section>

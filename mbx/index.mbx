@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mathbook xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
+<docinfo>
+<macros>
+\newcommand{\mm}{\multimap}
+\newcommand{\sub}{\subset}
+\newcommand{\g}{\gamma}
+\newcommand{\G}{\Gamma}
+\newcommand{\ol}{\overline}
+\newcommand{\ul}{\underline}
+\newcommand{\ti}{\times}
+\newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda}
+\newcommand{\bcup}{\bigcup}
+\newcommand{\bcap}{\bigcap}
+\newcommand{\De}{\Delta}
+\newcommand{\de}{\delta}
+\newcommand{\back}{\backslash}
+\newcommand{\f}{\frak}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+\newcommand{\wh}{\widehat}
+\newcommand{\emp}{\emptyset}
+\newcommand{\vs}{\vspace}
+\newcommand{\hs}{\hspace}
+</macros>
+
+<latex-image-preamble>
+\usepackage{tikz}
+\usepackage{tkz-graph}
+\usepackage{tkz-euclide}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning}
+\usetikzlibrary{matrix,arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes}
+\usetikzlibrary{through,intersections,decorations,shadows,fadings}
+
+\usepackage{pgfplots}
+
+</latex-image-preamble>
+
+</docinfo>
+
+
+<article>
+<title>토에플리츠 작용소에 대한 브리지 이론</title>
+<frontmatter>
+<titlepage>
+</titlepage>
+
+<abstract>
+
+<p>
+  Toeplitz 작용소는 수학과 물리학의 다양한 문제에서 자연스럽게
+  발생한다. 또한 아정규와 부분정규 작용소 이론은 오늘날 광범위하게 잘
+  발달된 분야로 성장하였으며 함수해석학, 작용소 이론, 수리물리학 등의
+  많은 문제를 푸는 데 지대한 기여를 해왔다. 따라서, Toeplitz 작용소에
+  대한 아정규성과 부분정규성을 상세하게 묘사하는 것은 매우 중요한
+  문제로 떠올랐다. 그런 의미에서 다음 질문은 흥미롭고 매력적이다: <em>어떤 Toeplitz 작용소가 아정규이거나 부분정규인가?</em> 정규성과
+  부분정규성에 대한 정확한 관계가 광범위하게 연구되어 온 반면에,
+  아정규성 안에서의 부분정규성의 위치에 관한 연구는 여전히 이해가
+  부족한 편이다. 무한차원 복소 Hilbert (혹은 Banach) 공간 상의
+  유계작용소에 관한 아정규성과 부분정규성 사이의 틈을 연구하는 분야를
+  `브리지 이론'이라 부르는데, 이 글에서는 Toeplitz 작용소에 대한
+  브리지 이론의 발전을 설명한다. 이는 1970년에 P. R.<nbsp />Halmos가 제시한
+  열 개의 문제 중 다음과 같은 다섯번째 문제로부터 야기된다: <em>모든
+  부분정규 Toeplitz 작용소는 정규이거나 해석적인가?</em>
+</p>
+
+</abstract>
+</frontmatter>
+
+<xi:include href="./section1.mbx" />
+
+<xi:include href="./section2.mbx" />
+
+<xi:include href="./section3.mbx" />
+
+<xi:include href="./x4_1_1.mbx" />
+
+<backmatter>
+
+<xi:include href="./bibliography.mbx" />
+
+</backmatter>
+</article>
+</mathbook>
